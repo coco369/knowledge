@@ -1,2 +1,65 @@
-# knowledge
-python学习之路
+# 知识库
+知识库，总结在项目中实际使用的git命令，docker部署，mongodb，mysql等知识点
+
+1. [git知识库]
+  - [git安装以及设置](git/git1.md)
+  - [git的基本命令](git/git2.md)
+2. [docker知识库]
+  - [基础](docker/docker.md)
+3. [mysql数据库知识库]
+  - [第一天:基础]
+      - [Mysql数据库基础语法](sql/mysql.md)
+  - [第二天:提升练习]
+      - [语法练习1](sql/mysql2_1.md)
+      - [语法练习2](sql/mysql2_2.md)
+  - [第三天:mysql与python交互]
+      - [交互](sql/mysql3.md)
+4. [redis知识库]
+  - [第一天:安装/基础]
+      - [redis安装以及基础语法](sql/redis.md)
+  - [第二天:订阅]
+	  - [订阅](sql/redis1.md)
+5. [Django知识库]
+  - [第一天:环境与创建项目]
+      - [django概念介绍](django/1.1django_pattern.md)
+      - [virtualenv环境](django/1.2python_virtualenv.md)
+      - [创建django项目](django/1.3django_halloWorld.md)
+      - [admin管理](django/1.4django_admin.md)
+  - [第二天:模型]
+      - [模型设计](django/2.1django_models.md)
+      - [练习](django/2.2django_mysql_lianxi.md)
+  - [第三天:模型加餐/模板]
+      - [模型关联设计](django/3.1django_model_more.md)
+      - [模板](django/3.2django_temp.md)
+  - [第四天:视图1]
+      - [路由/反向解析](django/4.1django_urls.md)
+  - [第五天:视图2]
+      - [cookies/session](django/5.1django_coo_sess.md)
+      - [登录/注册--自己实现](django/5.2django_regist_login.md)
+      - [登录/注册--django实现](django/5.3django_regist_login.md)
+  - [第六天:插件]
+      - [验证码/中间件/分页](django/6.1django_plug.md)
+      - [文件上传](django/6.2django_media.md)
+  
+  - [第七天:日志/restful]
+      - [日志](django/7.1django_log.md)
+      - [restful](django/7.2django_restful.md)
+  - [第八天:restframework]
+	  - [CRUD](django/8.1django_restful3.md)
+
+
+6. [Flask知识库]
+  - [第一天:HelloFlask]
+	  - [flask简介](flask/1.0flask_helloflask.md)
+	  - [flask蓝图](flask/1.1flask_blueflask.md)
+  - [第二天:views]
+	  - [flask请求与响应/错误处理](flask/2.1flask_request_response_error.md)
+	  - [session/cookie](flask/2.2flask_session_cookie.md)
+  - [第三天:templates与models]
+	  - [flask-template](flask/3.1flask_templates.md)
+	  - [flask-models1](flask/3.2flask_models.md)
+  - [第四天:models与一对多关系]
+	  - [flask-models2](flask/4.1flask_models.md)
+  - [第五天:多对多关系/debugtoolbal]
+	  - [flask-models3](flask/5.1flask_models.md)
+	  - [flask-extensions](flask/5.2flask_extensions.md)
