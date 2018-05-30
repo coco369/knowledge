@@ -43,9 +43,13 @@
   
   - [第七天:日志/restful]
       - [日志](django/7.1django_log.md)
-      - [restful](django/7.2django_restful.md)
-  - [第八天:restframework]
-	  - [CRUD](django/8.1django_restful3.md)
+      - [restful1](django/7.2django_restful.md)
+  - [第八天:权限、角色]
+	  - [权限、角色](django/8.1django_role_premission.md)
+  - [第九天:restframework2]
+	  - [响应结构/ajax-CRUD](django/9.1django_restful3.md)
+  - [第十天:restframework3]
+	  - [分页/过滤/筛选](django/10.1django_restful4.md)
 
 
 6. [Flask知识库]
