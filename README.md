@@ -1,12 +1,12 @@
 # 知识库
 知识库，总结在项目中实际使用的git命令，docker部署，mongodb，mysql等知识点
 
-1. [git知识库]
+### git知识库
   - [git安装以及设置](git/git1.md)
   - [git的基本命令](git/git2.md)
-2. [docker知识库]
+### docker知识库
   - [基础](docker/docker.md)
-3. [mysql数据库知识库]
+### mysql数据库知识库
   - [第一天:基础]
       - [Mysql数据库基础语法](sql/mysql.md)
   - [第二天:提升练习]
@@ -14,12 +14,17 @@
       - [语法练习2](sql/mysql2_2.md)
   - [第三天:mysql与python交互]
       - [交互](sql/mysql3.md)
-4. [redis知识库]
+### redis知识库
   - [第一天:安装/基础]
       - [redis安装以及基础语法](sql/redis.md)
   - [第二天:订阅]
 	  - [订阅](sql/redis1.md)
-5. [Django知识库]
+
+### PEP 8风格指南
+  
+  - [风格指南](PEP 8风格指南.md)
+
+### Django知识库
   - [第一天:环境与创建项目]
       - [django概念介绍](django/1.1django_pattern.md)
       - [virtualenv环境](django/1.2python_virtualenv.md)
@@ -52,7 +57,7 @@
 	  - [分页/过滤/筛选](django/10.1django_restful4.md)
 
 
-6. [Flask知识库]
+### Flask知识库
   - [第一天:HelloFlask]
 	  - [flask简介](flask/1.0flask_helloflask.md)
 	  - [flask蓝图](flask/1.1flask_blueflask.md)
