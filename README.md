@@ -87,16 +87,26 @@
 
 ### 爬虫
 	
-  - [第一天:进程线程]
+  - [第一天:进程线程/并发等]
   
+  		- 概念：线程、进程、同步、异步、并发、阻塞、非阻塞、并发、并行
 	  	- 进程、线程概念：多线程定义，守护线程，线程启动
-	  	- 线程、进程、同步、异步、并发、阻塞、非阻塞
+	  	- 线程锁
+	  	- 应用案例1：I/O密集型，计算密集型的单线程多线程对比
 	  	
-	  - [线程、进程](spider/2.0spider_process_threading.md)
-	  - [并发、并行、同步、异步](spider/2.0spider_thread.md)
+	  - [并发、并行、同步、异步线程、进程](spider/1.0spider_process_threading.md)
+	  - [线程锁](spider/1.1spider_threading_lock.md)
+	  - [应用案例](spider/1.2spider_threading_IO_calc_GIL.md)
+	  
 	  
 
   - [第二天:协程]
+  
+	  	- 协程的概念，原理，实现
+
+	  - [协程](spider/2.0spider_yield.md)
+
+  - [第三天:爬虫]
 		
 		- 概念：爬虫的由来/用来做什么
 		- 数据采集与分析：urllib/requests/bs4/mongodb/mysql/redis等
@@ -107,8 +117,8 @@
 		- 应用案例2：爬去智联上某工作某地点的岗位个数
 		- 应用案例3：获取豆瓣电影中动态加载电影资源信息
 		- 作业：爬取qq音乐的歌曲，并保存
-	  - [爬虫引入/User-Agent讲解](spider/1.0spider_concept.md)
-	  - [应用案例](spider/1.1spider_baidu_zhilian_search.md)
+	  - [爬虫引入/User-Agent讲解](spider/3.0spider_concept_urllib.md)
+	  - [应用案例](spider/3.1spider_baidu_zhilian_search.md)
 
 
   
