@@ -72,3 +72,8 @@
   - [第五天:多对多关系/debugtoolbal]
 	  - [flask-models3](flask/5.1flask_models.md)
 	  - [flask-extensions](flask/5.2flask_extensions.md)
+
+### 爬虫
+
+  - [第一天:概念]
+	  - 并发、并行、同步、异步(spider/1.0spider_gainian.md)
