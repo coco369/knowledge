@@ -57,6 +57,7 @@
 	  - [分页/过滤/筛选](django/10.1django_restful4.md)
   - [第十一天到十五天：项目]
 	  - [爱鲜蜂案例](https://github.com/coco369/axf)
+	  - [centos7部署项目](centos部署.md)
 
 ### Flask知识库
   - [第一天:HelloFlask]
