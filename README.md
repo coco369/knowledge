@@ -85,9 +85,10 @@
 		- 数据采集与分析：urllib/requests/bs4/mongodb/mysql/redis等
 		- 请求头-反爬虫：User-Agent，Accept，Accept-Language等
 		- 百度搜索：中文的编码解码
-		- 应用案例：urllib获取百度首页源代码，其中User-Agent的使用
+		- 应用案例1：urllib获取百度首页源代码，其中User-Agent的使用
+		- 应用案例2：爬去智联上某工作某地点的岗位个数
 	  - [爬虫引入/User-Agent讲解](spider/1.0spider_concept.md)
-	  - [百度搜索](spider/1.1spider_baidu_search.md)
+	  - [应用案例](spider/1.1spider_baidu_zhilian_search.md)
 
 
   - [第二天:多线程]
