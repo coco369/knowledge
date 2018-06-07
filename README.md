@@ -55,7 +55,8 @@
 	  - [响应结构/ajax-CRUD](django/9.1django_restful3.md)
   - [第十天:restframework3]
 	  - [分页/过滤/筛选](django/10.1django_restful4.md)
-
+  - [第十一天到十五天：项目]
+	  - [爱鲜蜂案例](https://github.com/coco369/axf)
 
 ### Flask知识库
   - [第一天:HelloFlask]
@@ -72,6 +73,8 @@
   - [第五天:多对多关系/debugtoolbal]
 	  - [flask-models3](flask/5.1flask_models.md)
 	  - [flask-extensions](flask/5.2flask_extensions.md)
+  - [第六天到第10天：项目]
+	  - [爱家案例](https://github.com/coco369/aj)
 
 ### 爬虫
 
@@ -84,6 +87,7 @@
 		- 应用案例：urllib获取百度首页源代码，其中User-Agent的使用
 	  - [爬虫引入/User-Agent讲解](spider/1.0spider_concept.md)
 	  - [百度搜索](spider/1.1spider_baidu_search.md)
-	  - 
+
+
   - [第二天:多线程]
 	  - 并发、并行、同步、异步(spider/2.0spider_thread.md)
