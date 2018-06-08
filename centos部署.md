@@ -134,7 +134,7 @@
 
 #### 3. 安装环境需要的包
 
-	pip install -r re_install.txt
+	pip3 install -r re_install.txt
 
 	其中re_install.txt文件中记录的是需要安装包的名称以及对应的版本
 
@@ -169,7 +169,156 @@ Django框架仅在开发模式下提供静态文件服务。当我开启DEBUG模
 	]
 	
 
+#### 2. 正式环境中部署方式
+
+正式环境中部署为nginx+uwsgi来部署django项目
+
+##### 2.1 安装nginx
+
+a）添加nginx存储库
+	
+	yum install epel-release
+	
+
+b) 安装nginx
+
+	yum install nginx
+
+c) 运行nginx
+
+Nginx不会自行启动。要运行Nginx
+	
+	systemctl start nginx
+
+nginx的运行命令：
+
+	 systemctl status nginx 查看nginx的状态
+	 systemctl start/stop/enable/disable nginx 启动/关闭/设置开机启动/禁止开机启动
+ 
+
+d）系统启动时启用Nginx
+	
+	systemctl enable nginx
+
+e）如果您正在运行防火墙，请运行以下命令以允许HTTP和HTTPS通信：
+	
+	sudo firewall-cmd --permanent --zone=public --add-service=http 
+
+	sudo firewall-cmd --permanent --zone=public --add-service=https
+
+	sudo firewall-cmd --reload
+
+运行结果如下:
+
+![图](django/images/django_centos_nginx.png)
 
 
+#### 3.配置uwsgi
 
+##### 3.1 安装uwsgi
+
+	pip3 install uwsgi
+
+然后进行环境变量的配置， 建立软连接
+
+	ln -s /usr/local/python3/bin/uwsgi /usr/bin/uwsgi
+
+![图](django/images/django_centios_uwsgi.png)
+
+
+#### 4. 配置项目代码，配置项目nginx，配置uwsgi.ini等
+
+本案例的配置文件，都习惯将每一个项目的配置文件，日志文件，虚拟环境放在一起，这样开发方便，运维也方便维护
+
+项目的目录结构如下：
+
+![图](django/images/django_centos_project_mulu.png)
+
+其中：
+
+conf是配置文件，用于存放项目的nginx.conf文件，uwsgi.ini文件
+
+logs是日志文件，用于存放nginx的启动成功和失败文件，以及uwsgi的运行日志文件
+
+env是用于存放虚拟环境
+
+src是项目文件，该目录下上传的是目录代码
+
+#### 4.1 配置nginx.conf文件
+
+<b>首先</b>：编写自己项目的nginx.conf文件如下：
+
+每一个项目对应有一个自己定义的nginx的配置文件，比如爱鲜蜂项目，我定义为axfnginx.conf文件
+
+	server {
+	     listen       80;
+	     server_name 39.104.176.9 localhost;
+	
+	     access_log /home/logs/access.log;
+	     error_log /home/logs/error.log;
+	
+	     location / {
+	         include uwsgi_params;
+	         uwsgi_pass 127.0.0.1:8890;
+	     }
+	     location /static/ {
+	         alias /home/src/axf/static/;
+	         expires 30d;
+	     }
+	
+	 }
+
+<b>其次</b>：修改总的nginx的配置文件，让总的nginx文件包含我们自定义的项目的axfnginx.conf文件
+
+总的nginx配置文件在：/etc/nginx/nginx.conf中
+
+
+![图](django/images/django_centos_nginx_peizhi.png)
+
+
+以上步骤操作完成以后，需要重启nginx：
+
+	systemctl restart nginx
+
+如果自定义的axfnginx.conf文件没有错误的话，查看nginx的运行状态会有如下的结果：
+
+![图](django/images/django_centos_nginx_status.png)
+
+
+#### 4.2 配置uwsgi文件
+
+在conf文件夹下除了包含自定义的axfnginx.conf文件，还有我们定义的uwsgi.ini文件
+
+	[uwsgi]
+	projectname = axf
+	base = /home/src
+	
+	# 守护进程
+	master = true
+	
+	# 进程个数
+	processes = 4
+	
+	# 虚拟环境
+	pythonhome = /home/env/axfenv
+
+	# 项目地址
+	chdir = %(base)/%(projectname)
+	
+	# 指定python版本
+	pythonpath = /usr/local/python3/bin/python3
+
+	# 指定uwsgi文件
+	module = %(projectname).wsgi
+	
+	# 和nginx通信地址:端口
+	socket = 127.0.0.1:8890
+
+	# 日志文件地址
+	logto = /home/logs/uwsgi.log
+
+	
+运行项目:
+
+	uwsgi --ini uwsgi.ini
 
