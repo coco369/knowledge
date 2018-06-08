@@ -49,7 +49,7 @@
 	
 	初始化MariaDB完成，接下来测试登录
 	
-	mysql -u root -p password
+	mysql -u root -p
 
 ### 开启远程连接
 
