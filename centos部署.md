@@ -26,8 +26,9 @@
 
 ### 设置密码
 
+命令: mysql\_secure\_installation
 
-命令: Enter current password for root:<–初次运行直接回车
+	Enter current password for root:<–初次运行直接回车
 	
 	设置密码
 	
@@ -56,6 +57,9 @@
 
 #### 1. 创建用户
 
+	# 先使用数据库
+	use mysql;
+
 	# 针对ip
 	create user 'root'@'192.168.10.10' identified by 'password';
 	
@@ -78,6 +82,9 @@
 	show grants for 'root'@'localhost';
 
 接下来就可以在远程的数据库可视化工具中直接访问该服务器中的mysql了。
+
+	# 访问数据库
+	mysql -u root -p
 
 ### 安装python3.6
 
