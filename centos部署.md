@@ -163,7 +163,7 @@ Django框架仅在开发模式下提供静态文件服务。当我开启DEBUG模
 	    url(r'^axf/', include('axf.urls', namespace='axf')),
 
 		# 增加以下的url路由
-	    url(r'^static/(?P<path>.*)$', serve, {"document_root": settings.STATIC_ROOT}),
+	    url(r'^static/(?P<path>.*)$', serve, {"document_root": settings.STATICFIELS_DIRS[0]}),
 
 	    url(r'^$', views.home)
 	]
