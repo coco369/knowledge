@@ -85,8 +85,11 @@
 		- 数据采集与分析：urllib/requests/bs4/mongodb/mysql/redis等
 		- 请求头-反爬虫：User-Agent，Accept，Accept-Language等
 		- 百度搜索：中文的编码解码
+		- ssl: ssl认证
 		- 应用案例1：urllib获取百度首页源代码，其中User-Agent的使用
 		- 应用案例2：爬去智联上某工作某地点的岗位个数
+		- 应用案例3：获取豆瓣电影中动态加载电影资源信息
+		- 作业：爬取qq音乐的歌曲，并保存
 	  - [爬虫引入/User-Agent讲解](spider/1.0spider_concept.md)
 	  - [应用案例](spider/1.1spider_baidu_zhilian_search.md)
 
