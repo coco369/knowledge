@@ -68,6 +68,10 @@
 	  - [flask简介](flask/1.0flask_helloflask.md)
 	  - [flask蓝图](flask/1.1flask_blueflask.md)
   - [第二天:views]
+	  
+		- 请求与响应：POST/GET请求传参，类字典的区别
+		-  session/cookie概念：用法，redis的配置
+		
 	  - [flask请求与响应/错误处理](flask/2.1flask_request_response_error.md)
 	  - [session/cookie](flask/2.2flask_session_cookie.md)
   - [第三天:templates与models]
