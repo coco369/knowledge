@@ -61,6 +61,10 @@
 
 ### Flask知识库
   - [第一天:HelloFlask]
+  
+	  	- flask配置：微的定义，最小flask的web引用，虚拟环境搭建，安装flask
+		- mvc概念
+		- 项目运行管理：flask_script库使用，debug配置等
 	  - [flask简介](flask/1.0flask_helloflask.md)
 	  - [flask蓝图](flask/1.1flask_blueflask.md)
   - [第二天:views]
