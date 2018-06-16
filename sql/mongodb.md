@@ -69,6 +69,22 @@ gunzip是个使用广泛的解压缩程序,它用于解开被gzip压缩过的文
 
 ![图](images/mongo_centos_mongo.png)
 
+设置配置文件mongodb.conf
+
+	vi mongodb.conf
+	
+	dbpath = /home/mongodb/data/db #数据文件存放目录
+	
+	logpath = /home/mongodb/logs/mongodb.log #日志文件存放目录
+	port = 27017  #端口
+	fork = true  #以守护程序的方式启用，即在后台运行
+	nohttpinterface = true
+	auth=true
+	bind_ip=0.0.0.0
+
+启动mongo命令: mongod -f mongodb.conf
+
+
 
 #### 3.5 查看进程
 
@@ -92,3 +108,21 @@ centos下安装 yum install net-tools 就可以使用netstat -lntp 去查看进�
 | primary key | primary key | 主键/主键（`_id`字段） |
 
 
+### 4. robomongo可视化工具
+
+
+在windows开发环境中，需要可视化mongodb数据库，通常都会使用robomongo这个可视化工具。请自行去官网下载
+
+简单的配置一下即可访问centos7 上的mongodb数据库了。
+
+
+![图](images/mongo_centos_robomongo.png)
+
+
+<b>坑：</b>
+
+如果在配置robomongo的过程中，遇到无法访问，出现'connect: network is unreachable'的提示的话，表示mongo的远程没有开启，或者防火墙的问题。首先需要检查mongodb.conf文件中的bind_ip是否是0.0.0.0。其次在查看防火墙是否开启，可直接关闭防火墙，在进行robomongo链接尝试。
+
+	systemctl stop firewalld.service #停止firewall 
+	
+	systemctl disable firewalld.service #禁止firewall开机启动 
