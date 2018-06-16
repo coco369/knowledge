@@ -20,6 +20,10 @@
   - [第二天:订阅]
 	  - [订阅](sql/redis1.md)
 
+### mongodb知识库
+  - [安装及配置](sql/mongodb.md)
+  - [基础语法](sql/mongodb语法.md)
+
 ### PEP 8风格指南
   
   - [风格指南](PEP 8风格指南.md)
@@ -121,7 +125,7 @@
 	  	
 	  - [并发、并行、同步、异步线程、进程](spider/3.0spider_process_threading.md)
 	  - [线程锁](spider/3.1spider_threading_lock.md)
-	  - [应用案例1:](spider/3.2spider_threading_IO_calc_GIL.md)
+	  - [应用案例1:计算密集型和IO密集型的性能对比](spider/3.2spider_threading_IO_calc_GIL.md)
 	  - [应用案例2:多线程爬虫]()
 	  
 
@@ -133,7 +137,7 @@
 
 	  - [协程](spider/4.0spider_yield.md)
 	  - [练习题](spider/4.1spider_yield_practice.md)
-	  - [数据库持久化]()
+	  - [数据库持久化](spider/4.2spider_sql_engine.md)
 
 
 
