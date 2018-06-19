@@ -112,7 +112,8 @@
 		- xpath语法、re正则表达式语法
 		- 应用案例1：获取豆瓣电影中动态加载电影资源信息
 		- 应用案例2:爬取知乎发现里面的提问的链接数，和链接地址
-	  - [采集](spider/2.0spider_collect.md)
+	  - [采集(bs4/requests)](spider/2.0spider_collect.md)
+	  - [提取](spider/2.2spider_re_xpath.md)
 	  - [应用案例](spider/2.1spider_movies_questions.md)
 
 	
