@@ -103,7 +103,7 @@
 		- 应用案例2：爬去智联上某工作某地点的岗位个数
 		- 作业：爬取qq音乐的歌曲，并保存
 	  - [爬虫引入/User-Agent讲解](spider/1.0spider_concept_urllib.md)
-	  - [应用案例](spider/1.1spider_baidu_zhilian_search.md)
+	  - [应用案例:爬取智联工作/百度源码](spider/1.1spider_baidu_zhilian_search.md)
 
 
   - [第二天:数据采集]
@@ -113,8 +113,8 @@
 		- 应用案例1：获取豆瓣电影中动态加载电影资源信息
 		- 应用案例2:爬取知乎发现里面的提问的链接数，和链接地址
 	  - [采集(bs4/requests)](spider/2.0spider_collect.md)
-	  - [提取](spider/2.2spider_re_xpath.md)
-	  - [应用案例](spider/2.1spider_movies_questions.md)
+	  - [提取xpath/re](spider/2.2spider_re_xpath.md)
+	  - [应用案例:爬知乎的提问](spider/2.1spider_movies_questions.md)
 
 	
   - [第三天:多线程爬虫]
@@ -144,9 +144,10 @@
 
  - [第五天:动态解析]
 
-		- 动态内容，javascript逆向，selenium
+		- 动态内容分析: 什么是动态内容，分析豆瓣的动态内容加载
+		- javascript逆向，selenium自动化测试框架
 		
-	  - [动态分析]()
+	  - [动态内容解析](spider/5.0spider_javascript_analyst.md)
 
   - [第六天:验证]
 
