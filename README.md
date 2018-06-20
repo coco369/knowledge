@@ -150,8 +150,12 @@
 	  - [动态内容解析](spider/5.0spider_javascript_analyst.md)
 
   - [第六天:验证]
+		
+		- 模拟登陆:请求url分析,请求参数分析，模拟登陆状态保持
 
 		- form模拟登陆、验证码
+
+	  - [应用案例1：模拟登陆github](spider/6.0spider_github_login.md)
 
 
   - [第七天--第九天]
