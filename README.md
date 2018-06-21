@@ -162,9 +162,12 @@
   
 	    - scrapy框架组件，处理流程，数据持久化
 	    - scrapy项目环境搭建，创建项目命令，执行启动操作，各相关文件的处理逻辑
+	    - 
 	    - 案例1：爬取起点小说网的小说分类，以及分诶的url
- 
-    - [scrapy框架的介绍以及案例1](spider/7.0spider_scrapy1.md)
+	    - 案例2：爬取豆瓣电影的信息，并持久化
+	    - 
+      - [scrapy框架的介绍以及案例1](spider/7.0spider_scrapy1.md)
+      - [scrapy爬虫豆瓣信息](spider/7.1spider_scrapy2.md) 
   
   - [第十天:综合案例]
 
