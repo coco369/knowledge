@@ -24,12 +24,21 @@ MongoDB将数据存储为一个文档，一个文档由一系列的“键值对�
 
 windows的下载msi文件比较大有183M，下载需耐心等待了。
 
-#### 2.10 windows下安装配置
+#### 2.1 windows下安装配置
 
 自定义了安装目录以后，直接下一步下一步就可以完成本地的mongo安装了
 
 ![图](images/mongo_install_msi.png)
 
+#### 2.2 配置mongodb的数据库
+
+我的mongodb安装在D:\instal_soft\mongodb中，那我指定mongodb的data/db也在该路径下即可。但是data文件夹和db文件夹需要自己创建，创建成功以后，执行以下的命令即可启动mongodb了
+
+![图](images/windows_mongodb_install.png)
+
+如下是安装成功了mongodb，系统会默认开启27017端口，可以通过'localhost:27017'去访问mongodb了。
+
+![图](images/windows_mongodb_27017_success.png)
 
 ### 3 linux下安装
 
