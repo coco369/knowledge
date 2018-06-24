@@ -101,7 +101,9 @@
 		- ssl: ssl认证
 		- 应用案例1：urllib获取百度首页源代码，其中User-Agent的使用
 		- 应用案例2：爬去智联上某工作某地点的岗位个数
-		- 作业：爬取qq音乐的歌曲，并保存
+		- 作业1：爬取智联上某工作某地点的工作名称，公司等信息
+		- 作业2：爬取格言网(https://www.geyanw.com/)上的某一个模块的名言警句
+		- 作业3：爬取搜狗图片中的新垣结衣的图片
 	  - [爬虫引入/User-Agent讲解](spider/1.0spider_concept_urllib.md)
 	  - [应用案例:爬取智联工作/百度源码](spider/1.1spider_baidu_zhilian_search.md)
 
