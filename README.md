@@ -116,7 +116,8 @@
 		- 应用案例2:爬取知乎发现里面的提问的链接数，和链接地址
 	  - [采集(bs4/requests)](spider/2.0spider_collect.md)
 	  - [提取xpath/re](spider/2.2spider_re_xpath.md)
-	  - [应用案例:爬知乎的提问](spider/2.1spider_movies_questions.md)
+	  - [应用案例1:爬知乎的提问/豆瓣电影信息](spider/2.1spider_movies_questions.md)
+	  - [应用案例2:爬取搜狐体育的新闻信息](spider/2.3spider_souhu_sports.md)
 
 	
   - [第三天:多线程爬虫]
