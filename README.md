@@ -130,7 +130,7 @@
 	  - [并发、并行、同步、异步线程、进程](spider/3.0spider_process_threading.md)
 	  - [线程锁](spider/3.1spider_threading_lock.md)
 	  - [应用案例1:计算密集型和IO密集型的性能对比](spider/3.2spider_threading_IO_calc_GIL.md)
-	  - [应用案例2:多线程爬虫](3.3spider_threading_douban.md)
+	  - [应用案例2:多线程爬虫](spider/3.3spider_threading_douban.md)
 	  
 
   - [第四天:协程/数据持久化]
