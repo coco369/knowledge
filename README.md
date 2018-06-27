@@ -138,10 +138,12 @@
  		- 迭代器、生成器的原理概念、斐波那契的实现
 	  	- 协程的概念，原理，生产者-消费者的实现
 	  	- 数据持久化，redis安装配置、缓存，mongodb安装配置、语法、缓存
+	  	- aiohttp:异步非阻塞的
 
 	  - [协程](spider/4.0spider_yield.md)
 	  - [练习题](spider/4.1spider_yield_practice.md)
 	  - [数据库持久化](spider/4.2spider_sql_engine.md)
+	  - [应用案例1:使用协程爬取豆瓣电影并持久化](spider/4.3spider_async_await.md)
 
 
 
