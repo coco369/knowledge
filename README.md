@@ -151,8 +151,10 @@
 
 		- 动态内容分析: 什么是动态内容，分析豆瓣的动态内容加载
 		- javascript逆向，selenium自动化测试框架
+		- 应用案例1: 使用selenium模拟登陆知乎
+		- 应用案例2: 使用selenium解析豆瓣电影信息
 		
-	  - [动态内容解析](spider/5.0spider_javascript_analyst.md)
+	  - [动态内容解析/selenium用法](spider/5.0spider_javascript_analyst.md)
 	  - [模拟登陆知乎并截图/解析豆瓣电影信息](spider/5.1spider_selenium_login_zhihu_and_douban_movies.md)
 
   - [第六天:验证]
