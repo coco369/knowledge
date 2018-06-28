@@ -153,6 +153,7 @@
 		- javascript逆向，selenium自动化测试框架
 		
 	  - [动态内容解析](spider/5.0spider_javascript_analyst.md)
+	  - [模拟登陆知乎并截图/解析豆瓣电影信息](spider/5.1spider_selenium_login_zhihu_and_douban_movies.md)
 
   - [第六天:验证]
 		
@@ -163,7 +164,7 @@
 	  - [应用案例1：模拟登陆github](spider/6.0spider_github_login.md)
 
 
-  - [第七天--第九天]
+  - [第七天--第十天]
   
 	    - scrapy框架组件，处理流程，数据持久化
 	    - scrapy项目环境搭建，创建项目命令，执行启动操作，各相关文件的处理逻辑
@@ -174,7 +175,6 @@
       - [scrapy框架的介绍以及案例1](spider/7.0spider_scrapy1.md)
       - [scrapy爬虫豆瓣信息](spider/7.1spider_scrapy2.md) 
   
-  - [第十天:综合案例]
 
 
 
