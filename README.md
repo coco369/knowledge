@@ -176,6 +176,7 @@
 	    - 
       - [scrapy框架的介绍以及案例1](spider/7.0spider_scrapy1.md)
       - [scrapy爬虫豆瓣信息](spider/7.1spider_scrapy2.md) 
+      - [scrapy爬取链家信息](spider/code/scrapy框架/lianjiaspider)
   
 
 
