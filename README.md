@@ -173,10 +173,13 @@
 	    - 
 	    - 案例1：爬取起点小说网的小说分类，以及分类的url
 	    - 案例2：爬取豆瓣电影的信息，并使用mongodb持久化
-	    - 
+		- 案例3：爬取链家房源信息，并存储在csv文件
+		- 案例4：爬取微博大V的粉丝数，关注，博客等信息
+
       - [scrapy框架的介绍以及案例1](spider/7.0spider_scrapy1.md)
       - [scrapy爬虫豆瓣信息](spider/7.1spider_scrapy2.md) 
       - [scrapy爬取链家信息](spider/code/scrapy框架/lianjiaspider)
+      - [scrapy爬取微博用户信息](spider/7.2spider_weibo_scrapy3.md)
   
 
 
