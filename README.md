@@ -164,6 +164,7 @@
 		- form模拟登陆、验证码
 
 	  - [应用案例1：模拟登陆github](spider/6.0spider_github_login.md)
+	  - [应用案例2: 验证码识别](6.1spider_verifi_aliyun.md)
 
 
   - [第七天--第十天]
