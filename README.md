@@ -181,6 +181,8 @@
       - [scrapy爬虫豆瓣信息](spider/7.1spider_scrapy2.md) 
       - [scrapy爬取链家信息](spider/code/scrapy框架/lianjiaspider)
       - [scrapy爬取微博用户信息](spider/7.2spider_weibo_scrapy3.md)
+	      - [分析接口](spider/7.2spider_weibo_scrapy3.md)
+	      - [分析用户信息](spider/7.3spider_weibo_scrapy_user_info.md)
   
 
 
