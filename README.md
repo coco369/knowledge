@@ -183,6 +183,8 @@
       - [scrapy爬取微博用户信息](spider/7.2spider_weibo_scrapy3.md)
 	      - [分析接口](spider/7.2spider_weibo_scrapy3.md)
 	      - [分析用户信息](spider/7.3spider_weibo_scrapy_user_info.md)
+	      - [分析关注信息](spider/7.4spider_weibo_scrapy_follows_info.md)
+	      - [分析粉丝信息](spider/7.5spider_weibo_Scrapy_fans_info.md)
   
 
 
