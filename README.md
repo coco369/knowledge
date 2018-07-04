@@ -171,7 +171,8 @@
   
 	    - scrapy框架组件，处理流程，数据持久化
 	    - scrapy项目环境搭建，创建项目命令，执行启动操作，各相关文件的处理逻辑
-	    - 
+	    - scrapy_redis分布式爬虫原理
+	    
 	    - 案例1：爬取起点小说网的小说分类，以及分类的url
 	    - 案例2：爬取豆瓣电影的信息，并使用mongodb持久化
 		- 案例3：爬取链家房源信息，并存储在csv文件
@@ -186,6 +187,9 @@
 	      - [分析关注信息](spider/7.4spider_weibo_scrapy_follows_info.md)
 	      - [分析粉丝信息](spider/7.5spider_weibo_scrapy_fans_info.md)
 	      - [IP代理池/User-Agent设置](spider/7.6spider_weibo_scrapy_ips_user_agent.md)
+	      
+	  - [分布式爬虫](spider/7.7spider_scrapy_redis.md)
+
   
 
 
