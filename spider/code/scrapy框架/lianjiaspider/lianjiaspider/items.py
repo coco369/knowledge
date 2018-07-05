@@ -8,19 +8,16 @@
 import scrapy
 
 
-class LianjiaItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    page = scrapy.Field()
-    title = scrapy.Field()
-    community = scrapy.Field()
-    model = scrapy.Field()
-    area = scrapy.Field()
-    focus_num = scrapy.Field()
-    watch_num =scrapy.Field()
-    time = scrapy.Field()
-    price = scrapy.Field()
-    average_price =scrapy.Field()
-    link = scrapy.Field()
-    city = scrapy.Field()
+class LianjiaspiderItem(scrapy.Item):
+    collections = 'ershoufang'
 
+    house_code = scrapy.Field()
+    img_src = scrapy.Field()
+    title = scrapy.Field()
+    address = scrapy.Field()
+    info = scrapy.Field()
+    flood = scrapy.Field()
+    tag = scrapy.Field()
+    type = scrapy.Field()  # 新房/二手房
+    city = scrapy.Field()  # 城市
+    area = scrapy.Field()  # 区域

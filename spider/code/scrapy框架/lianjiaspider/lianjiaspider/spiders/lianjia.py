@@ -1,71 +1,68 @@
 
-import scrapy
-import requests
-import time
-from lxml import etree
-from lianjiaspider.items import LianjiaItem
-import random
+import json
+
+from scrapy import Request
+from scrapy.spiders import Spider
+from scrapy.selector import Selector
+
+from lianjiaspider.items import LianjiaspiderItem
 
 
-class LianjiaSpider(scrapy.Spider):
-    name = 'lianjiaspider'
-    allowed_domains = ['sh.lianjia.com']
-    start_urls = 'http://sh.lianjia.com/ershoufang/'
+class LianJiaSpider(Spider):
+
+    name = 'lianjia'
+    # allowed_domains = ['lianjia.com']
+    domains_url = 'https://cd.lianjia.com'
+    start_linjia_url = 'https://cd.lianjia.com/ershoufang'
 
     def start_requests(self):
-        user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:60.0) Gecko/20100101 Firefox/60.0'
-        headers = {'User-Agent': user_agent}
-        #包含yield语句的函数是一个生成器，每次产生一个值，函数被冻结，被唤醒后再次产生一个值
-        yield scrapy.Request(url=self.start_urls, headers=headers, method='GET', callback=self.parse)
-        #callback指定该请求返回的Response由哪个函数来处理
+        yield Request(self.start_linjia_url)
 
     def parse(self, response):
-        print(response)
-        user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:60.0) Gecko/20100101 Firefox/60.0'
-        headers = {'User-Agent': user_agent} #用headers伪装浏览器
-        lists = response.body.decode('utf-8')
-        selector = etree.HTML(lists)
-        #在进行网页抓取的时候，分析定位html节点
-        #将文件读入，解析成树，然后根据路径定位到每个节点
-        area_list = selector.xpath('/html/body/div[3]/div/div[1]/dl[2]/dd/div[1]/div/a')
-        # etree.HTML得到的内容可以直接使用xpath
-        for area in area_list:
-            try:
-                area_hanzi = area.xpath('text()').pop() #['浦东', '闵行', '宝山', '徐汇'...]
-                area_pinyin = area.xpath('@href').pop().split('/')[2] #['/ershoufang/pudong/', '/ershoufang/minhang/', '/ershoufang/baoshan/'...]
-                area_url = 'http://sh.lianjia.com/ershoufang/{}/'.format(area_pinyin)
-                print(area_url)
-                yield scrapy.Request(url=area_url, headers=headers, callback=self.detail_url, meta={"id1":area_hanzi, "id2":area_pinyin})
-            except Exception:
-                pass
 
-    def detail_url(self, response):
-        for i in range(1,40): #获取1-39页
-            url = 'http://sh.lianjia.com/ershoufang/{}/pg{}/'.format(response.meta["id2"], str(i))
-            time.sleep(random.randint(1,5)) #随机等待1-5秒
-            try:
-                contents = requests.get(url)
-                contents = etree.HTML(contents.content.decode('utf-8'))
-                houselist = contents.xpath('/html/body/div[4]/div[1]/ul/li')
-                for house in houselist:
-                    try:
-                        item = LianjiaItem()
-                        item['page'] = i
-                        item['title'] = house.xpath('div[1]/div[1]/a/text()').pop()
-                        item['community'] = house.xpath('div[1]/div[2]/div/a/text()').pop()
-                        item['model'] = house.xpath('div[1]/div[2]/div/text()').pop().split('|')[1]
-                        item['area'] = house.xpath('div[1]/div[2]/div/text()').pop().split('|')[2]
-                        item['focus_num'] = house.xpath('div[1]/div[4]/text()').pop().split('/')[0]
-                        item['watch_num'] = house.xpath('div[1]/div[4]/text()').pop().split('/')[1]
-                        item['time'] = house.xpath('div[1]/div[4]/text()').pop().split('/')[2]
-                        item['price'] = house.xpath('div[1]/div[6]/div[1]/span/text()').pop()
-                        item['average_price'] = house.xpath('div[1]/div[6]/div[2]/span/text()').pop()
-                        item['link'] = house.xpath('div[1]/div[1]/a/@href').pop()
-                        item['city'] = response.meta["id1"]
-                        self.url_detail = house.xpath('div[1]/div[1]/a/@href').pop()
+        sel = Selector(response)
+        ershoufang_aera = sel.xpath('//div[@data-role="ershoufang"]')
+        area_info = ershoufang_aera.xpath('./div/a')
 
-                    except Exception:
-                        pass
-                    yield item
-            except Exception:
-                pass
+        for area in area_info:
+            area_href = area.xpath('./@href').extract()[0]
+            area_name = area.xpath('./text()').extract()[0]
+
+            yield Request(self.domains_url + area_href,
+                          callback=self.parse_house_info,
+                          meta={'name': area_name, 'href': area_href})
+
+    def parse_house_info(self, response):
+        sel = Selector(response)
+        page_box = sel.xpath('//div[@class="page-box house-lst-page-box"]/@page-data').extract()
+        total_page = json.loads(page_box[0]).get('totalPage')
+
+        for i in range(1, int(total_page)+1):
+            yield Request(self.domains_url + response.meta.get('href') + 'pg' + str(i),
+                          callback=self.parse_house,
+                          meta={'name': response.meta.get('name')})
+
+    def parse_house(self, response):
+
+        sel = Selector(response)
+        lis = sel.xpath('//html/body/div[4]/div[1]/ul/li[@class="clear"]')
+        for li in lis:
+
+            item = LianjiaspiderItem()
+            item['house_code'] = li.xpath('./a/@data-housecode').extract()[0]
+            if li.xpath('./a/img/@src').extract():
+                item['img_src'] = li.xpath('./a/img/@src').extract()[0]
+            if li.xpath('./div/div/a/text()').extract():
+                item['title'] = li.xpath('./div/div/a/text()').extract()[0]
+            item['address'] = li.xpath('./div/div[2]/div/a/text()').extract()
+            item['info'] = li.xpath('./div/div[2]/div/text()').extract()
+            item['flood'] = li.xpath('./div/div[3]/div/text()').extract()
+            item['tag'] = li.xpath('.//div[@class="tag"]/span/text()').extract()
+            item['type'] = 'ershoufang'
+            item['city'] = '成都'
+            item['area'] = response.meta.get('name')
+
+            yield item
+
+    def split_house_info(self, info):
+        return [i.strip() for i in info.split('|')[1:]]

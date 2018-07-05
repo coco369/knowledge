@@ -5,16 +5,31 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
-import csv
+import pymongo
+
+from scrapy.conf import settings
+
+from lianjiaspider.items import LianjiaspiderItem
 
 
-class LianjiaPipeline(object):
+class LianjiaspiderPipeline(object):
 
     def process_item(self, item, spider):
-        f = open('lianjia.csv', 'a+')
-        write = csv.writer(f)
-        write.writerow((item['title'], item['community'], item['model'], item['area'], \
-        item['focus_num'], item['watch_num'], item['time'], item['price'], item['average_price'], item['link'], \
-        item['city'], item['page']))
+        return item
+
+
+class PymongoLinJiaPipeline(object):
+
+    def __init__(self):
+
+        conn = pymongo.MongoClient(host=settings['MONGODB_HOST'],
+                                   port=settings['MONGODB_PORT'])
+        db = conn[settings['MONGODB_DB']]
+        self.collection = db[LianjiaspiderItem.collections]
+
+    def process_item(self, item, spider):
+        if isinstance(item, LianjiaspiderItem):
+
+            self.collection.update({'house_code': item['house_code']}, {'$set': item}, True)
 
         return item
