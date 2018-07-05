@@ -187,7 +187,7 @@
 	      - [分析关注信息](spider/7.4spider_weibo_scrapy_follows_info.md)
 	      - [分析粉丝信息](spider/7.5spider_weibo_scrapy_fans_info.md)
 	      - [IP代理池/User-Agent设置](spider/7.6spider_weibo_scrapy_ips_user_agent.md)
-	      
+	  - [scrapy爬取豆瓣即将上线电影/正在热播电影信息](spider/code/scrapy框架/doubanMoviespider)
 	  - [分布式爬虫](spider/7.7spider_scrapy_redis.md)
 
   
