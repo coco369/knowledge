@@ -71,7 +71,15 @@
 	> // 更新s_id为1的文档
 	> db.students.update({'s_id':1}, {'$set':{'age':16}})
 	WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
-
+	
+	> //更新s_id为1的姓名
+	> db.students.update({'s_id':1}, {'$set':{'name':'非常帅'}})
+	{ "_id" : ObjectId("5b4427f9c03e2f1fece215dd"), "s_id" : 1, "name" : "非常帅", "age" : 18 }
+	
+	> // 添加新的age字段
+	> db.students.update({'s_id':1}, {'$addToSet':{'$set':{'age':18}}})
+	> db.students.find()
+	> { "_id" : ObjectId("5b4427f9c03e2f1fece215dd"), "s_id" : 1, "name" : "非常帅", "age" : 18 }
 
 	> // 插入或更新s_id为3的文档
 	> db.students.update({s_id: 3}, {'$set': {name: '小妲己', tel: '13022221333', gender: '女'}},  upsert=true)
