@@ -60,7 +60,8 @@
   - [第十天:restframework3]
 	  - [分页/过滤/筛选](django/10.1django_restful4.md)
   - [第十一天到十五天：项目]
-	  - [爱鲜蜂案例](https://github.com/coco369/axf)
+	  - [爱鲜蜂案例2班](https://github.com/coco369/axf)
+	  - [爱鲜蜂案例3班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1803/1.django/day09/%E4%BB%A3%E7%A0%81/axf)
 	  - [centos7部署项目](centos部署.md)
 
 ### Flask知识库
