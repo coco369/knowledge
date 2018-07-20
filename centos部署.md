@@ -150,6 +150,8 @@ Django框架仅在开发模式下提供静态文件服务。当我开启DEBUG模
 
 #### 1. 测试环境中部署方式
 
+##### urls.py中的修改
+
 在测试环境中一般都直接使用python manage.py runserver的方式去运行项目。其中就涉及到DEBUG=False的修改，静态目录的修改等，具体修改如下：
 
 	修改settings.py配置文件中的DEBUG=False模式，修改ALLOEWD_HOST=['*']
@@ -164,10 +166,26 @@ Django框架仅在开发模式下提供静态文件服务。当我开启DEBUG模
 
 		# 增加以下的url路由
 	    url(r'^static/(?P<path>.*)$', serve, {"document_root": settings.STATICFILES_DIRS[0]}),
+		
+    	url(r'^media/(?P<path>.*)$', serve, {"document_root": settings.MEDIA_ROOT}),
+
 
 	    url(r'^$', views.home)
 	]
 	
+##### 中间件的修改
+
+如果中间件是过滤哪些地址不需要登录验证的话，可以设置如下的static和media过滤地址的参数：
+
+	# 验证用户的登录状态
+    paths = ['/user/login/', '/user/register/',
+             '/axf/market/', '/axf/marketparams/(\d+)/(\d+)/(\d+)/',
+            '/static/[0-9a-zA-Z/\.]', '/media/[0-9a-zA-Z/\.]']
+
+    for path in paths:
+        if re.match(path, request.path):
+            return None
+
 
 #### 2. 正式环境中部署方式
 
