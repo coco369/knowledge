@@ -68,7 +68,7 @@
   - [第一天:HelloFlask]
   
 	  	- flask配置：微的定义，最小flask的web引用，虚拟环境搭建，安装flask
-		- mvc概念
+		- mvc概念,项目的符合MVC模式的拆分
 		- 项目运行管理：flask_script库使用，debug配置等
 	  - [flask简介](flask/1.0flask_helloflask.md)
 	  - [flask蓝图](flask/1.1flask_blueflask.md)
@@ -76,17 +76,36 @@
 	  
 		- 请求与响应：POST/GET请求传参，类字典的区别
 		-  session/cookie概念：用法，redis的配置
+		-  应用案例1：使用session模拟登陆功能，装饰器的定义使用
 		
 	  - [flask请求与响应/错误处理](flask/2.1flask_request_response_error.md)
 	  - [session/cookie](flask/2.2flask_session_cookie.md)
   - [第三天:templates与models]
+  
+		- 基础模板的定义，模板的继承，挖坑以及填坑。宏定义
+		- 模板中逻辑控制，过滤器，以及静态static的配置
+		- 模型的定义，数据库的创建，学生模型CRUD操作
+		
 	  - [flask-template](flask/3.1flask_templates.md)
 	  - [flask-models1](flask/3.2flask_models.md)
   - [第四天:models与一对多关系]
+	    
+        - 深入数据库的增删改查，查询数据filter和filter_by
+        - 运算符--contains、startswith、__gt__等
+        - 筛选--offset、limit、get、first、paginate等
+        - 逻辑运算符--and_、or_、not_
+        - 模型之间的一对多的关联关系的定义
+        
 	  - [flask-models2](flask/4.1flask_models.md)
+	  
   - [第五天:多对多关系/debugtoolbal]
+
+	    - 模型之间的多对多的关联关系的定义，多对多的数据的CRUD
+	    - 拓展库的使用：debugtoolbar，flask_restful
+	    
 	  - [flask-models3](flask/5.1flask_models.md)
 	  - [flask-extensions](flask/5.2flask_extensions.md)
+	  
   - [第六天到第10天：项目]
 	  - [爱家案例](https://github.com/coco369/aj)
 
