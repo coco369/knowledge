@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+我是index
+{% endblock %}
+
+{% block content %}
+
+{% macro hello() %}
+    <h3>你好。python</h3>
+{% endmacro %}
+
+{{ hello() }}
+
+{% endblock %}
+
