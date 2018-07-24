@@ -80,6 +80,8 @@
 		
 	  - [flask请求与响应/错误处理](flask/2.1flask_request_response_error.md)
 	  - [session/cookie](flask/2.2flask_session_cookie.md)
+	  - [应用案例1：登录校验](flask/2.3flask_login.md)
+	  
   - [第三天:templates与models]
   
 		- 基础模板的定义，模板的继承，挖坑以及填坑。宏定义
