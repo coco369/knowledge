@@ -154,3 +154,7 @@
 	{ "_id" : ObjectId("5b24b01f165a0f78dbf82a12"), "s_id" : 2, "name" : "王帅帅", "tel" : "12334566789", "gender" : "男" }
 	{ "_id" : ObjectId("5b24b0ba165a0f78dbf82a14"), "s_id" : 2, "name" : "王帅帅", "tel" : "12334566789", "gender" : "男" }
 	{ "_id" : ObjectId("5b24b0dc165a0f78dbf82a15"), "s_id" : 1, "name" : "王大帅", "tel" : "12334566786", "age" : 16 }
+
+模糊查询：
+
+	>> db.getCollection('later_movies').find({'name':{'$regex':'勇者'}})
