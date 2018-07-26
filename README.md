@@ -26,7 +26,7 @@
 
 ### PEP 8风格指南
   
-  - [风格指南](PEP 8风格指南.md)
+  - [风格指南](PEP8风格指南.md)
 
 ### Django知识库
   - [第一天:环境与创建项目]
@@ -110,6 +110,10 @@
 	  
   - [第六天到第10天：项目]
 	  - [爱家案例](https://github.com/coco369/aj)
+
+
+  - [Flask和Django区别]
+	  - [区别](flask/6.0flask_django_diff.md)
 
 ### 爬虫
 
