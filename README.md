@@ -30,14 +30,27 @@
 
 ### Django知识库
   - [第一天:环境与创建项目]
+		  
+        - 环境搭建: virtualenv的安装与使用,pycharm中环境的配置
+        - Django概念: MVC模式/MVT模式
+        - 项目创建: 创建Django工程目录，创建应用app，使用admin管理后台 
       - [django概念介绍](django/1.1django_pattern.md)
       - [virtualenv环境](django/1.2python_virtualenv.md)
       - [创建django项目](django/1.3django_halloWorld.md)
       - [admin管理](django/1.4django_admin.md)
   - [第二天:模型]
+  
+	    - M模型：模型的定义，字段的定义，max_length，default, null， unique等参数定义
+	    - ORM对象关系映射概念，数据的迁移
+	    - 数据的查询，all，filter，get等
       - [模型设计](django/2.1django_models.md)
       - [练习](django/2.2django_mysql_lianxi.md)
   - [第三天:模型加餐/模板]
+  
+	    - 模型设计概念：一对一，一对多，多对多的模型定义
+	    - 模型设计案例：学生和学生拓展表一对一模型设计，学生和课程表多对多模型设计，学生和班级一对多模型设计
+	    - 数据的查询与添加
+	    
       - [模型关联设计](django/3.1django_model_more.md)
       - [模板](django/3.2django_temp.md)
   - [第四天:视图1]
