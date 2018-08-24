@@ -76,7 +76,8 @@
 	  - [爱鲜蜂案例2班](https://github.com/coco369/axf)
 	  - [爱鲜蜂案例3班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1803/1.django/day09/%E4%BB%A3%E7%A0%81/axf)
 	  - [爱鲜蜂案例4班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1804/1.django/day14/%E4%BB%A3%E7%A0%81/axf4)
-	  - [centos7部署项目](centos部署.md)
+	  - [centos7部署项目](部署/centos部署.md)
+	  - [ubuntu部署项目](部署/ubuntu部署.md)
 
 ### Flask知识库
   - [第一天:HelloFlask]

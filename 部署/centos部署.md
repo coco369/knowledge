@@ -154,9 +154,9 @@ Django框架仅在开发模式下提供静态文件服务。当我开启DEBUG模
 
 在测试环境中一般都直接使用python manage.py runserver的方式去运行项目。其中就涉及到DEBUG=False的修改，静态目录的修改等，具体修改如下：
 
-	修改settings.py配置文件中的DEBUG=False模式，修改ALLOEWD_HOST=['*']
+	a) 修改settings.py配置文件中的DEBUG=False模式，修改ALLOEWD_HOST=['*']
 
-	修改工程目录下的urls.py
+	b) 修改工程目录下的urls.py
 
 	from django.views.static import serve
 
@@ -172,7 +172,8 @@ Django框架仅在开发模式下提供静态文件服务。当我开启DEBUG模
 
 	    url(r'^$', views.home)
 	]
-	
+
+
 ##### 中间件的修改
 
 如果中间件是过滤哪些地址不需要登录验证的话，可以设置如下的static和media过滤地址的参数：
@@ -235,13 +236,10 @@ e）如果您正在运行防火墙，请运行以下命令以允许HTTP和HTTPS�
 
 ##### 3.1 安装uwsgi
 
-	pip3 install uwsgi
+在虚拟环境中安装uwsgi，假设虚拟环境安装在/home/env/axfenv中
 
-然后进行环境变量的配置， 建立软连接
+	/home/env/axfeng/bin/python3/pip3 install uwsgi
 
-	ln -s /usr/local/python3/bin/uwsgi /usr/bin/uwsgi
-
-![图](django/images/django_centios_uwsgi.png)
 
 
 #### 4. 配置项目代码，配置项目nginx，配置uwsgi.ini等
@@ -338,5 +336,5 @@ src是项目文件，该目录下上传的是目录代码
 	
 运行项目:
 
-	uwsgi --ini uwsgi.ini
+	/home/env/axfeng/bin/python3/uwsgi --ini uwsgi.ini
 
