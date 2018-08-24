@@ -229,7 +229,7 @@ e）如果您正在运行防火墙，请运行以下命令以允许HTTP和HTTPS�
 
 运行结果如下:
 
-![图](django/images/django_centos_nginx.png)
+![图](../django/images/django_centos_nginx.png)
 
 
 #### 3.配置uwsgi
@@ -248,7 +248,7 @@ e）如果您正在运行防火墙，请运行以下命令以允许HTTP和HTTPS�
 
 项目的目录结构如下：
 
-![图](django/images/django_centos_project_mulu.png)
+![图](../django/images/django_centos_project_mulu.png)
 
 其中：
 
@@ -289,7 +289,7 @@ src是项目文件，该目录下上传的是目录代码
 总的nginx配置文件在：/etc/nginx/nginx.conf中
 
 
-![图](django/images/django_centos_nginx_peizhi.png)
+![图](../django/images/django_centos_nginx_peizhi.png)
 
 
 以上步骤操作完成以后，需要重启nginx：
@@ -298,7 +298,7 @@ src是项目文件，该目录下上传的是目录代码
 
 如果自定义的axfnginx.conf文件没有错误的话，查看nginx的运行状态会有如下的结果：
 
-![图](django/images/django_centos_nginx_status.png)
+![图](../django/images/django_centos_nginx_status.png)
 
 
 #### 4.2 配置uwsgi文件
