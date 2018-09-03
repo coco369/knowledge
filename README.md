@@ -125,6 +125,8 @@
 	  
   - [第六天到第10天：项目]
 	  - [爱家案例](https://github.com/coco369/aj)
+	  - [爱家案例2班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1802/2.flask/day9/%E4%BB%A3%E7%A0%81/day06)
+	  - [爱家案例3班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1803/2.flask/day09/%E4%BB%A3%E7%A0%81/aj)
 
 
   - [Flask和Django区别]
