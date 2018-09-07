@@ -49,7 +49,6 @@
   
 	    - 模型设计概念：一对一，一对多，多对多的模型定义
 	    - 模型设计案例：学生和学生拓展表一对一模型设计，学生和课程表多对多模型设计，学生和班级一对多模型设计
-	    - 数据的查询与添加
 	    
       - [模型关联设计](django/3.1django_model_more.md)
       - [模板](django/3.2django_temp.md)
@@ -127,8 +126,8 @@
 	  - [爱家案例](https://github.com/coco369/aj)
 	  - [爱家案例2班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1802/2.flask/day9/%E4%BB%A3%E7%A0%81/day06)
 	  - [爱家案例3班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1803/2.flask/day09/%E4%BB%A3%E7%A0%81/aj)
-
-
+	  - [centos7部署项目](部署/aj_centos部署.md)
+	
   - [Flask和Django区别]
 	  - [区别](flask/6.0flask_django_diff.md)
 
