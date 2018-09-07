@@ -49,27 +49,64 @@
   
 	    - 模型设计概念：一对一，一对多，多对多的模型定义
 	    - 模型设计案例：学生和学生拓展表一对一模型设计，学生和课程表多对多模型设计，学生和班级一对多模型设计
+	    - 模板1：在settings.py文件中静态static的配置定义，在页面中静态文件的加载
+	    - 模板2：模板中逻辑运算符，if、ifequal、forloop、for empty等
+	    - 模板3：父模板中定义block块和子模板中继承与调用父模板中block块
+	    - 模板4：模板中注解，注解代码的可见与不可见，三种注解的区别
+	    - 模板5：模板中定义修饰变量的过滤器，使用管道符‘|’，以及Django中过滤器的自定义
 	    
       - [模型关联设计](django/3.1django_model_more.md)
       - [模板](django/3.2django_temp.md)
   - [第四天:视图1]
+  
+	    - URL的正则匹配与带参URL和不带参URL定义
+	    - 带参URL的redirect跳转与参数传递，以及页面内中URL反向解析的定义
+	    - Django中DEBUG为False和True的区别,以及当DEBUG为False时，静态文件解析与错误(403、404、500)视图的定义
+	    - 请求与响应：请求中属性和方法，响应中属性和方法
       - [路由/反向解析](django/4.1django_urls.md)
   - [第五天:视图2]
+	    
+		- 什么是会话技术，什么是HTTP无状态协议，解决HTTP无状态协议的方案----> cookie + session
+		- cookie的使用：如何设置cookie，删除cookie，如何设置失效
+		- session的使用：如何使用session，删除session，session中数据存储的时效。在Django中如何配置session，数据库中django_session表的使用
+		- 案例1：cookie和session实现的原理
+		
       - [cookies/session](django/5.1django_coo_sess.md)
       - [登录/注册--自己实现](django/5.2django_regist_login.md)
       - [登录/注册--django实现](django/5.3django_regist_login.md)
   - [第六天:插件]
+		
+		- 中间件middleware的工作原理，如何拦截各阶段的请求，重构拦截各阶段的方法
+		- 数据分页：掌握Paginator分页的工作原理，实现分页的方式
+		- 定义模型中上传文件字段，安装Pillow，定义上传文件的media路径，定义页面中如何解析media中上传图片
+		- 中间件案例1： 实现登录注册功能
+		- 富文本编辑器案例2： 使用富文本编辑器实现文本内容编辑，图片上传
       - [验证码/中间件/分页](django/6.1django_plug.md)
       - [文件上传](django/6.2django_media.md)
+      - [kindeditor富文本编辑器](django/6.3django_kindeditor.md)
   
   - [第七天:日志/restful]
+
+  		- setting.py中日志logging文件的配置，logging的四大组成，loggers，handlers，filters，formatters的处理流程，以及日志打印
+  		- 架构设计指导原则，rest的核心定义，如何定义符合规范的api接口。资源、请求、状态码的理解。
+  		- Django中restframework安装，settings.py中的定义，以及如何定义对资源的CRUD操作
       - [日志](django/7.1django_log.md)
       - [restful1](django/7.2django_restful.md)
   - [第八天:权限、角色]
+	    
+	    - 权限与角色的剖析，模型关联关系的定义。权限中一对多和多对多中数据的增删改查。
+	    
 	  - [权限、角色](django/8.1django_role_premission.md)
   - [第九天:restframework2]
+
+	    - 重构api响应结构，api中异常响应结构重构与定义
+	    - 定义虚拟化serializer，验证每一个字段的错误信息，配置参数等
 	  - [响应结构/ajax-CRUD](django/9.1django_restful3.md)
   - [第十天:restframework3]
+	    
+ 	    - api返回数据的分页配置，过滤类的定义与配置
+ 	    - 调用postman实现通过api对数据进行CRUD操作
+ 	      
 	  - [分页/过滤/筛选](django/10.1django_restful4.md)
   - [第十一天到十五天：项目]
 	  - [爱鲜蜂案例2班](https://github.com/coco369/axf)
