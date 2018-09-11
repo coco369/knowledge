@@ -33,18 +33,25 @@
 		  
         - 环境搭建: virtualenv的安装与使用,pycharm中环境的配置
         - Django概念: MVC模式/MVT模式
-        - 项目创建: 创建Django工程目录，创建应用app，使用admin管理后台 
+        - 项目创建: 创建Django工程目录，创建应用app，使用admin管理后台
+        - admin管理后台：超级用户的创建，模型注册，模型中数据展示(list_display)、搜索(search_field)、过滤(list_filter)等
       - [django概念介绍](django/1.1django_pattern.md)
       - [virtualenv环境](django/1.2python_virtualenv.md)
       - [创建django项目](django/1.3django_halloWorld.md)
       - [admin管理](django/1.4django_admin.md)
+
   - [第二天:模型]
   
-	    - M模型：模型的定义，字段的定义，max_length，default, null， unique等参数定义
-	    - ORM对象关系映射概念，数据的迁移
-	    - 数据的查询，all，filter，get等
+	    - M模型：模型的定义，字段的定义，字段参数的定义。Meta元数据定义，定义表名称
+	    - 数据库配置，pymysql驱动配置，数据迁移执行命令
+	    - ORM对象关系映射概念：什么是ORM，ORM用于做什么？
+	    - 比较运算符，F/Q对象，限制结果集：contains，startswith，endswith，in，gt，gte，lt，lte，pk等
+	    - 数据的查询，all，filter，get，first，last，values等
+	    - 数据的创建：create()，对象save()，初始化模型再save()
+	    - 数据的更新：update()，对象save()
+	    - 数据的删除：delete()
       - [模型设计](django/2.1django_models.md)
-      - [练习](django/2.2django_mysql_lianxi.md)
+      - [数据的CRUD练习](django/2.2django_mysql_lianxi.md)
   - [第三天:模型加餐/模板]
   
 	    - 模型设计概念：一对一，一对多，多对多的模型定义
