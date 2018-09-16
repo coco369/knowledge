@@ -105,7 +105,7 @@
 	    
 	    - 权限与角色的剖析，模型关联关系的定义。权限中一对多和多对多中数据的增删改查。
 	    
-	  - [权限、角色](django/8.1django_role_premission.md)
+	  - [权限、角色](django/8.1django权限控制.md)
   - [第九天:restframework2]
 
 	    - 重构api响应结构，api中异常响应结构重构与定义
