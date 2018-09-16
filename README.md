@@ -103,9 +103,13 @@
       - [restful1](django/7.2django_restful.md)
   - [第八天:权限、角色]
 	    
-	    - 权限与角色的剖析，模型关联关系的定义。权限中一对多和多对多中数据的增删改查。
+	    - 如何拓展Django的User模型，并自定义相关的权限
+	    - 权限系统中User模型、Group模型、Permission模型的ManyToManyFiled关联关系，以及数据的增、删、清空。
+	    - 权限装饰器: permission_reqired('应用app.权限名')
+	    - 菜单控制：通过全局perms变量进行权限和菜单的控制
 	    
-	  - [权限、角色](django/8.1django权限控制.md)
+	  - [权限系统](django/8.1django权限控制.md)
+	  
   - [第九天:restframework2]
 
 	    - 重构api响应结构，api中异常响应结构重构与定义
