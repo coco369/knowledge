@@ -128,6 +128,9 @@
 	  - [centos7部署项目](部署/centos部署.md)
 	  - [ubuntu部署项目](部署/ubuntu部署.md)
 
+  - [拓展]
+	  - [调试工具](django/debug的安装与使用.md)
+
 ### Flask知识库
   - [第一天:HelloFlask]
   
