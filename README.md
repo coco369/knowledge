@@ -89,10 +89,9 @@
 		- 数据分页：掌握Paginator分页的工作原理，实现分页的方式
 		- 定义模型中上传文件字段，安装Pillow，定义上传文件的media路径，定义页面中如何解析media中上传图片
 		- 中间件案例1： 实现登录注册功能
-		- 富文本编辑器案例2： 使用富文本编辑器实现文本内容编辑，图片上传
       - [验证码/中间件/分页](django/6.1django_plug.md)
       - [文件上传](django/6.2django_media.md)
-      - [kindeditor富文本编辑器](django/6.3django_kindeditor.md)
+      
   
   - [第七天:日志/restful]
 
@@ -130,6 +129,7 @@
 
   - [拓展]
 	  - [调试工具](django/debug的安装与使用.md)
+	  - [kindeditor富文本编辑器](django/6.3kindeditor富文本编辑器.md)
 
 ### Flask知识库
   - [第一天:HelloFlask]
