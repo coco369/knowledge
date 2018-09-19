@@ -83,13 +83,15 @@
       - [cookies/session](django/5.1django_coo_sess.md)
       - [登录/注册--自己实现](django/5.2django_regist_login.md)
       - [登录/注册--django实现](django/5.3django_regist_login.md)
+      
   - [第六天:插件]
 		
 		- 中间件middleware的工作原理，如何拦截各阶段的请求，重构拦截各阶段的方法
 		- 数据分页：掌握Paginator分页的工作原理，实现分页的方式
 		- 定义模型中上传文件字段，安装Pillow，定义上传文件的media路径，定义页面中如何解析media中上传图片
 		- 中间件案例1： 实现登录注册功能
-      - [验证码/中间件/分页](django/6.1django_plug.md)
+      - [验证码/分页](django/6.1django_plug.md)
+      - [中间件](django/中间件.md)
       - [文件上传](django/6.2django_media.md)
       
   
@@ -100,6 +102,7 @@
   		- Django中restframework安装，settings.py中的定义，以及如何定义对资源的CRUD操作
       - [日志](django/7.1django_log.md)
       - [restful1](django/7.2django_restful.md)
+      
   - [第八天:权限、角色]
 	    
 	    - 如何拓展Django的User模型，并自定义相关的权限
