@@ -94,21 +94,21 @@
       - [中间件](django/中间件.md)
       - [文件上传](django/6.2django_media.md)
       
-  - [第七天:日志/restful]
-
-  		- setting.py中日志logging文件的配置，logging的四大组成，loggers，handlers，filters，formatters的处理流程，以及日志打印
-  		- 架构设计指导原则，rest的核心定义，如何定义符合规范的api接口。资源、请求、状态码的理解。
-  		- Django中restframework安装，settings.py中的定义，以及如何定义对资源的CRUD操作
-      - [日志](django/7.1django日志.md)
-      - [restful1](django/7.2django_restful.md)
-      
-  - [第八天:权限、角色]
+  - [第七天:权限、角色]
 	    
 	    - 如何拓展Django的User模型，并自定义相关的权限
 	    - 权限系统中User模型、Group模型、Permission模型的ManyToManyFiled关联关系，以及数据的增、删、清空。
 	    - 权限装饰器: permission_reqired('应用app.权限名')
 	    - 菜单控制：通过全局perms变量进行权限和菜单的控制
 	  - [权限系统](django/8.1django权限控制.md)
+
+  - [第八天:日志/restful]
+
+  		- setting.py中日志logging文件的配置，logging的四大组成，loggers，handlers，filters，formatters的处理流程，以及日志打印
+  		- 架构设计指导原则，rest的核心定义，如何定义符合规范的api接口。资源、请求、状态码的理解。
+  		- Django中restframework安装，settings.py中的定义，以及如何定义对资源的CRUD操作
+      - [日志](django/7.1django日志.md)
+      - [restful1](django/7.2django_restful.md)
 	  
   - [第九天:restframework2]
 
