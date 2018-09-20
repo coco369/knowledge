@@ -94,13 +94,12 @@
       - [中间件](django/中间件.md)
       - [文件上传](django/6.2django_media.md)
       
-  
   - [第七天:日志/restful]
 
   		- setting.py中日志logging文件的配置，logging的四大组成，loggers，handlers，filters，formatters的处理流程，以及日志打印
   		- 架构设计指导原则，rest的核心定义，如何定义符合规范的api接口。资源、请求、状态码的理解。
   		- Django中restframework安装，settings.py中的定义，以及如何定义对资源的CRUD操作
-      - [日志](django/7.1django_log.md)
+      - [日志](django/7.1django日志.md)
       - [restful1](django/7.2django_restful.md)
       
   - [第八天:权限、角色]
@@ -109,7 +108,6 @@
 	    - 权限系统中User模型、Group模型、Permission模型的ManyToManyFiled关联关系，以及数据的增、删、清空。
 	    - 权限装饰器: permission_reqired('应用app.权限名')
 	    - 菜单控制：通过全局perms变量进行权限和菜单的控制
-	    
 	  - [权限系统](django/8.1django权限控制.md)
 	  
   - [第九天:restframework2]
@@ -117,12 +115,13 @@
 	    - 重构api响应结构，api中异常响应结构重构与定义
 	    - 定义虚拟化serializer，验证每一个字段的错误信息，配置参数等
 	  - [响应结构/ajax-CRUD](django/9.1django_restful3.md)
+
   - [第十天:restframework3]
 	    
  	    - api返回数据的分页配置，过滤类的定义与配置
  	    - 调用postman实现通过api对数据进行CRUD操作
- 	      
 	  - [分页/过滤/筛选](django/10.1django_restful4.md)
+
   - [第十一天到十五天：项目]
 	  - [爱鲜蜂案例2班](https://github.com/coco369/axf)
 	  - [爱鲜蜂案例3班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1803/1.django/day09/%E4%BB%A3%E7%A0%81/axf)
