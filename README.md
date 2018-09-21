@@ -29,6 +29,9 @@
   - [风格指南](PEP8风格指南.md)
 
 ### Django知识库
+
+[![图](django/images/Django大纲.png)](django/images/Django大纲.png)
+
   - [第一天:环境与创建项目]
 		  
         - 环境搭建: virtualenv的安装与使用,pycharm中环境的配置
