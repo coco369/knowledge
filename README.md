@@ -30,7 +30,7 @@
 
 ### Django知识库
 
-[![图](django/images/Django大纲.png)](django/images/Django大纲.png)
+<a href="django/images/Django大纲.png">思维导图</a>
 
   - [第一天:环境与创建项目]
 		  
