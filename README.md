@@ -197,6 +197,10 @@
   - [Flask和Django区别]
 	  - [区别](flask/6.0flask_django_diff.md)
 
+  - [拓展]
+	  - [邮件发送](flask/flask邮件发送.md)
+	  - [登录注册](flask/flask登录注册.md)
+
 ### 爬虫
 
 
