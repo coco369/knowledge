@@ -152,11 +152,14 @@
   - [第二天:views]
 	  
 		- 请求与响应：POST/GET请求传参，类字典的区别
-		-  session/cookie概念：用法，redis的配置
-		-  应用案例1：使用session模拟登陆功能，装饰器的定义使用
+		-  session/cookie概念与用法：
+			-  1) flask默认使用cookie存储session的数据。 
+			-  2)引入flask_session扩展库，实现使用数据库存储session中数据。
+		-  应用案例1：分别使用两种存储session数据方式实现模拟登陆功能，以及装饰器的定义使用
 		
 	  - [flask请求与响应/错误处理](flask/2.1flask_request_response_error.md)
 	  - [session/cookie](flask/2.2flask_session_cookie.md)
+	  
 	  - [应用案例1：登录校验](flask/2.3flask_login.md)
 	  
   - [第三天:templates与models]
