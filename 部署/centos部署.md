@@ -95,9 +95,15 @@
 
 首先安装依赖包
 
+安装Python3.6所需要的依赖包：
+
 	yum -y groupinstall "Development tools"
 	
 	yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
+
+安装Python3.7还需额外安装依赖包：
+
+	yum install libffi-devel -y
 
 然后根据自己需求下载不同版本的Python3，我下载的是Python3.6.2
 
