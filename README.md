@@ -212,7 +212,7 @@
 	  - [centos7部署项目](部署/aj_centos部署.md)
 	
   - [Flask和Django区别]
-	  - [区别](flask/6.0flask_django_diff.md)
+	  - [区别](flask/flask和django的区别.md)
 
 
 ### 爬虫

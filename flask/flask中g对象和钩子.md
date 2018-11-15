@@ -12,16 +12,19 @@
 
 ### 前言
 
+&nbsp;&nbsp;&nbsp;&nbsp;在Web开发中经常会对所有的请求做一些相同的操作，如果将相同的代码写入每一个视图函数中，那么程序就会变得非常臃肿。为了避免在每个视图函数中定义相同的代码，可以使用钩子函数。如下有三个常见的钩子:
+
+1. before_request: 被装饰的函数会在每个请求被处理之前调用。
+
+2. after_request: 被装饰的函数会在每个请求退出时才被调用。在程序没有抛出异常的情况下，才会被执行。
+
+3. teardown_request: 被装饰的函数会在每个请求退出时才被调用。不论程序是否抛出异常，都会执行。
+
+#### 1. 钩子函数执行顺序
 
 	@blue.before_request
-	def before_request1():
+	def before_request():
 	    print('before_request')
-	    # 如果有返回，则不再执行其余的before_request钩子函数
-	    return 'hello'
-	
-	@blue.before_request
-	def before_request2():
-	    print('before_request_2')
 	
 	
 	@blue.after_request
@@ -34,17 +37,28 @@
 	def teardown_request(exception):
 	    print('teardown_request')
 	
-	
 	@blue.route('index/')
 	def index_requst():
-	
 	    return 'index_requst'
-	
-	数据库的连接，使用请求钩子
-	from flask import g
-	import pymysql
-	
-	
+
+分析:访问http://127.0.0.1:8080/app/index/后，在控制台可以看到如下输出:
+
+before_request
+
+after_request
+
+teardown_request
+
+从控制台的输出中可以看出各函数的执行顺序，被before_request装饰的函数会在请求处理之前被调用。而after_request和teardown_request会在请求处理完后才被调用。区别就在于after_request只会在请求正常退出的情况下才会被调用，并且atfer_request函数必须接受一个响应对象，并返回一个响应对象。而teardown_request函数在任何情况下都会被调用，并且必须传入一个参数来接收异常对象。
+
+
+#### 2. 应用上下文G对象
+
+&nbsp;&nbsp;&nbsp;&nbsp;应用全局对象（g）是Flask为每一个请求自动建立的一个对象。g的作用范围只是在一个请求（也就是一个线程）里，它不能在多个请求中共享数据，故此应用全局变量（g）确保了线程安全。
+
+
+##### 案例: 连接pymysql，并实现表的创建和数据的插入
+
 	@blue.before_request
 	def get_mysql_connect():
 	    # 建立mysql数据库的连接
