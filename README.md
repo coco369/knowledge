@@ -147,45 +147,59 @@
 	  	- flask配置：微的定义，最小flask的web引用，虚拟环境搭建，安装flask
 		- mvc概念,项目的符合MVC模式的拆分
 		- 项目运行管理：flask_script库使用，debug配置等
-	  - [flask简介](flask/1.0flask_helloflask.md)
-	  - [flask蓝图](flask/1.1flask_blueflask.md)
-  - [第二天:views]
-	  
+		- 路由: 路由匹配规则
 		- 请求与响应：POST/GET请求传参，类字典的区别
+	  - [flask简介/路由规则](flask/flask入门与路由.md)
+	  - [flask蓝图](flask/flask蓝图.md)
+	  - 	[flask请求与响应/错误处理](flask/flask请求与响应与异常.md)
+  - [第二天:views]
+  
 		-  session/cookie概念与用法：
 			-  1) flask默认使用cookie存储session的数据。 
 			-  2)引入flask_session扩展库，实现使用数据库存储session中数据。
 		-  应用案例1：分别使用两种存储session数据方式实现模拟登陆功能，以及装饰器的定义使用
-		
-	  - [flask请求与响应/错误处理](flask/2.1flask_request_response_error.md)
+		-  应用案例2：使用flask-login扩展库实现用户登录注销功能
+		-  基础模板的定义，模板的继承，挖坑以及填坑。宏定义
+		-  模板中逻辑控制，过滤器，以及静态static的配置
+
 	  - [session/cookie](flask/2.2flask_session_cookie.md)
+	  - [应用案例1：自定义登录校验](flask/2.3flask_login.md)
+	  - [应用案例2：flask-login登录校验](flask/flask登录注册.md)
+	  - [flask模板](flask/flask模板.md)
 	  
-	  - [应用案例1：登录校验](flask/2.3flask_login.md)
-	  
-  - [第三天:templates与models]
+  - [第三天:models初窥]
   
-		- 基础模板的定义，模板的继承，挖坑以及填坑。宏定义
-		- 模板中逻辑控制，过滤器，以及静态static的配置
 		- 模型的定义，数据库的创建，学生模型CRUD操作
-		
-	  - [flask-template](flask/3.1flask_templates.md)
-	  - [flask-models1](flask/3.2flask_models.md)
-  - [第四天:models与一对多关系]
-	    
-        - 深入数据库的增删改查，查询数据filter和filter_by
+		- 深入数据库的增删改查，查询数据filter和filter_by
         - 运算符--contains、startswith、__gt__等
         - 筛选--offset、limit、get、first、paginate等
         - 逻辑运算符--and_、or_、not_
         - 模型之间的一对多的关联关系的定义
         
-	  - [flask-models2](flask/4.1flask_models.md)
+	  - [flask模型初窥](flask/flask模型1.md)
+	  - [flask模型深入1](flask/flask模型2.md)
 	  
-  - [第五天:多对多关系/debugtoolbal]
-
+  - [第四天:models关系与其他]
+  
 	    - 模型之间的多对多的关联关系的定义，多对多的数据的CRUD
+	    - 钩子函数: before_request, after_request, teardown_request
+	    - 应用上下文g对象
+	    - 应用案例1: 钩子函数+g对象的使用，实现pymysql连接MySQL，并执行查询操作
+	    - 应用案例2: flask-wtf的form表单的使用
+	   
+      - [flask模型深入2](flask/flask模板3.md)
+      - [应用案例1](flask/flask中g对象和钩子.md)
+      - [应用案例2](flask/flask表单验证.md)
+      
+	  
+  - [第五天:扩展]
+		
+        - 登录注册: 使用第三方flask-login库实现登录注册，登录验证等
+        - 文件上传: form表单提交上传图片进行保存
 	    - 拓展库的使用：debugtoolbar，flask_restful
+	    - 应用案例1: 登录、注册、登录验证
 	    
-	  - [flask-models3](flask/5.1flask_models.md)
+	  - [文件上传](flask/flask文件上传.md)
 	  - [flask-extensions](flask/5.2flask_extensions.md)
 	  
   - [第六天到第10天：项目]
@@ -199,8 +213,7 @@
 
   - [拓展]
 	  - [邮件发送](flask/flask邮件发送.md)
-	  - [登录注册](flask/flask登录注册.md)
-	  - [表单验证](flask/flask表单验证.md)
+	  
 
 ### 爬虫
 
