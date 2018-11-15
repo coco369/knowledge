@@ -152,6 +152,7 @@
 	  - [flask简介/路由规则](flask/flask入门与路由.md)
 	  - [flask蓝图](flask/flask蓝图.md)
 	  - 	[flask请求与响应/错误处理](flask/flask请求与响应与异常.md)
+	  
   - [第二天:views]
   
 		-  session/cookie概念与用法：
@@ -198,9 +199,11 @@
         - 文件上传: form表单提交上传图片进行保存
 	    - 拓展库的使用：debugtoolbar，flask_restful
 	    - 应用案例1: 登录、注册、登录验证
+	    - 应用案例2: 邮件发送
 	    
 	  - [文件上传](flask/flask文件上传.md)
 	  - [flask-extensions](flask/5.2flask_extensions.md)
+	  - [邮件发送](flask/flask邮件发送.md)
 	  
   - [第六天到第10天：项目]
 	  - [爱家案例](https://github.com/coco369/aj)
@@ -211,9 +214,6 @@
   - [Flask和Django区别]
 	  - [区别](flask/6.0flask_django_diff.md)
 
-  - [拓展]
-	  - [邮件发送](flask/flask邮件发送.md)
-	  
 
 ### 爬虫
 
