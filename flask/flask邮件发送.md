@@ -59,8 +59,7 @@
 	
 	
 	def send_email(msg):
-	    with app.app_context():
-	        mail.send(msg)
+	    mail.send(msg)
 	
 	
 	if __name__ == "__main__":
