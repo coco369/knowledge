@@ -123,7 +123,9 @@
 	    
  	    - api返回数据的分页配置，过滤类的定义与配置
  	    - 调用postman实现通过api对数据进行CRUD操作
+ 	    - 总结drf中的视图、序列化器、过滤器等
 	  - [分页/过滤/筛选](django/10.1django_restful4.md)
+	  - [总结](django/djangorestframework总结.md)
 
   - [第十一天到十五天：项目]
 	  - [爱鲜蜂案例2班](https://github.com/coco369/axf)
