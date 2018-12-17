@@ -153,7 +153,7 @@
 		- 请求与响应：POST/GET请求传参，类字典的区别
 	  - [flask简介/路由规则](flask/flask入门与路由.md)
 	  - [flask蓝图](flask/flask蓝图.md)
-	  - 	[flask请求与响应/错误处理](flask/flask请求与响应与异常.md)
+	  - 	[flask请求与响应与错误处理](flask/flask请求与响应与异常.md)
 	  
 	  
   - [第二天:views]
