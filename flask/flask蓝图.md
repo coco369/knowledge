@@ -53,18 +53,44 @@
 
 语法:
 	
-	url_for('蓝图中定义的第一个参数.函数名', 参数名=value)
-
+	无参情况: url_for('蓝图中定义的第一个参数.函数名')
+	有参情况: url_for('蓝图中定义的第一个参数.函数名', 参数名=value)
+	
 定义跳转：
 
 	from flask import url_for, redirect
-
-	@blue.route('/redirect/')
-	def make_redirect():
-	    # 第一种方法
+	# 第一步: 生成蓝图对象
+	blueprint = Blueprint('first', __name__)
+	
+	
+	@blueprint.route('/')
+	def hello():
+	    return 'hello'
+	
+	
+	@blueprint.route('/stu/<id>/')
+	def stu(id):
+	    return 'hello stu: %s' % id
+	
+	
+	# 1. 定义路由跳转到hello方法
+	@blueprint.route('/redirect/')
+	def my_redirect():
+		# 第一种方法
+	    # redirect: 跳转
+	    # url_for: 反向解析
+	    # 'first.hello': 蓝图第一个参数.跳转到的函数名
+	    return redirect(url_for('first.hello'))
+		# 第二种方法
 	    return redirect('/hello/index/')
-	    # 第二种方法
-	    return redirect(url_for('first.index'))
+		
+	# 2. 定义路由跳转到stu方法
+	@blueprint.route('/redirect_id/')
+	def stu_redirect():
+	    return redirect(url_for('first.stu', id=3))
+
+注意: 反向解析可以使用url_for方法，也可以直接定义跳转的路由地址。
+	
 		
 
 ##### 前端中使用反向解析

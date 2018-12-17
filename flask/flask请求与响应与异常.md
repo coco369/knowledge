@@ -47,11 +47,15 @@ a）args是get请求参数的包装，args是一个ImmutableMultiDict对象，�
 	
 b）数据存储也是key-value
 
+c) 获取GET请求中传递的参数，request.args
+
 #### 1.2 form-->POST请求参数包装
 
 a）form是post请求参数的包装，args是一个ImmutableMultiDict对象，类字典结构对象
 	
 b）数据存储也是key-value
+
+c) 获取POST请求中传递的参数，request.form
 
 重点：ImmutableMultiDict是类似字典的数据结构，但是与字典的区别是，<font style="color:red; font-weight:bold;">可以存在相同的键</font>。
 
@@ -107,45 +111,20 @@ Response是由开发者自己创建的
 	    return res
 
 
-### 3. 重定向/反向解析
-
-	url_for('蓝图定义的名称.方法名')
-
-例子1:
-
-定义跳转方法，跳转到get_response的方法上
-
-		
-	@blue.route('/getredirect/')
-	def get_redirect():
-	
-	    return redirect('getresponse')
-
-例子2：
-
-使用url_for反向解析
-
-	from flask import redirect, url_for
-
-	@blue.route('/getredirect/')
-	def get_redirect():
-	
-	    return redirect(url_for('first.get_response'))
-
-### 4. 终止/异常捕获
+### 3. 终止/异常捕获
 
 自动抛出异常：abort(状态码)
 
 捕获异常处理：errorhandler(状态码)，定义的函数中要包含一个参数，用于接收异常信息
 
-#### 4.1 定义终止程序
+#### 3.1 定义终止程序
 	
 	@blue.route('/make_abort/')
 	def get_abort():
 	    abort(400)
 	    return '终止'
 
-#### 4.2 捕获定义的异常
+#### 3.2 捕获定义的异常
 
 	@blue.errorhandler(400)
 	def handler(exception):
