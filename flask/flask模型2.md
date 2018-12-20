@@ -327,6 +327,14 @@ you can further refine before loading the items. This is usually what you want i
 
 	dynamic则不一样，在访问属性的时候，并没有在内存中加载数据，而是返回一个query对象, 需要执行相应方法才可以获取对象，
 
+<b style="color:red;">注意</b>: 当在Student模型中新增s_g字段后，在执行db.create_all()方法时，该Student模型映射到数据库中的表并不会新增s_g字段，因此字段的新增需要手动的执行SQL语句，并指定和Grade模型对应的表grade之间的主外键关系。
+
+
+	alter table student add s_g int;
+	
+	ALTER TABLE student add FOREIGN KEY (s_g) references grade(g_id);
+
+
 #### 2.2
 
 1. 通过班级查询学生信息

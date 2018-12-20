@@ -20,6 +20,12 @@
 
 3. teardown_request: 被装饰的函数会在每个请求退出时才被调用。不论程序是否抛出异常，都会执行。
 
+<b style="color:red;">注意:
+ 
+	1. 这个异常是指代码本身错误（代码中出现10/0）不执行，如果abort抛出异常了，after_request还是会执行。
+	2. 必须配置app.config['PRESERVE_CONTEXT_ON_EXCEPTION'] = False。该配置表示无论如何都将执行teardown_request装饰的方法。
+</b>
+
 #### 1. 钩子函数执行顺序
 
 	@blue.before_request
