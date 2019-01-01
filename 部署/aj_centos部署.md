@@ -14,7 +14,7 @@
 在CentOS中Flask的项目部署和Django项目部署有异曲同工之效, 包括数据库的配置，远程设置访问,python3的安装都是相同的。在部署Flask项目的时候，可以借鉴Django部署的部分配置。[传送门](centos部署.md))
 
 
-![环境与分支](flask/images/环境与分支.png)
+![环境与分支](../flask/images/环境与分支.png)
 
 ### 配置
 
