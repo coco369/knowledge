@@ -9,6 +9,11 @@
 >
 >github：https://github.com/coco369/knowledge
 
+### 前言
+
+项目从0到1的过程需要产品、测试、前端、后端、运维共同维护，如下展示项目的设计流程:
+
+![项目设计流程](../django/images/项目设计流程.png)
 
 ### 安装MariaDB
 
