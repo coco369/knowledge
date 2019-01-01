@@ -144,6 +144,9 @@
 	  - [kindeditor富文本编辑器](django/6.3kindeditor富文本编辑器.md)
 
 ### Flask知识库
+
+<a href="flask/images/Flask大纲.png">思维导图</a>
+
   - [第一天:HelloFlask]
   
 	  	- flask配置：微的定义，最小flask的web引用，虚拟环境搭建，安装flask
