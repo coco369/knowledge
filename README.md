@@ -96,6 +96,7 @@
       - [验证码/分页](django/6.1django_plug.md)
       - [中间件](django/中间件.md)
       - [文件上传](django/6.2django_media.md)
+      - [表单form](django/form表单.md)
       
   - [第七天:权限、角色]
 	    
