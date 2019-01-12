@@ -32,7 +32,9 @@ django-rest-framework,是一套基于Django 的 REST 框架，是一个强大灵
 
 9. get_queryset方法
 
-10. get_object方法 
+10. get_object方法
+
+11. 分页 
 
 ### 1. 安装与配置
 
@@ -420,4 +422,70 @@ get_object(self): 返回详情视图所需的模型类数据对象。 在视图�
 
 若详情访问的模型类对象不存在，会返回404。
 
+### 11. 分页
 
+restframework的分页需要在setting中配置REST_FRAMEWORK中的分页参数
+
+#### 11.1 定义分页类为PageNumberPagination时，如下定义
+
+	# 配置rest_framework的相关信息
+	REST_FRAMEWORK = {
+	    # 分页参数配置
+		# 配置分页类
+		'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.PageNumberPagination',
+		# 配置每一页数据的条数
+	    'PAGE_SIZE': 2,
+	}
+
+响应结果如下:
+
+	"count": 22,
+        "next": "http://127.0.0.1:8080/user/student/?page=2",
+        "previous": null,
+        "results": [
+            {
+                "s_name": "小明22",
+                "s_gender": "男",
+                "s_age": 23,
+                "id": 4
+            },
+            {
+                "s_name": "校花2",
+                "s_gender": "男",
+                "s_age": 18,
+                "id": 5
+            }
+        ]
+
+#### 11.2 定义分页类为LimitOffsetPagination时，如下定义
+	
+	# 配置rest_framework的相关信息
+	REST_FRAMEWORK = {
+	    # 分页参数配置
+		# 配置分页类
+		'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.LimitOffsetPagination',
+		# 配置每一页数据的条数
+	    'PAGE_SIZE': 2,
+	}
+
+响应结果如下:
+
+	"count": 22,
+        "next": "http://127.0.0.1:8080/user/student/?limit=2&offset=2",
+        "previous": null,
+        "results": [
+            {
+                "s_name": "小明22",
+                "s_gender": "男",
+                "s_age": 23,
+                "id": 4
+            },
+            {
+                "s_name": "校花2",
+                "s_gender": "男",
+                "s_age": 18,
+                "id": 5
+            }
+        ]
+
+分析: 使用分页类PageNumberPagination进行分页时，下一页的URL地址为:/user/student/?page=2, LimitOffsetPagination分页类进行分页时，下一页的URL地址为:/user/student/?limit=2&offset=2
