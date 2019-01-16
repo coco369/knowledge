@@ -236,6 +236,7 @@
 		- 作业1：爬取智联上某工作某地点的工作名称，公司等信息
 		- 作业2：爬取格言网(https://www.geyanw.com/)上的某一个模块的名言警句
 		- 作业3：爬取搜狗图片中的新垣结衣的图片
+	  - [爬虫基础概念](spider/1爬虫基本概念.md)
 	  - [爬虫引入/User-Agent讲解](spider/1.0spider_concept_urllib.md)
 	  - [应用案例:爬取智联工作/百度源码](spider/1.1spider_baidu_zhilian_search.md)
 
