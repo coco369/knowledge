@@ -116,12 +116,15 @@
        - 中间件案例1： 实现登录注册功能
 
       - [验证码/分页](django/6.1django_plug.md)
+
       - [中间件](django/中间件.md)
+
       - [文件上传](django/6.2django_media.md)
+
       - [表单form](django/form表单.md)
 
   - [第七天:权限、角色]
-      ​    
+
         - 如何拓展Django的User模型，并自定义相关的权限
           - 权限系统中User模型、Group模型、Permission模型的ManyToManyFiled关联关系，以及数据的增、删、清空。
           - 权限装饰器: permission_reqired('应用app.权限名')
@@ -144,7 +147,9 @@
   - [第九天:restframework2]
 
         - 重构api响应结构，api中异常响应结构重构与定义
+
           - 定义虚拟化serializer，验证每一个字段的错误信息，配置参数等
+
         - [响应结构/ajax-CRUD](django/9.1django_restful3.md)
 
   - [第十天:restframework3]
