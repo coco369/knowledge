@@ -33,116 +33,132 @@
 <a href="django/images/Django大纲.png">思维导图</a>
 
   - [第一天:环境与创建项目]
-	​	  
+
+
+
         - 环境搭建: virtualenv的安装与使用,pycharm中环境的配置
+
         - Django概念: MVC模式/MVT模式
+
         - 项目创建: 创建Django工程目录，创建应用app，使用admin管理后台
+
         - admin管理后台：超级用户的创建，模型注册，模型中数据展示(list_display)、搜索(search_field)、过滤(list_filter)等
+
       - [django概念介绍](django/1.1django_pattern.md)
+
       - [virtualenv环境](django/1.2python_virtualenv.md)
+
       - [创建django项目](django/1.3django_halloWorld.md)
+
       - [admin管理](django/1.4django_admin.md)
 
   - [第二天:模型]
-  
-	    - M模型：模型的定义，字段的定义，字段参数的定义。Meta元数据定义，定义表名称
-	    - 数据库配置，pymysql驱动配置，数据迁移执行命令
-	    - ORM对象关系映射概念：什么是ORM，ORM用于做什么？
-	    - 比较运算符，F/Q对象，限制结果集：contains，startswith，endswith，in，gt，gte，lt，lte，pk等
-	    - 数据的查询，all，filter，get，first，last，values等
-	    - 数据的创建：create()，对象save()，初始化模型再save()
-	    - 数据的更新：update()，对象save()
-	    - 数据的删除：delete()
+
+        - M模型：模型的定义，字段的定义，字段参数的定义。Meta元数据定义，定义表名称
+          - 数据库配置，pymysql驱动配置，数据迁移执行命令
+          - ORM对象关系映射概念：什么是ORM，ORM用于做什么？
+          - 比较运算符，F/Q对象，限制结果集：contains，startswith，endswith，in，gt，gte，lt，lte，pk等
+          - 数据的查询，all，filter，get，first，last，values等
+          - 数据的创建：create()，对象save()，初始化模型再save()
+          - 数据的更新：update()，对象save()
+          - 数据的删除：delete()
       - [模型设计](django/2.1django_models.md)
       - [数据的CRUD练习](django/2.2django_mysql_lianxi.md)
+
   - [第三天:模型加餐/模板]
-  
-	    - 模型设计概念：一对一，一对多，多对多的模型定义
-	    - 模型设计案例：学生和学生拓展表一对一模型设计，学生和课程表多对多模型设计，学生和班级一对多模型设计
-	    - 模板1：在settings.py文件中静态static的配置定义，在页面中静态文件的加载
-	    - 模板2：模板中逻辑运算符，if、ifequal、forloop、for empty等
-	    - 模板3：父模板中定义block块和子模板中继承与调用父模板中block块
-	    - 模板4：模板中注解，注解代码的可见与不可见，三种注解的区别
-	    - 模板5：模板中定义修饰变量的过滤器，使用管道符‘|’，以及Django中过滤器的自定义
-	    
+
+        - 模型设计概念：一对一，一对多，多对多的模型定义
+          - 模型设计案例：学生和学生拓展表一对一模型设计，学生和课程表多对多模型设计，学生和班级一对多模型设计
+          - 模板1：在settings.py文件中静态static的配置定义，在页面中静态文件的加载
+          - 模板2：模板中逻辑运算符，if、ifequal、forloop、for empty等
+          - 模板3：父模板中定义block块和子模板中继承与调用父模板中block块
+          - 模板4：模板中注解，注解代码的可见与不可见，三种注解的区别
+          - 模板5：模板中定义修饰变量的过滤器，使用管道符‘|’，以及Django中过滤器的自定义
+          
       - [模型关联设计](django/3.1django_model_more.md)
       - [模板](django/3.2django_temp.md)
+
   - [第四天:视图1]
-  
-	    - URL的正则匹配与带参URL和不带参URL定义
-	    - 带参URL的redirect跳转与参数传递，以及页面内中URL反向解析的定义
-	    - Django中DEBUG为False和True的区别,以及当DEBUG为False时，静态文件解析与错误(403、404、500)视图的定义
-	    - 请求与响应：请求中属性和方法，响应中属性和方法
+
+        - URL的正则匹配与带参URL和不带参URL定义
+          - 带参URL的redirect跳转与参数传递，以及页面内中URL反向解析的定义
+          - Django中DEBUG为False和True的区别,以及当DEBUG为False时，静态文件解析与错误(403、404、500)视图的定义
+          - 请求与响应：请求中属性和方法，响应中属性和方法
       - [路由/反向解析](django/4.1django_urls.md)
+
   - [第五天:视图2]
-	​    
-		- form表单：字段的定义、form中错误信息的重定义、页面中错误信息的展示
-		- 登录注册注销：django中如何快速的实现登录注册注销功能
-		- 什么是会话技术，什么是HTTP无状态协议，解决HTTP无状态协议的方案----> cookie + session
-		- cookie的使用：如何设置cookie，删除cookie，如何设置失效
-		- session的使用：如何使用session，删除session，session中数据存储的时效。在Django中如何配置session，数据库中django_session表的使用
-		- 案例1：cookie和session实现的原理
-		
+     ​    
+     - form表单：字段的定义、form中错误信息的重定义、页面中错误信息的展示
+     	- 登录注册注销：django中如何快速的实现登录注册注销功能
+     	- 什么是会话技术，什么是HTTP无状态协议，解决HTTP无状态协议的方案----> cookie + session
+     	- cookie的使用：如何设置cookie，删除cookie，如何设置失效
+     	- session的使用：如何使用session，删除session，session中数据存储的时效。在Django中如何配置session，数据库中django_session表的使用
+     	- 案例1：cookie和session实现的原理
+     	
       - [cookies/session](django/5.1django_coo_sess.md)
       - [登录/注册--自己实现](django/5.2django_regist_login.md)
       - [登录/注册--django实现](django/5.3django_regist_login.md)
-     
+
   - [第六天:插件]
-	​	
-		- 中间件middleware的工作原理，如何拦截各阶段的请求，重构拦截各阶段的方法
-		- 数据分页：掌握Paginator分页的工作原理，实现分页的方式
-		- 定义模型中上传文件字段，安装Pillow，定义上传文件的media路径，定义页面中如何解析media中上传图片
-		- 中间件案例1： 实现登录注册功能
+     ​	
+     - 中间件middleware的工作原理，如何拦截各阶段的请求，重构拦截各阶段的方法
+     	- 数据分页：掌握Paginator分页的工作原理，实现分页的方式
+     	- 定义模型中上传文件字段，安装Pillow，定义上传文件的media路径，定义页面中如何解析media中上传图片
+     	- 中间件案例1： 实现登录注册功能
       - [验证码/分页](django/6.1django_plug.md)
       - [中间件](django/中间件.md)
       - [文件上传](django/6.2django_media.md)
       - [表单form](django/form表单.md)
-     
+
   - [第七天:权限、角色]
-	​    
-	    - 如何拓展Django的User模型，并自定义相关的权限
-	    - 权限系统中User模型、Group模型、Permission模型的ManyToManyFiled关联关系，以及数据的增、删、清空。
-	    - 权限装饰器: permission_reqired('应用app.权限名')
-	    - 菜单控制：通过全局perms变量进行权限和菜单的控制
-	  - [权限系统](django/8.1django权限控制.md)
+      ​    
+        - 如何拓展Django的User模型，并自定义相关的权限
+          - 权限系统中User模型、Group模型、Permission模型的ManyToManyFiled关联关系，以及数据的增、删、清空。
+          - 权限装饰器: permission_reqired('应用app.权限名')
+          - 菜单控制：通过全局perms变量进行权限和菜单的控制
+        - [权限系统](django/8.1django权限控制.md)
 
   - [第八天:日志/restful]
 
-  		- setting.py中日志logging文件的配置，logging的四大组成，loggers，handlers，filters，formatters的处理流程，以及日志打印
-  		- 架构设计指导原则，rest的核心定义，如何定义符合规范的api接口。资源、请求、状态码的理解。
-  		- Django中restframework安装，settings.py中的定义，以及如何定义对资源的CRUD操作
+    - setting.py中日志logging文件的配置，logging的四大组成，loggers，handlers，filters，formatters的处理流程，以及日志打印
+
+    - 架构设计指导原则，rest的核心定义，如何定义符合规范的api接口。资源、请求、状态码的理解。
+
+    - Django中restframework安装，settings.py中的定义，以及如何定义对资源的CRUD操作
       - [日志](django/7.1django日志.md)
       - [restful1](django/7.2django_restful.md)
-	
+
   - [第九天:restframework2]
 
-	    - 重构api响应结构，api中异常响应结构重构与定义
-	    - 定义虚拟化serializer，验证每一个字段的错误信息，配置参数等
-	  - [响应结构/ajax-CRUD](django/9.1django_restful3.md)
+        - 重构api响应结构，api中异常响应结构重构与定义
+          - 定义虚拟化serializer，验证每一个字段的错误信息，配置参数等
+        - [响应结构/ajax-CRUD](django/9.1django_restful3.md)
 
   - [第十天:restframework3]
-	
- 	    - api返回数据的分页配置，过滤类的定义与配置
- 	    - 调用postman实现通过api对数据进行CRUD操作
- 	    - 总结drf中的视图、序列化器、过滤器等
-	  - [分页/过滤/筛选](django/10.1django_restful4.md)
-	  - [总结](django/djangorestframework总结.md)
+
+      - api返回数据的分页配置，过滤类的定义与配置
+
+      - 调用postman实现通过api对数据进行CRUD操作
+
+      - 总结drf中的视图、序列化器、过滤器等
+          - [分页/过滤/筛选](django/10.1django_restful4.md)
+            - [总结](django/djangorestframework总结.md)
 
   - [第十一天到十五天：项目]
-	  - [爱鲜蜂案例2班](https://github.com/coco369/axf)
-	  - [爱鲜蜂案例3班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1803/1.django/day09/%E4%BB%A3%E7%A0%81/axf)
-	  - [爱鲜蜂案例4班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1804/1.django/day14/%E4%BB%A3%E7%A0%81/axf4)
-	  - [天天生鲜案例5班]
-		  - [前台代码](https://github.com/coco369/django-teaching-15days/tree/master/qf_1805/1.django/day15/%E4%BB%A3%E7%A0%81/fresh_shop)
-		  - [后台代码](https://github.com/coco369/django-teaching-15days/tree/master/qf_1805/1.django/day15/%E4%BB%A3%E7%A0%81/fresh_shop_back)
-  
+      - [爱鲜蜂案例2班](https://github.com/coco369/axf)
+        - [爱鲜蜂案例3班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1803/1.django/day09/%E4%BB%A3%E7%A0%81/axf)
+        - [爱鲜蜂案例4班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1804/1.django/day14/%E4%BB%A3%E7%A0%81/axf4)
+        - [天天生鲜案例5班]
+      	  - [前台代码](https://github.com/coco369/django-teaching-15days/tree/master/qf_1805/1.django/day15/%E4%BB%A3%E7%A0%81/fresh_shop)
+      	  - [后台代码](https://github.com/coco369/django-teaching-15days/tree/master/qf_1805/1.django/day15/%E4%BB%A3%E7%A0%81/fresh_shop_back)
+
   - [部署]
-	  - [centos7部署项目](部署/centos部署.md)
-	  - [ubuntu部署项目](部署/ubuntu部署.md)
+      - [centos7部署项目](部署/centos部署.md)
+        - [ubuntu部署项目](部署/ubuntu部署.md)
 
   - [拓展]
-	  - [调试工具](django/debug的安装与使用.md)
-	  - [kindeditor富文本编辑器](django/6.3kindeditor富文本编辑器.md)
+      - [调试工具](django/debug的安装与使用.md)
+        - [kindeditor富文本编辑器](django/6.3kindeditor富文本编辑器.md)
 
 ### Flask知识库
 
