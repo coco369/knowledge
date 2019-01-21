@@ -34,13 +34,13 @@
 
   - [第一天:环境与创建项目]
 
-        - 环境搭建: virtualenv的安装与使用,pycharm中环境的配置
+      * 环境搭建: virtualenv的安装与使用,pycharm中环境的配置
 
         - Django概念: MVC模式/MVT模式
-
         - 项目创建: 创建Django工程目录，创建应用app，使用admin管理后台
-
         - admin管理后台：超级用户的创建，模型注册，模型中数据展示(list_display)、搜索(search_field)、过滤(list_filter)等
+
+
 
       - [django概念介绍](django/1.1django_pattern.md)
 
