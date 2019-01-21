@@ -25,7 +25,7 @@
   - [基础语法](sql/mongodb语法.md)
 
 ### PEP 8风格指南
-  
+
   - [风格指南](PEP8风格指南.md)
 
 ### Django知识库
@@ -33,7 +33,7 @@
 <a href="django/images/Django大纲.png">思维导图</a>
 
   - [第一天:环境与创建项目]
-		  
+	​	  
         - 环境搭建: virtualenv的安装与使用,pycharm中环境的配置
         - Django概念: MVC模式/MVT模式
         - 项目创建: 创建Django工程目录，创建应用app，使用admin管理后台
@@ -75,7 +75,7 @@
 	    - 请求与响应：请求中属性和方法，响应中属性和方法
       - [路由/反向解析](django/4.1django_urls.md)
   - [第五天:视图2]
-	    
+	​    
 		- form表单：字段的定义、form中错误信息的重定义、页面中错误信息的展示
 		- 登录注册注销：django中如何快速的实现登录注册注销功能
 		- 什么是会话技术，什么是HTTP无状态协议，解决HTTP无状态协议的方案----> cookie + session
@@ -86,9 +86,9 @@
       - [cookies/session](django/5.1django_coo_sess.md)
       - [登录/注册--自己实现](django/5.2django_regist_login.md)
       - [登录/注册--django实现](django/5.3django_regist_login.md)
-      
+     
   - [第六天:插件]
-		
+	​	
 		- 中间件middleware的工作原理，如何拦截各阶段的请求，重构拦截各阶段的方法
 		- 数据分页：掌握Paginator分页的工作原理，实现分页的方式
 		- 定义模型中上传文件字段，安装Pillow，定义上传文件的media路径，定义页面中如何解析media中上传图片
@@ -97,9 +97,9 @@
       - [中间件](django/中间件.md)
       - [文件上传](django/6.2django_media.md)
       - [表单form](django/form表单.md)
-      
+     
   - [第七天:权限、角色]
-	    
+	​    
 	    - 如何拓展Django的User模型，并自定义相关的权限
 	    - 权限系统中User模型、Group模型、Permission模型的ManyToManyFiled关联关系，以及数据的增、删、清空。
 	    - 权限装饰器: permission_reqired('应用app.权限名')
@@ -113,7 +113,7 @@
   		- Django中restframework安装，settings.py中的定义，以及如何定义对资源的CRUD操作
       - [日志](django/7.1django日志.md)
       - [restful1](django/7.2django_restful.md)
-	  
+	
   - [第九天:restframework2]
 
 	    - 重构api响应结构，api中异常响应结构重构与定义
@@ -121,7 +121,7 @@
 	  - [响应结构/ajax-CRUD](django/9.1django_restful3.md)
 
   - [第十天:restframework3]
-	    
+	
  	    - api返回数据的分页配置，过滤类的定义与配置
  	    - 调用postman实现通过api对数据进行CRUD操作
  	    - 总结drf中的视图、序列化器、过滤器等
@@ -158,7 +158,7 @@
 	  - [flask简介/路由规则](flask/flask入门与路由.md)
 	  - [flask请求与响应与错误处理](flask/flask请求与响应与异常.md)
 	  - [flask蓝图](flask/flask蓝图.md)
-	  
+	
   - [第二天:views]
   
 		-  session/cookie概念与用法：
@@ -173,7 +173,7 @@
 	  - [应用案例1：自定义登录校验](flask/2.3flask_login.md)
 	  - [应用案例2：flask-login登录校验](flask/flask登录注册.md)
 	  - [flask模板](flask/flask模板.md)
-	  
+	
   - [第三天:models初窥]
   
 		- 模型的定义，数据库的创建，学生模型CRUD操作
@@ -182,25 +182,24 @@
         - 筛选--offset、limit、get、first、paginate等
         - 逻辑运算符--and_、or_、not_
         - 模型之间的一对多的关联关系的定义
-        
+       
 	  - [flask模型初窥](flask/flask模型1.md)
 	  - [flask模型深入1](flask/flask模型2.md)
-	  
+	
   - [第四天:models关系与其他]
-  
-	    - 模型之间的多对多的关联关系的定义，多对多的数据的CRUD
-	    - 钩子函数: before_request, after_request, teardown_request
-	    - 应用上下文g对象
-	    - 应用案例1: 钩子函数+g对象的使用，实现pymysql连接MySQL，并执行查询操作
-	    - 应用案例2: flask-wtf的form表单的使用
-	   
+
+        - 模型之间的多对多的关联关系的定义，多对多的数据的CRUD
+          - 钩子函数: before_request, after_request, teardown_request
+          - 应用上下文g对象
+          - 应用案例1: 钩子函数+g对象的使用，实现pymysql连接MySQL，并执行查询操作
+          - 应用案例2: flask-wtf的form表单的使用
+         
       - [flask模型深入2](flask/flask模板3.md)
       - [应用案例1](flask/flask中g对象和钩子.md)
       - [应用案例2](flask/flask表单验证.md)
-      
-	  
+
   - [第五天:扩展]
-		
+	​	
         - 登录注册: 使用第三方flask-login库实现登录注册，登录验证等
         - 文件上传: form表单提交上传图片进行保存
 	    - 拓展库的使用：debugtoolbar，flask_restful
@@ -210,7 +209,7 @@
 	  - [文件上传](flask/flask文件上传.md)
 	  - [flask-extensions](flask/5.2flask_extensions.md)
 	  - [邮件发送](flask/flask邮件发送.md)
-	  
+	
   - [第六天到第10天：项目]
 	  - [爱家案例](https://github.com/coco369/aj)
 	  - [爱家案例2班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1802/2.flask/day9/%E4%BB%A3%E7%A0%81/day06)
@@ -225,49 +224,47 @@
 
 
   - [第一天:爬虫]
-		
+	​	
 		- 概念：爬虫的由来/用来做什么
 		- 数据采集与分析：urllib/requests/bs4/mongodb/mysql/redis等
 		- 请求头-反爬虫：User-Agent，Accept，Accept-Language等
 		- 百度搜索：中文的编码解码
 		- ssl: ssl认证
-		- 应用案例1：urllib获取百度首页源代码，其中User-Agent的使用
-		- 应用案例2：爬去智联上某工作某地点的岗位个数
+		- 应用案例1：urllib获取百度首页源代码/爬取智联某工作某地点的岗位信息
+		- 应用案例2：猫眼网站信息
 		- 作业1：爬取智联上某工作某地点的工作名称，公司等信息
 		- 作业2：爬取格言网(https://www.geyanw.com/)上的某一个模块的名言警句
 		- 作业3：爬取搜狗图片中的新垣结衣的图片
 	  - [爬虫基础概念](spider/1爬虫基本概念.md)
 	  - [爬虫引入/User-Agent讲解](spider/1.0spider_concept_urllib.md)
-	  - [应用案例:爬取智联工作/百度源码](spider/1.1spider_baidu_zhilian_search.md)
-
+	  - [应用案例1:爬取智联工作/百度源码](spider/1.1spider_baidu_zhilian_search.md)
+	  - [应用案例2:猫眼](spider/1猫眼网站实战.md)
 
   - [第二天:数据采集]
-		
-		- 爬取工具：requests使用、bs4使用、urllib使用
-		- xpath语法、re正则表达式语法
-		- 应用案例1：获取豆瓣电影中动态加载电影资源信息
-		- 应用案例2:爬取知乎发现里面的提问的链接数，和链接地址
-	  - [采集(bs4/requests)](spider/2.0spider_collect.md)
-	  - [提取xpath/re](spider/2.2spider_re_xpath.md)
-	  - [应用案例1:爬知乎的提问/豆瓣电影信息](spider/2.1spider_movies_questions.md)
-	  - [应用案例2:爬取搜狐体育的新闻信息](spider/2.3spider_souhu_sports.md)
+     ​	
+     - 爬取工具：requests使用、bs4使用、urllib使用
+     	- xpath语法、re正则表达式语法
+     	- 应用案例1：获取豆瓣电影中动态加载电影资源信息
+     	- 应用案例2:爬取知乎发现里面的提问的链接数，和链接地址
+       - [采集(bs4/requests)](spider/2.0spider_collect.md)
+       - [提取xpath/re](spider/2.2spider_re_xpath.md)
+       - [应用案例1:爬知乎的提问/豆瓣电影信息](spider/2.1spider_movies_questions.md)
+       - [应用案例2:爬取搜狐体育的新闻信息](spider/2.3spider_souhu_sports.md)
 
-	
   - [第三天:多线程爬虫]
   
-  		- 概念：线程、进程、同步、异步、并发、阻塞、非阻塞、并发、并行
-	  	- 进程、线程概念：多线程定义，守护线程，线程启动
-	  	- 线程锁
-	  	- 应用案例1：I/O密集型，计算密集型的单线程多线程对比
-	  	
-	  - [并发、并行、同步、异步线程、进程](spider/3.0spider_process_threading.md)
-	  - [线程锁](spider/3.1spider_threading_lock.md)
-	  - [应用案例1:计算密集型和IO密集型的性能对比](spider/3.2spider_threading_IO_calc_GIL.md)
-	  - [应用案例2:多线程爬虫](spider/3.3spider_threading_douban.md)
-	  
+    - 概念：线程、进程、同步、异步、并发、阻塞、非阻塞、并发、并行
+         - 进程、线程概念：多线程定义，守护线程，线程启动
+           	- 线程锁
+           	- 应用案例1：I/O密集型，计算密集型的单线程多线程对比
+           
+           - [并发、并行、同步、异步线程、进程](spider/3.0spider_process_threading.md)
+           - [线程锁](spider/3.1spider_threading_lock.md)
+           - [应用案例1:计算密集型和IO密集型的性能对比](spider/3.2spider_threading_IO_calc_GIL.md)
+           - [应用案例2:多线程爬虫](spider/3.3spider_threading_douban.md)
 
   - [第四天:协程/数据持久化]
-	    
+	
  		- 迭代器、生成器的原理概念、斐波那契的实现
 	  	- 协程的概念，原理，生产者-消费者的实现
 	  	- 数据持久化，redis安装配置、缓存，mongodb安装配置、语法、缓存
@@ -291,7 +288,7 @@
 	  - [模拟登陆知乎并截图/解析豆瓣电影信息](spider/5.1spider_selenium_login_zhihu_and_douban_movies.md)
 
   - [第六天:验证]
-		
+	​	
 		- 模拟登陆:请求url分析,请求参数分析，模拟登陆状态保持
 
 		- form模拟登陆、验证码
@@ -315,15 +312,15 @@
       - [scrapy爬虫豆瓣信息](spider/7.1spider_scrapy2.md) 
       - [scrapy爬取链家信息](spider/code/scrapy框架/lianjiaspider)
       - [scrapy爬取微博用户信息](spider/7.2spider_weibo_scrapy3.md)
-	      - [分析接口](spider/7.2spider_weibo_scrapy3.md)
-	      - [分析用户信息](spider/7.3spider_weibo_scrapy_user_info.md)
-	      - [分析关注信息](spider/7.4spider_weibo_scrapy_follows_info.md)
-	      - [分析粉丝信息](spider/7.5spider_weibo_scrapy_fans_info.md)
-	      - [IP代理池/User-Agent设置](spider/7.6spider_weibo_scrapy_ips_user_agent.md)
+	  ​    - [分析接口](spider/7.2spider_weibo_scrapy3.md)
+	  ​    - [分析用户信息](spider/7.3spider_weibo_scrapy_user_info.md)
+	  ​    - [分析关注信息](spider/7.4spider_weibo_scrapy_follows_info.md)
+	  ​    - [分析粉丝信息](spider/7.5spider_weibo_scrapy_fans_info.md)
+	  ​    - [IP代理池/User-Agent设置](spider/7.6spider_weibo_scrapy_ips_user_agent.md)
 	  - [scrapy爬取豆瓣即将上线电影/正在热播电影信息](spider/code/scrapy框架/doubanMoviespider)
 	  - [分布式爬虫](spider/7.7spider_scrapy_redis.md)
 
-  
+
 ### Tornado知识库
 
 
