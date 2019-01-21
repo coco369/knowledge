@@ -130,6 +130,8 @@
           - 权限装饰器: permission_reqired('应用app.权限名')
           - 菜单控制：通过全局perms变量进行权限和菜单的控制
 
+        - 
+
         - [权限系统](django/8.1django权限控制.md)
 
   - [第八天:日志/restful]
