@@ -81,7 +81,8 @@
         - URL的正则匹配与带参URL和不带参URL定义
           - 带参URL的redirect跳转与参数传递，以及页面内中URL反向解析的定义
           - Django中DEBUG为False和True的区别,以及当DEBUG为False时，静态文件解析与错误(403、404、500)视图的定义
-          - 请求与响应：请求中属性和方法，响应中属性和方法
+
+      - 请求与响应：请求中属性和方法，响应中属性和方法
 
       - [路由/反向解析](django/4.1django_urls.md)
 
@@ -89,14 +90,11 @@
 
      - form表单：字段的定义、form中错误信息的重定义、页面中错误信息的展示
        - 登录注册注销：django中如何快速的实现登录注册注销功能
-
        - 什么是会话技术，什么是HTTP无状态协议，解决HTTP无状态协议的方案----> cookie + session
-
        - cookie的使用：如何设置cookie，删除cookie，如何设置失效
-
        - session的使用：如何使用session，删除session，session中数据存储的时效。在Django中如何配置session，数据库中django_session表的使用
 
-       - 案例1：cookie和session实现的原理
+     - 案例1：cookie和session实现的原理
 
       - [cookies/session](django/5.1django_coo_sess.md)
 
