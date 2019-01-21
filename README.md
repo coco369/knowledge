@@ -107,10 +107,15 @@
      - 中间件middleware的工作原理，如何拦截各阶段的请求，重构拦截各阶段的方法
        - 数据分页：掌握Paginator分页的工作原理，实现分页的方式
        - 定义模型中上传文件字段，安装Pillow，定义上传文件的media路径，定义页面中如何解析media中上传图片
-       - 中间件案例1： 实现登录注册功能
+
+     - 中间件案例1： 实现登录注册功能
+
       - [验证码/分页](django/6.1django_plug.md)
+
       - [中间件](django/中间件.md)
+
       - [文件上传](django/6.2django_media.md)
+
       - [表单form](django/form表单.md)
 
   - [第七天:权限、角色]
@@ -119,6 +124,7 @@
           - 权限系统中User模型、Group模型、Permission模型的ManyToManyFiled关联关系，以及数据的增、删、清空。
           - 权限装饰器: permission_reqired('应用app.权限名')
           - 菜单控制：通过全局perms变量进行权限和菜单的控制
+
         - [权限系统](django/8.1django权限控制.md)
 
   - [第八天:日志/restful]
