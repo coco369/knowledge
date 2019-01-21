@@ -87,17 +87,21 @@
 
   - [第五天:视图2]
 
-
-
      - form表单：字段的定义、form中错误信息的重定义、页面中错误信息的展示
        - 登录注册注销：django中如何快速的实现登录注册注销功能
+
        - 什么是会话技术，什么是HTTP无状态协议，解决HTTP无状态协议的方案----> cookie + session
+
        - cookie的使用：如何设置cookie，删除cookie，如何设置失效
+
        - session的使用：如何使用session，删除session，session中数据存储的时效。在Django中如何配置session，数据库中django_session表的使用
+
        - 案例1：cookie和session实现的原理
 
       - [cookies/session](django/5.1django_coo_sess.md)
+
       - [登录/注册--自己实现](django/5.2django_regist_login.md)
+
       - [登录/注册--django实现](django/5.3django_regist_login.md)
 
   - [第六天:插件]
