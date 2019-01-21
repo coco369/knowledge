@@ -148,7 +148,7 @@
 
         - 重构api响应结构，api中异常响应结构重构与定义
 
-          - 定义虚拟化serializer，验证每一个字段的错误信息，配置参数等
+          - 定义序列化serializer，验证每一个字段的错误信息，配置参数等
 
         - [响应结构/ajax-CRUD](django/9.1django_restful3.md)
 
