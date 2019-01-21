@@ -87,6 +87,8 @@
 
   - [第五天:视图2]
 
+
+
      - form表单：字段的定义、form中错误信息的重定义、页面中错误信息的展示
        - 登录注册注销：django中如何快速的实现登录注册注销功能
 
@@ -107,9 +109,12 @@
   - [第六天:插件]
      ​	
      - 中间件middleware的工作原理，如何拦截各阶段的请求，重构拦截各阶段的方法
-     	- 数据分页：掌握Paginator分页的工作原理，实现分页的方式
-     	- 定义模型中上传文件字段，安装Pillow，定义上传文件的media路径，定义页面中如何解析media中上传图片
-     	- 中间件案例1： 实现登录注册功能
+       - 数据分页：掌握Paginator分页的工作原理，实现分页的方式
+
+       - 定义模型中上传文件字段，安装Pillow，定义上传文件的media路径，定义页面中如何解析media中上传图片
+
+       - 中间件案例1： 实现登录注册功能
+
       - [验证码/分页](django/6.1django_plug.md)
       - [中间件](django/中间件.md)
       - [文件上传](django/6.2django_media.md)
@@ -121,16 +126,19 @@
           - 权限系统中User模型、Group模型、Permission模型的ManyToManyFiled关联关系，以及数据的增、删、清空。
           - 权限装饰器: permission_reqired('应用app.权限名')
           - 菜单控制：通过全局perms变量进行权限和菜单的控制
+
         - [权限系统](django/8.1django权限控制.md)
 
   - [第八天:日志/restful]
 
-    - setting.py中日志logging文件的配置，logging的四大组成，loggers，handlers，filters，formatters的处理流程，以及日志打印
+          - setting.py中日志logging文件的配置，logging的四大组成，loggers，handlers，filters，formatters的处理流程，以及日志打印
 
-    - 架构设计指导原则，rest的核心定义，如何定义符合规范的api接口。资源、请求、状态码的理解。
+          - 架构设计指导原则，rest的核心定义，如何定义符合规范的api接口。资源、请求、状态码的理解。
 
-    - Django中restframework安装，settings.py中的定义，以及如何定义对资源的CRUD操作
+          - Django中restframework安装，settings.py中的定义，以及如何定义对资源的CRUD操作
+
       - [日志](django/7.1django日志.md)
+
       - [restful1](django/7.2django_restful.md)
 
   - [第九天:restframework2]
@@ -141,13 +149,15 @@
 
   - [第十天:restframework3]
 
-      - api返回数据的分页配置，过滤类的定义与配置
+            - api返回数据的分页配置，过滤类的定义与配置
 
-      - 调用postman实现通过api对数据进行CRUD操作
+            - 调用postman实现通过api对数据进行CRUD操作
 
-      - 总结drf中的视图、序列化器、过滤器等
-          - [分页/过滤/筛选](django/10.1django_restful4.md)
-            - [总结](django/djangorestframework总结.md)
+            - 总结drf中的视图、序列化器、过滤器等
+
+      - [分页/过滤/筛选](django/10.1django_restful4.md)
+
+      - [总结](django/djangorestframework总结.md)
 
   - [第十一天到十五天：项目]
       - [爱鲜蜂案例2班](https://github.com/coco369/axf)
