@@ -244,7 +244,6 @@
       	- 应用案例2：猫眼网站信息
       	- 作业1：爬取智联上某工作某地点的工作名称，公司等信息
       	- 作业2：爬取格言网(https://www.geyanw.com/)上的某一个模块的名言警句
-      	- 作业3：爬取搜狗图片中的新垣结衣的图片
 
       - [爬虫基础概念](spider/1爬虫基本概念.md)
       - [爬虫引入/User-Agent讲解](spider/1.0spider_concept_urllib.md)
@@ -258,7 +257,8 @@
      	- 应用案例1：获取豆瓣电影中动态加载电影资源信息
      	- 应用案例2:爬取知乎发现里面的提问的链接数，和链接地址
        
-	  - [采集(bs4/requests)](spider/2.0spider_collect.md)
+	  - [采集(bs4)](spider/2数据采集bs.md)
+	  - [采集(requests)](spider/2数据采集requests.md)
       - [提取xpath/re](spider/2.2spider_re_xpath.md)
       - [应用案例1:爬知乎的提问/豆瓣电影信息](spider/2.1spider_movies_questions.md)
       - [应用案例2:爬取搜狐体育的新闻信息](spider/2.3spider_souhu_sports.md)

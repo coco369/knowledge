@@ -11,48 +11,17 @@
 
 ### 前言
 
-数据采集，针对网页获取源码，按照一定的正则匹配，或者xpath的规则去匹配出我们需要的结果，进行分类筛选入库等操作。在本章中会讲到requests，beautifulsoup等工具去爬取网页，获取相关需要的信息。
+数据采集，针对网页获取源码，按照一定的正则匹配，或者xpath的规则去匹配出我们需要的结果，进行分类筛选入库等操作。在本章中会讲到requests工具去爬取网页，获取相关需要的信息。
 
-
-### 1. BeautifSoup
-
-Beautiful Soup 是一个可以从HTML或XML文件中提取数据的Python库.它能够通过你喜欢的转换器实现惯用的文档导航,查找,修改文档的方式.Beautiful Soup会帮你节省数小时甚至数天的工作时间.-----引入[官网地址](https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html)的一句话
-
-#### 1.1 安装
-
-Beautiful Soup 4 通过PyPi发布,所以如果你无法使用系统包管理安装,那么也可以通过 easy_install 或 pip 来安装.包的名字是 beautifulsoup4 ,这个包兼容Python2和Python3.
-
-	pip install beautifulsoup4
-
-
-#### 1.2 解析语法、find、find_all
-
-##### find_all( name , attrs , recursive , text , **kwargs )
-
-find_all() 方法搜索当前tag的所有tag子节点,并判断是否符合过滤器的条件
-
-
-	1. 查询所有a标签的内容
-	
-		soup.find_all('a')
-	
-	2. 查询所有a标签下class样式为bb的内容
-	
-		soup.find_all('a', 'bb')
-	
-	3. 查询所有id样式为cc的内容
-
-		soup.find_all(id='cc')
-
-### 2. requests
+### 1. requests
 
 [官网地址](http://docs.python-requests.org/zh_CN/latest/user/quickstart.html)
 
-#### 2.1 安装
+#### 1.1 安装
 
 	pip install requests
 
-#### 2.2 发送请求，GET、POST、PUT、PATCH、DELETE
+#### 1.2 发送请求，GET、POST、PUT、PATCH、DELETE
 
 使用 Requests 发送网络请求非常简单。
 
@@ -82,7 +51,7 @@ Requests 简便的 API 意味着所有 HTTP 请求类型都是显而易见的。
 
 都很不错吧，但这也仅是 Requests 的冰山一角呢。
 
-#### 2.3 传递 URL 参数
+#### 1.3 传递 URL 参数
 
 你也许经常想为 URL 的查询字符串(query string)传递某种数据。如果你是手工构建 URL，那么数据会以键/值对的形式置于 URL 中，跟在一个问号的后面。例如， httpbin.org/get?key=val。 
 
@@ -112,7 +81,7 @@ Requests 允许你使用 params 关键字参数，以一个字符串字典来提
 	
 	http://httpbin.org/get?key1=value1&key2=value2&key2=value3
 
-#### 2.4 响应内容
+#### 1.4 响应内容
 
 我们能读取服务器响应的内容。再次以 GitHub 时间线为例：
 
