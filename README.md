@@ -344,8 +344,13 @@
 	 - [Tornado请求与响应](tornado/3.2.1-Tornado开发基础/tornado请求与响应.md)
 	 - [Tornado路由规则/HTTP行为方法/切入点函数](tornado/3.2.1-Tornado开发基础/tornado路由与切入点函数.md)
 
-   - [第二天: 进阶]
-
+  - [第二天: 进阶]
+	      
+		- tornado静态资源与模板
+		- 应用案例1: 开发websocket聊天系统
+		
+	 - [Tornado模板与静态资源加载](tornado/3.2.2-Tornado进阶/tornado模板资源.md)
+	 - [应用案例1: websocket](tornado/3.2.2-Tornado进阶/tornado-websocket.md)
 
    - [第三天: 项目]
 
