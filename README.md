@@ -344,7 +344,6 @@
 	 - [Tornado请求与响应](tornado/3.2.1-Tornado开发基础/tornado请求与响应.md)
 	 - [Tornado路由规则/HTTP行为方法/切入点函数](tornado/3.2.1-Tornado开发基础/tornado路由与切入点函数.md)
 
-
    - [第二天: 进阶]
 
 
