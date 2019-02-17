@@ -75,7 +75,7 @@
 
 现在你可以在浏览器中打开http://localhost:8888/hello，
 
-[图](../images/tornado_first.png)
+![图](../images/tornado_first.png)
 
 #### 3.1 代码分析
 
