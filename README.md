@@ -341,7 +341,8 @@
 		- 路由: 路由匹配规则
 
 	 - [Tornado简介/入门](tornado/3.2.1-Tornado开发基础/tornado介绍与入门.md)
-	 - [Tornado请求与响应与错误处理](flask/3.1.1-flask开发基础/flask请求与响应与异常.md)
+	 - [Tornado请求与响应](tornado/3.2.1-Tornado开发基础/tornado请求与响应.md)
+	 - [Tornado路由规则/HTTP行为方法/切入点函数](tornado/3.2.1-Tornado开发基础/tornado路由与切入点函数.md)
 
 
    - [第二天: 进阶]
