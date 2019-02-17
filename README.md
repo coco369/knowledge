@@ -185,12 +185,12 @@
 
   - [第三天: 模板]
 
-	   - 基础模板的定义，模板的继承，挖坑以及填坑。宏定义
-	   - 模板中逻辑控制，过滤器，以及静态static的配置
-	   - 应用案例1: flask-wtf的form表单的使用
+	    - 基础模板的定义，模板的继承，挖坑以及填坑。宏定义
+	    - 模板中逻辑控制，过滤器，以及静态static的配置
+	    - 应用案例1: flask-wtf的form表单的使用
 
-	 - [flask模板](flask/3.1.3-flask模板/flask模板.md)
-	 - [flask表单](flask/3.1.3-flask模板/flask表单验证.md)
+	  - [flask模板](flask/3.1.3-flask模板/flask模板.md)
+	  - [flask表单](flask/3.1.3-flask模板/flask表单验证.md)
 
   - [第四天: 数据库]
   
