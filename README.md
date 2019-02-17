@@ -183,7 +183,7 @@
 	  - [应用案例2：flask-login登录校验](flask/3.1.2-flask视图/flask-login登录注册.md)
 	  - [flask模板](flask/3.1.2-flask视图/flask模板.md)
 
-  - [第三天]: 模板
+  - [第三天: 模板]
 
 	   - 基础模板的定义，模板的继承，挖坑以及填坑。宏定义
 	   - 模板中逻辑控制，过滤器，以及静态static的配置
