@@ -335,13 +335,13 @@
 ### Tornado知识库
 	
    - [第一天: 入门基础]
-   - 
+
 	    - Tornado配置：虚拟环境搭建和tornado的安装、最小tornado的web应用、启动命令端口配置等
 		- 请求与响应: 请求参数、响应参数等
 		- 路由: 路由匹配规则
 
-	  - [Tornado简介/入门](tornado/3.2.1-Tornado开发基础/tornado介绍与入门.md)
-	  - [Tornado请求与响应与错误处理](flask/3.1.1-flask开发基础/flask请求与响应与异常.md)
+	 - [Tornado简介/入门](tornado/3.2.1-Tornado开发基础/tornado介绍与入门.md)
+	 - [Tornado请求与响应与错误处理](flask/3.1.1-flask开发基础/flask请求与响应与异常.md)
 
 
    - [第二天: 进阶]
