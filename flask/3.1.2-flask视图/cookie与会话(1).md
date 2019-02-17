@@ -203,12 +203,12 @@ c）定义模板
 
 d）redis中数据
 
-![图](images/flask_session_keys.png)
+![图](../images/flask_session_keys.png)
 
 注意：我们在定义app.config的时候指定了SESSION_KEY_PREFIX为flask，表示存在session中的key都会加一个前缀名flask
 
 e) cookie和session的联系
 
-![图](images/flask_cookie_session.png)
+![图](../images/flask_cookie_session.png)
 
 访问者在第一次访问服务器时，服务器在其cookie中设置一个唯一的ID号——会话ID(session)。 这样，访问者后续对服务器的访问头中将自动包含该信息，服务器通过这个ID号，即可区 隔不同的访问者。然后根据不同的访问者来获取其中保存的value值信息。

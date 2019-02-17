@@ -21,7 +21,7 @@
 
 设置如下:
 
-![图](images/flask_mail.png)
+![图](../images/flask_mail.png)
 
 ### 2. 使用flask-mail库实现邮件发送功能
 
@@ -81,4 +81,4 @@
 
 ### 3. 网易163免费邮箱相关服务器信息如下：
 
-![图](images/flask_163_mail.png)
+![图](../images/flask_163_mail.png)
