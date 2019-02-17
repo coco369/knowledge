@@ -351,7 +351,7 @@
 		- 应用案例1: 开发websocket聊天系统
 		
 	 - [Tornado模板与静态资源加载](tornado/3.2.2-Tornado进阶/tornado模板资源.md)
-	 - [应用案例1: websocket](tornado/3.2.2-Tornado进阶/tornado-websocket.md)
+	 - [应用案例1: websocket聊天室](tornado/3.2.2-Tornado进阶/tornado-websocket.md)
 
    - [第三天: 项目]
 
