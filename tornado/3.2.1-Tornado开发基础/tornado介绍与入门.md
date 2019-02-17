@@ -105,8 +105,6 @@
 
 在虚拟环境tornadoenv中运行FirstTornado.py文件，然后在浏览器中访问http://127.0.0.1:8888/hello地址
 
-[图](../images/tornado_first.png)
-
 ### 4. 修改启动方式，使用命令行参数启动服务
 
 修改最简单的tornado程序,命名为helloTornado2.py。 如下:
