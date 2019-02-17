@@ -61,7 +61,7 @@ c) 获取POST请求中传递的参数，request.form
 
 在ImmutableMultiDict中获取数据的方式，dict['key']或者dict.get('key')或者dict.getlist('key')
 
-![图](images/flask_request_form.png)
+![图](../images/flask_request_form.png)
 
 
 ### 2. 响应Response
