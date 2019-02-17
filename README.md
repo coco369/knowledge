@@ -347,6 +347,7 @@
   - [第二天: 进阶]
 	      
 		- tornado静态资源与模板
+		- Tornado WebSocket网络协议: 保持浏览器与服务器之间的通信，并实现持久化连接，数据的双向传递等。 
 		- 应用案例1: 开发websocket聊天系统
 		
 	 - [Tornado模板与静态资源加载](tornado/3.2.2-Tornado进阶/tornado模板资源.md)
