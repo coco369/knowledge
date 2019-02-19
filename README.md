@@ -353,9 +353,11 @@
 	 - [Tornado模板与静态资源加载](tornado/3.2.2-Tornado进阶/tornado模板资源.md)
 	 - [应用案例1: websocket聊天室](tornado/3.2.2-Tornado进阶/tornado-websocket.md)
 
-   - [第三天: 项目]
-
-
+  - [第三天: 数据监控后台项目]
+  
+		- 数据监控项目: 前端页面采用echarts展示图像报表、后端采用tornado进行数据实时更新
+				
+ 	 - [Tornado数据监控后台项目](tornado/3.2.3-Tornado项目/tornado数据监控后台项目.md)
 
 ### 数据分析
 
