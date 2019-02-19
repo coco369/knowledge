@@ -381,6 +381,6 @@
 
   - [第一天: 入门]
 
-	    - Vue配置
+	    - Vue配置: node.js安装、cnpm的安装、vue的安装、vue项目的创建以及项目的启动
 
 	 - [Vue配置与启动](vue/vue入门基础/vue入门基础.md)
