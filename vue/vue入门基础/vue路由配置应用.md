@@ -106,7 +106,7 @@
 		}
 	</script>
 
-在<template>标签中定义解析<p>标签，p标签中的值在<script>中进行定义。
+在template标签中定义解析p标签，p标签中的值在script中进行定义。
 
 
 
