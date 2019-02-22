@@ -383,6 +383,10 @@
 
 	    - Vue配置: node.js安装、cnpm的安装、vue的安装、vue项目的创建以及项目的启动
 	    - Vue组件: 新增组件，修改启动页面的展示效果
+	    - 应用案例1: 路由配置与点击链接渲染页面
 
 	 - [Vue配置与启动](vue/vue入门基础/vue入门基础.md)
 	 - [自定义组件](vue/vue入门基础/vue第一个组件.md)
+	 - [路由router-link](vue/vue入门基础/vue路由.md)
+	 
+	 - [应用案例1: 路由点击事件](vue/vue入门基础/vue路由配置应用.md)
