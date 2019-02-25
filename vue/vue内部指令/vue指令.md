@@ -222,4 +222,25 @@ v-bind是处理HTML中的标签属性的，例如img标签，绑定src属性，�
 	        }
 	})
 
-### 6. 
+### 6. v-model指令
+
+v-model指令: 绑定数据源。 就是把数据绑定在特定的表单元素上，可以很容易的实现双向数据绑定。
+
+	<!-- 双向数据绑定 v-model -->
+    <p>
+      <input type="text" v-model="detail">
+    </p>
+    <p>{{detail}}</p>
+
+
+	<script>
+	export default {
+	  data () {
+	    return {
+	      detail: 'hello qianfeng'
+	    }
+	  }
+	}
+	</script>
+
+![图](../images/vue_v_model.png)
