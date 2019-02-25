@@ -84,8 +84,8 @@ v-for指令是循环渲染一组data中的数组，v-for 指令需要以 item in
 	      {{key}}-{{value}}
 	    </li>
 	
-	    <li v-for="(value, key, index) in objs">
-	      {{index}}-{{value}}-{{key}}
+	    <li v-for="(key, value, index) in objs">
+	      {{index}}-{{key}}-{{value}}
 	    </li>
 	  </div>
 	</template>
@@ -106,5 +106,120 @@ v-for指令是循环渲染一组data中的数组，v-for 指令需要以 item in
 	}
 	</script>
 
-### 5. 
+<b>注意</b> : 使用v-for指令进行循环获取数据，如objs变量，通过v-for="(key, value, index) in objs"进行取值，key为objs中的value值，value为objs中的key值，index为循环的序号(从1开始)
 
+### 5. v-on 绑定事件监听器
+
+v-on指令监听DOM事件来触发一些javascript代码。
+
+如下: 定义两个点击事件，并触发弹窗
+	
+	<template>
+	  <div>
+		// 打印score变量的值
+	    {{ score }}
+	    <!-- v-on指令 -->
+
+	    <p v-on:click="show()"> 今天天气如何? </p>
+	    <p @click="showContent()">千锋教育怎么样？</p>
+	
+	  </div>
+	</template>
+	
+	<script>
+	export default {
+	  data () {
+	    return {
+	      title: 'v-on绑定点击事件',
+	      score: '0'
+	    }
+	  },
+	  methods: {
+	    show: function () {
+	      // score变量自增1
+	      this.score++
+	      alert('今天天气棒棒哒')
+	    },
+	    showContent: function () {
+	      // score变量自减1
+	      this.score--
+	      alert('好好好')
+	    }
+	  }
+	}
+
+使用<b>v-on:click="点击调用函数"</b>或者<b>@click="点击调用函数"</b>的形式进行绑定点击事件，点击事件的定义在methods中定义。
+
+### 5. v-bind 绑定属性
+
+
+v-bind是处理HTML中的标签属性的，例如img标签，绑定src属性，进行动态赋值。
+
+在标签template中定义如下的内容，使用v-bind进行属性的绑定:
+
+    <!-- 属性绑定 v-bind -->
+    <p v-bind:class="color">
+      点我可以变换颜色哦，这是真的!
+    </p>
+    <p :class="color"> 简写方式 </p>
+
+<b>注意:</b> 使用v-bind给标签绑定class属性，在页面中查看源码，可发现源码为: <p class="color">
+
+
+如下:绑定src属性
+
+	<div>
+	    <img v-bind:src="imgSrc"  width="200px">
+	</div>
+
+默认样式color的定义和imgSrc的定义如下:
+
+	export default {
+	  data () {
+	    return {
+		  imgSrc='图片的地址',
+	      color: 'blue'
+	    }
+	  }
+	}
+
+<b> 重点: 绑定CSS样式</b>
+
+在工作中我们经常使用v-bind来绑定css样式：
+	
+在绑定CSS样式是，绑定的值必须在vue中的data属性中进行声明。 
+
+1、直接绑定class样式
+	
+	<div :class="className">1、绑定classA</div>
+
+2、绑定classA并进行判断，在isOK为true时显示样式，在isOk为false时不显示样式。
+	
+	<div :class="{classA:isOk}">2、绑定class中的判断</div>
+
+3、绑定class中的数组
+	
+	<div :class="[classA,classB]">3、绑定class中的数组</div>
+
+4、绑定class中使用三元表达式判断
+	
+	<div :class="isOk?classA:classB">4、绑定class中的三元表达式判断</div>
+
+5、绑定style
+	
+	<div :style="{color:red,fontSize:font}">5、绑定style</div>
+
+6、用对象绑定style样式
+	
+	<div :style="styleObject">6、用对象绑定style样式</div>
+	var app=new Vue({
+	   el:'#app',
+	   data:{
+	       styleObject:{
+	           fontSize:'24px',
+	           color:'green'
+	            }
+	        }
+	})
+
+### 6. 
