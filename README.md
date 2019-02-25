@@ -390,3 +390,10 @@
 	 - [路由router-link](vue/vue入门基础/vue路由.md)
 	 
 	 - [应用案例1: 路由点击事件](vue/vue入门基础/vue路由配置应用.md)
+
+  - [第二天: 内部指令]
+	    
+        - Vue内部指令: v-text、v-html、v-if、v-else、v-show
+        
+     - [Vue指令](vue/vue内部指令/vue指令.md)
+
