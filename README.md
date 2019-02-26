@@ -388,12 +388,15 @@
 	 - [Vue配置与启动](vue/vue入门基础/vue入门基础.md)
 	 - [自定义组件](vue/vue入门基础/vue第一个组件.md)
 	 - [路由router-link](vue/vue入门基础/vue路由.md)
-	 
 	 - [应用案例1: 路由点击事件](vue/vue入门基础/vue路由配置应用.md)
 
-  - [第二天: 内部指令]
+  - [第二天: 内部指令与API]
 	    
-        - Vue内部指令: v-text、v-html、v-if、v-else、v-show、v-model、v-bind、v-on
+        - Vue内部指令: v-text、v-html、v-if、v-else、v-show、v-model、v-bind、v-on等
+        - Vue的全局操作、生命周期
+        - [应用案例1]: 外部数据的引入，点击按钮修改页面数据
         
      - [Vue指令](vue/vue内部指令/vue指令.md)
+     - [Vue全局操作与生命周期](vue/vue内部指令/vue全局操作与生命周期.md)
+	 - [应用案例1: 数据引入与属性修改](vue/vue内部指令/vue数据引入与属性修改.md)
 
