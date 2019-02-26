@@ -393,7 +393,7 @@
 
   - [第二天: 内部指令]
 	    
-        - Vue内部指令: v-text、v-html、v-if、v-else、v-show
+        - Vue内部指令: v-text、v-html、v-if、v-else、v-show、v-model、v-bind、v-on
         
      - [Vue指令](vue/vue内部指令/vue指令.md)
 

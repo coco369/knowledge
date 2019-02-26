@@ -243,4 +243,28 @@ v-model指令: 绑定数据源。 就是把数据绑定在特定的表单元素�
 	}
 	</script>
 
+如下图效果:
+
 ![图](../images/vue_v_model.png)
+
+### 7. v-html/v-text
+
+在vue文件中解析输出data中的变量时，使用{{ 变量名 }}的形式。 但这种情况是有弊端的，就是当我们网速很慢或者javascript出错时，会暴露我们的{{ 变量名 }}。Vue给我们提供的v-text,就是解决这个问题的。而v-html可以渲染输出真正的HTML，如h2标签。需要注意的是：在生产环境中动态渲染HTML是非常危险的，因为容易导致XSS攻击。所以只能在可信的内容上使用v-html，永远不要在用户提交和可操作的网页上使用。
+
+    <div>
+      <span>{{ message }}</span>=<span v-text="message"></span><br/>
+      <span v-html="msgHtml"></span>
+    </div>
+
+	<script>
+	export default {
+	  data () {
+	    return {
+	      message: 'hello Vue!',
+	      msgHtml: '<h2>hello Vue!</h2>'
+	    }
+	  }
+	}
+	</script>
+
+总结: v-text只能解析变量内容，而v-html可以解析内容中带有的标签属性。
