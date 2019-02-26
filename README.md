@@ -394,9 +394,10 @@
 	    
         - Vue内部指令: v-text、v-html、v-if、v-else、v-show、v-model、v-bind、v-on等
         - Vue的全局操作、生命周期
-        - [应用案例1]: 外部数据的引入，点击按钮修改页面数据
+        - 应用案例1: 外部数据的引入，点击按钮修改页面数据
         
      - [Vue指令](vue/vue内部指令/vue指令.md)
-     - [Vue全局操作与生命周期](vue/vue内部指令/vue全局操作与生命周期.md)
+     - [Vue生命周期](vue/vue内部指令/vue生命周期.md)
 	 - [应用案例1: 数据引入与属性修改](vue/vue内部指令/vue数据引入与属性修改.md)
 
+  - [第三天:]
