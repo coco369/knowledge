@@ -346,11 +346,13 @@
 
   - [第二天: 进阶]
 	      
-		- tornado静态资源与模板
+		- tornado静态资源与模板: 模型的继承与模板语法、静态资源的加载static_url等
+		- 数据库: sqlalchemy的安装、模型定义、模型迁移等
 		- Tornado WebSocket网络协议: 保持浏览器与服务器之间的通信，并实现持久化连接，数据的双向传递等。 
 		- 应用案例1: 开发websocket聊天系统
 		
 	 - [Tornado模板与静态资源加载](tornado/3.2.2-Tornado进阶/tornado模板资源.md)
+	 - [Tornado模型](tornado/3.2.2-Tornado进阶/tornado数据库.md)
 	 - [应用案例1: websocket聊天室](tornado/3.2.2-Tornado进阶/tornado-websocket.md)
 
   - [第三天: 数据监控后台项目]
@@ -393,10 +395,13 @@
   - [第二天: 内部指令与API]
 	    
         - Vue内部指令: v-text、v-html、v-if、v-else、v-show、v-model、v-bind、v-on等
+        - Vue计算computed、监听watch
+        - Vue父组件与子组件之间传递参数
         - Vue的全局操作、生命周期
         - 应用案例1: 外部数据的引入，点击按钮修改页面数据
         
      - [Vue指令](vue/vue内部指令/vue指令.md)
+     - [Vue重要选项](vue/vue内部指令/vue重要选项.md)
      - [Vue生命周期](vue/vue内部指令/vue生命周期.md)
 	 - [应用案例1: 数据引入与属性修改](vue/vue内部指令/vue数据引入与属性修改.md)
 

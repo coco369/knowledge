@@ -47,7 +47,7 @@
 	</template>
 	
 	<script>
-
+	
 	var outData = {
 	  score: '0'
 	}
@@ -111,7 +111,7 @@
 	    add: function () {
 	      // score变量自增1
 	      // this.arr[1]++
-      	  // outData.arr[1]++
+	  	  // outData.arr[1]++
 	      Vue.set(outData.arr, 0, 10)
 	      alert('实现加一功能')
 	    },
@@ -132,6 +132,6 @@
 因此Vue.set的存在原因如下:
 
 	由于Javascript的限制，Vue不能自动检测以下变动的数组。
-
+	
 		当你利用索引直接设置一个项时，vue不会为我们自动更新。
 		当你修改数组的长度时，vue不会为我们自动更新。
