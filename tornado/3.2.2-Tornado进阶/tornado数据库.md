@@ -13,6 +13,8 @@
 
 在Web开发中，数据的存储与读取都离不开数据库的支持，本章中将使用MySQL作为数据库，并使用pymysql驱动来连接Mysql。当然还有很多数据库可以用于Web开发的数据存储，比如Redis，MongoDB。且开发中常用ORM（Object Relational Mapping）对象关系映射将数据库中表和面向对象语言中的模型类建议一种对应关系，至此实现操作模型以达到操作数据库中表信息的目的。
 
+[代码地址](数据库)
+
 ### 1. 数据库配置
 
 SQLALchemy为最成熟最常用的ORM工具之一，因此使用SQLALchemy框架。
