@@ -349,17 +349,27 @@
 		- tornado静态资源与模板: 模型的继承与模板语法、静态资源的加载static_url等
 		- 数据库: sqlalchemy的安装、模型定义、模型迁移等
 		- Tornado WebSocket网络协议: 保持浏览器与服务器之间的通信，并实现持久化连接，数据的双向传递等。 
-		- 应用案例1: 开发websocket聊天系统
+		
 		
 	 - [Tornado模板与静态资源加载](tornado/3.2.2-Tornado进阶/tornado模板资源.md)
 	 - [Tornado模型](tornado/3.2.2-Tornado进阶/tornado数据库.md)
-	 - [应用案例1: websocket聊天室](tornado/3.2.2-Tornado进阶/tornado-websocket.md)
+	 
+
+  - [第三天: 进阶2]
+ 		
+		- tornado跨站请求伪造XSRF
+  		- 应用案例1: 开发websocket聊天系统
+		
+	 - [Tornado跨站请求伪造](tornado/3.2.3-Tornado进阶2/tornado跨站请求.md)
+	 - [应用案例1: websocket聊天室](tornado/3.2.3-Tornado进阶2/tornado-websocket.md)
+ 	 
 
   - [第三天: 数据监控后台项目]
-  
-		- 数据监控项目: 前端页面采用echarts展示图像报表、后端采用tornado进行数据实时更新
-				
- 	 - [Tornado数据监控后台项目](tornado/3.2.3-Tornado项目/tornado数据监控后台项目.md)
+
+	    - 数据监控项目: 前端页面采用echarts展示图像报表、后端采用tornado进行数据实时更新
+
+	 - [Tornado数据监控后台项目](tornado/3.2.3-Tornado进阶2/tornado数据监控后台项目.md)
+
 
 ### 机器学习
 
