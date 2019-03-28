@@ -110,3 +110,30 @@ axios封装了post方法，post方法可以接收请求参数，请求参数定�
 	  }
 	}
 	</script>
+
+### 5. axios经典写法
+
+axios的经典写法，post请求格式为: <b>this.axios({method: 'post',url: url，data: params}).then(res => {}).catch(err => {})</b>
+
+	<script>
+		export default {
+		
+		  mounted: function () {
+		    var url = 'http://127.0.0.1:8000/api/article/article/'
+		    var params = {
+		      title: '121322',
+		      desc: '321'
+		    }
+		    this.axios({
+		      method: 'post',
+		      url: url,
+		      data: params
+		    }).then(res => {
+		      console.log('成功')
+		    }).catch(err => {
+		      console.log('失败')
+		    })
+		  }
+		}
+	</script>
+
