@@ -406,24 +406,26 @@
 
 	    - Vue配置: node.js安装、cnpm的安装、vue的安装、vue项目的创建以及项目的启动
 	    - Vue组件: 新增组件，修改启动页面的展示效果
+	    - Vue内部指令: v-text、v-html、v-if、v-else、v-show、v-model、v-bind、v-on等
+        - Vue计算computed、监听watch
 	    - 应用案例1: 路由配置与点击链接渲染页面
+	    - 应用案例2: 外部数据的引入，点击按钮修改页面数据
 
 	 - [Vue配置与启动](vue/vue入门基础/vue入门基础.md)
 	 - [自定义组件](vue/vue入门基础/vue第一个组件.md)
 	 - [路由router-link](vue/vue入门基础/vue路由.md)
+	 - [Vue指令](vue/vue入门基础/vue指令.md)
+     - [Vue重要选项](vue/vue入门基础/vue重要选项.md)
 	 - [应用案例1: 路由点击事件](vue/vue入门基础/vue路由配置应用.md)
+	 - [应用案例2: 数据引入与属性修改](vue/vue入门基础/vue数据引入与属性修改.md)
 
   - [第二天: 内部指令与API]
 	    
-        - Vue内部指令: v-text、v-html、v-if、v-else、v-show、v-model、v-bind、v-on等
-        - Vue计算computed、监听watch
+        
         - Vue父组件与子组件之间传递参数
         - Vue的全局操作、生命周期
-        - 应用案例1: 外部数据的引入，点击按钮修改页面数据
         
-     - [Vue指令](vue/vue内部指令/vue指令.md)
-     - [Vue重要选项](vue/vue内部指令/vue重要选项.md)
      - [Vue生命周期](vue/vue内部指令/vue生命周期.md)
-	 - [应用案例1: 数据引入与属性修改](vue/vue内部指令/vue数据引入与属性修改.md)
+	 
 
   - [第三天:]
