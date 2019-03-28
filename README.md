@@ -419,13 +419,12 @@
 	 - [应用案例1: 路由点击事件](vue/vue入门基础/vue路由配置应用.md)
 	 - [应用案例2: 数据引入与属性修改](vue/vue入门基础/vue数据引入与属性修改.md)
 
-  - [第二天: 内部指令与API]
+  - [第二天: 提升]
 	    
-        
-        - Vue父组件与子组件之间传递参数
         - Vue的全局操作、生命周期
+        - Vue中axios的使用
         
-     - [Vue生命周期](vue/vue内部指令/vue生命周期.md)
+     - [Vue生命周期](vue/vue提升/vue生命周期.md)
+     - [Vue的axios使用](vue/vue提升/vue的axios使用.md)
 	 
 
-  - [第三天:]
