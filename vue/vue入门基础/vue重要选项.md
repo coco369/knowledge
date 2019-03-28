@@ -49,6 +49,29 @@ computed计算属性: 可以像绑定普通属性一样在模板中绑定计算�
 
 ### 2. watch监听
 
+watch监听属性: 监听参数
+
+案例1: 监听当前页面中路由地址的变化
+
+	export default {
+	watch: {
+	    $route (to, from) {
+	      console.log(to)
+	      console.log(from)
+	    }
+	  }
+	}
+
+案例2: 监听页面中msg变量的值的变化
+
+	export default {
+	  watch: {
+	    msg (val, oldval) {
+	      console.log(val)
+	      console.log(oldval)
+	    }
+	  }
+	}
 
 ### 3. 父组件给子组件传值
 
