@@ -39,10 +39,10 @@
         - 项目创建: 创建Django工程目录，创建应用app，使用admin管理后台
         - admin管理后台：超级用户的创建，模型注册，模型中数据展示(list_display)、搜索(search_field)、过滤(list_filter)等
 
-      - [django概念介绍](django/1.1django_pattern.md)
-      - [virtualenv环境](django/1.2python_virtualenv.md)
-      - [创建django项目](django/1.3django_halloWorld.md)
-      - [admin管理](django/1.4django_admin.md)
+      - [django概念介绍](django/1.Django基础入门/1.django概念.md)
+      - [virtualenv环境](django/1.Django基础入门/2.virtualenv虚拟环境.md)
+      - [创建django项目](django/1.Django基础入门/3.django简单项目.md)
+      - [admin管理](django/1.Django基础入门/4.django管理后台.md)
 
   - [第二天:模型]
 
@@ -54,8 +54,8 @@
         - 数据的创建：create()，对象save()，初始化模型再save()
         - 数据的更新：update()，对象save()
         - 数据的删除：delete()
-      - [模型设计](django/2.1django_models.md)
-      - [数据的CRUD练习](django/2.2django_mysql_lianxi.md)
+      - [模型设计](django/2.Django模型/1.django模型定义.md)
+      - [数据的CRUD练习](django/2.Django模型/2.django数据的CRUD练习.md)
 
   - [第三天:模型加餐/模板]
 
@@ -67,8 +67,8 @@
         - 模板4：模板中注解，注解代码的可见与不可见，三种注解的区别
         - 模板5：模板中定义修饰变量的过滤器，使用管道符‘|’，以及Django中过滤器的自定义
           
-      - [模型关联设计](django/3.1django_model_more.md)
-      - [模板](django/3.2django_temp.md)
+      - [模型关联设计](django/2.Django模型/3.django模型关联关系.md)
+      - [模板](django/3.Django模板与路由/1.django模板.md)
 
   - [第四天:视图1]
 
@@ -77,7 +77,7 @@
         - Django中DEBUG为False和True的区别,以及当DEBUG为False时，静态文件解析与错误(403、404、500)视图的定义
         - 请求与响应：请求中属性和方法，响应中属性和方法
 
-      - [路由/反向解析](django/4.1django_urls.md)
+      - [路由/反向解析](django/3.Django模板与路由/2.django路由.md)
 
   - [第五天:视图2]
 
@@ -88,9 +88,9 @@
         - session的使用：如何使用session，删除session，session中数据存储的时效。在Django中如何配置session，数据库中django_session表的使用
         - 案例1：cookie和session实现的原理
        
-      - [cookies/session](django/5.1django_coo_sess.md)
-      - [登录/注册--自己实现](django/5.2django_regist_login.md)
-      - [登录/注册--django实现](django/5.3django_regist_login.md)
+      - [cookies/session](django/4.Django会话/1.cookie与session.md)
+      - [登录/注册--自己实现](django/4.Django会话/2.django注册登录(1).md)
+      - [登录/注册--django实现](django/4.Django会话/3.django注册登录(2).md)
 
   - [第六天:插件]
 
@@ -98,11 +98,13 @@
         - 数据分页：掌握Paginator分页的工作原理，实现分页的方式
         - 定义模型中上传文件字段，安装Pillow，定义上传文件的media路径，定义页面中如何解析media中上传图片
         - 中间件案例1： 实现登录注册功能
+        - 上传文件与解析案例2: 实现文件上传功能
      
-      - [验证码/分页](django/6.1django_plug.md)
-      - [中间件](django/中间件.md)
-      - [文件上传](django/6.2django_media.md)
-      - [表单form](django/form表单.md)
+      - [验证码/分页](django/6.Django分页与权限/1.django分页.md)
+      - [中间件](django/5.Django中间件与表单与文件上传/1.django中间件.md)
+      - [文件上传](django/5.Django中间件与表单与文件上传/2.django文件上传.md)
+      - [表单form](django/5.Django中间件与表单与文件上传/3.djangoform表单.md)
+      - [文件上传练习](django/5.Django中间件与表单与文件上传/4.django文件上传练习.md)
 
   - [第七天:权限、角色]
 
@@ -111,23 +113,25 @@
           - 权限装饰器: permission_reqired('应用app.权限名')
           - 菜单控制：通过全局perms变量进行权限和菜单的控制
 
-       - [权限系统](django/8.1django权限控制.md)
+       - [权限系统](django/6.Django分页与权限/2.django权限控制.md)
 
   - [第八天:日志/restful]
 
           - setting.py中日志logging文件的配置，logging的四大组成，loggers，handlers，filters，formatters的处理流程，以及日志打印
-          - 架构设计指导原则，rest的核心定义，如何定义符合规范的api接口。资源、请求、状态码的理解。
-          - Django中restframework安装，settings.py中的定义，以及如何定义对资源的CRUD操作
           
-      - [日志](django/7.1django日志.md)
-      - [restful1](django/7.2django_restful.md)
+      - [日志](django/7.Django日志与celery/1.django日志.md)
+      - [celery](django/7.Django日志与celery/2.django_celery.md)
+      
 
   - [第九天:restframework2]
-
+ 
+		 - 架构设计指导原则，rest的核心定义，如何定义符合规范的api接口。资源、请求、状态码的理解。
+         - Django中restframework安装，settings.py中的定义，以及如何定义对资源的CRUD操作
          - 重构api响应结构，api中异常响应结构重构与定义
          - 定义序列化serializer，验证每一个字段的错误信息，配置参数等
          
-       - [响应结构/ajax-CRUD](django/9.1django_restful3.md)
+       - [restful概念](django/8.Django的DRF/1.restful概念.md)
+       - [响应结构/ajax-CRUD](django/8.Django的DRF/2.rest响应重构与mixins父类.md)
 
   - [第十天:restframework3]
 
@@ -135,24 +139,33 @@
 		 - 调用postman实现通过api对数据进行CRUD操作
          - 总结drf中的视图、序列化器、过滤器等
 
-      - [分页/过滤/筛选](django/10.1django_restful4.md)
-      - [总结](django/djangorestframework总结.md)
+      - [分页/过滤/筛选](django/8.Django的DRF/3.rest过滤分页筛选.md)
+      - [总结](django/8.Django的DRF/4.djangorestframework总结.md)
 
-  - [第十一天到十五天：项目]
+  - [第十一天到十五天：项目(后端渲染页面)]
       - [爱鲜蜂案例2班](https://github.com/coco369/axf)
-        - [爱鲜蜂案例3班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1803/1.django/day09/%E4%BB%A3%E7%A0%81/axf)
-        - [爱鲜蜂案例4班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1804/1.django/day14/%E4%BB%A3%E7%A0%81/axf4)
-        - [天天生鲜案例5班]
-      	  - [前台代码](https://github.com/coco369/django-teaching-15days/tree/master/qf_1805/1.django/day15/%E4%BB%A3%E7%A0%81/fresh_shop)
-      	  - [后台代码](https://github.com/coco369/django-teaching-15days/tree/master/qf_1805/1.django/day15/%E4%BB%A3%E7%A0%81/fresh_shop_back)
-
+      - [爱鲜蜂案例3班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1803/1.django/day09/%E4%BB%A3%E7%A0%81/axf)
+      - [爱鲜蜂案例4班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1804/1.django/day14/%E4%BB%A3%E7%A0%81/axf4)
+      - [天天生鲜案例5班]
+      	 - [前台代码](https://github.com/coco369/django-teaching-15days/tree/master/qf_1805/1.django/day15/%E4%BB%A3%E7%A0%81/fresh_shop)
+      	 - [后台代码](https://github.com/coco369/django-teaching-15days/tree/master/qf_1805/1.django/day15/%E4%BB%A3%E7%A0%81/fresh_shop_back)
+	
+  - [第十一天到十五天: 项目(前后分离渲染)]
+	
+	     - 前端vue框架
+	     - 后端drf框架
+	   - [vue框架源代码地址](https://github.com/coco369/m_axf)
+	   - [开发前技术准备](django/项目技术准备/准备.md)
+	   - [drf框架后端源代码1809班]()
+	
+- []
   - [部署]
       - [centos7部署项目](部署/centos部署.md)
-        - [ubuntu部署项目](部署/ubuntu部署.md)
+      - [ubuntu部署项目](部署/ubuntu部署.md)
 
   - [拓展]
-      - [调试工具](django/debug的安装与使用.md)
-        - [kindeditor富文本编辑器](django/6.3kindeditor富文本编辑器.md)
+      - [调试工具](django/9.Django扩展/1.debug的安装与使用.md)
+      - [kindeditor富文本编辑器](django/9.Django扩展/2.kindeditor富文本编辑器.md)
 
 ### Flask知识库
 
@@ -428,4 +441,3 @@
      - [Vue生命周期](vue/vue提升/vue生命周期.md)
      - [Vue的axios使用](vue/vue提升/vue的axios使用.md)
 	 - [Django后端的跨域配置](vue/vue提升/vue跨域.md)
-
