@@ -2,11 +2,15 @@
 知识库，总结在项目中实际使用的git命令，docker部署，mongodb，mysql等知识点
 
 ### git知识库
+
   - [git安装以及设置](git/git1.md)
   - [git的基本命令](git/git2.md)
 ### docker知识库
+
   - [基础](docker/docker.md)
+
 ### mysql数据库知识库
+
   - [第一天:基础]
       - [Mysql数据库基础语法](sql/mysql.md)
   - [第二天:提升练习]
@@ -15,14 +19,20 @@
   - [第三天:mysql与python交互]
       - [交互](sql/mysql3.md)
 ### redis知识库
+
   - [第一天:安装/基础]
       - [redis安装以及基础语法](sql/redis.md)
   - [第二天:订阅]
 	  - [订阅](sql/redis1.md)
 
 ### mongodb知识库
+
   - [安装及配置](sql/mongodb.md)
   - [基础语法](sql/mongodb语法.md)
+
+### celery知识库
+
+  - [安装配置与简单案例](celery/1.celery入门基础/1.安装配置与简单案例.md)
 
 ### PEP 8风格指南
 
