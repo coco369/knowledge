@@ -42,6 +42,16 @@
 	
 	Vue.use(VueAxios, axios)
 
+	
+如果需配置全局axios访问的路由前缀，可以配置如下内容:
+
+	import axios from 'axios'
+	const ajax = axios.create({
+	  baseURL: 'http://127.0.0.1:8000'
+	})
+	Vue.config.productionTip = false
+	Vue.prototype.axios = ajax
+
 ### 3. axios.get()方法 
 
 #### 3.1 无参情况
