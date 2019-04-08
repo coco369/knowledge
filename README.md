@@ -446,7 +446,10 @@
         - Vue的全局操作、生命周期
         - Vue中axios的使用
         - Vue的Django进行前后交互中的跨域解决问题
+        - Vue部署
         
      - [Vue生命周期](vue/vue提升/vue生命周期.md)
      - [Vue的axios使用](vue/vue提升/vue的axios使用.md)
 	 - [Django后端的跨域配置](vue/vue提升/vue跨域.md)
+	 - [Vue部署](vue/vue部署/部署.md)
+	
