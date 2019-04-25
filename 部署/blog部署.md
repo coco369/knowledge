@@ -116,6 +116,29 @@ Ubuntu的图形界面固然漂亮，但这也决定了它较佳的应用领域�
 	ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
 
 
+#### 3. 创建虚拟环境
+
+由于Ubuntu下有多个Python版本，因此虚拟环境将采用virtualenv进行创建、或者python3的venv模块
+
+1）使用virtualenv进行虚拟环境的创建
+	
+	# 安装pip3
+	apt install python3-pip
+
+	# 创建python3版本对应的virtualenv
+	pip3 install virtualenv
+
+	# 创建虚拟环境blogenv
+	virtualenv --no-site-packages blognev
+
+2）使用python3 venv模块进行虚拟环境的创建
+	
+	# 安装venv模块
+	aptinstall python3-venv
+	
+	# 创建虚拟环境
+	python3 -m venv blognenv2
+
 #### 3. 使用nginx+uwsgi配置django项目
 
 1. 安装nginx
@@ -162,7 +185,7 @@ Ubuntu的图形界面固然漂亮，但这也决定了它较佳的应用领域�
 	}
 
 
-6. 配置uwsgi，名称为uwsgi.ini
+6.配置uwsgi，名称为uwsgi.ini
 
 	[uwsgi]
 	master=true
@@ -175,3 +198,6 @@ Ubuntu的图形界面固然漂亮，但这也决定了它较佳的应用领域�
 
 
 正式线上启动方式： uwsgi --ini uwsgi.ini
+
+
+<b>注意: 如果服务器中需要使用git版本控制，则使用apt install git进行安装即可</b>
