@@ -55,11 +55,11 @@ ajnginx.conf内容如下：
 	    error_log /home/logs/error.log;
 
 	    location / {
-		include uwsgi_params;
+			include uwsgi_params;
 	        uwsgi_pass 127.0.0.1:8891;
 
-		uwsgi_param UWSGI_CHDIR /home/src/aj;
-		uwsgi_param UWSGI_SCRIPT manage:app;
+			uwsgi_param UWSGI_CHDIR /home/src/aj;
+			uwsgi_param UWSGI_SCRIPT manage:app;
 	    }    
 	}
 
