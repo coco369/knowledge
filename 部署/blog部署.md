@@ -54,16 +54,16 @@ Ubuntu的图形界面固然漂亮，但这也决定了它较佳的应用领域�
 	修改mysqld.conf 将bind_address注释
 
 
-	# 先使用数据库
+	先使用数据库
 	use mysql;
 
-	#全部
-	 create user 'root'@'%' identified by 'password';
+	全部
+	create user 'root'@'%' identified by 'password';
 
-	# 给用户最大权限
+	给用户最大权限
 	grant all privileges on *.* to 'root'@'%' identified by 'password';
 	
-	# 刷新权限表
+	刷新权限表
  	flush privileges;
 
 
