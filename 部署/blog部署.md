@@ -46,24 +46,22 @@ Ubuntu的图形界面固然漂亮，但这也决定了它较佳的应用领域�
 
 	> quit;
 
-2) 修改远程访问
+2)修改远程访问
 
-
+	# 修改配置参数
 	cd /etc/mysql/mysql.conf.d
-
 	修改mysqld.conf 将bind_address注释
 
-
-	先使用数据库
+	# 先使用数据库
 	use mysql;
 
-	全部
+	# 创建root账号
 	create user 'root'@'%' identified by 'password';
 
-	给用户最大权限
+	# 给用户最大权限
 	grant all privileges on *.* to 'root'@'%' identified by 'password';
 	
-	刷新权限表
+	# 刷新权限表
  	flush privileges;
 
 
