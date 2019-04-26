@@ -66,7 +66,22 @@ curl -ssl https://get.docker.com/ | sh
 ```
 
 ***
+### 1.1 CentOS7中安装docker
+
+#### 安装docker
+
+```
+yum -y install docker-io
+
+yum list installed | grep docker
+```
+#### 启动docker
+
+```
+systemctl restart docker
+```
 ### 2. 制作镜像
+
 #### 1）运行交互式容器
 
 ```
