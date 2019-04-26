@@ -135,7 +135,13 @@ docker start 容器id/容器名
 docker rm 容器id/容器名
 ```
 
-#### 6）删除镜像
+#### 6）退出容器但不关闭容器
+
+```
+control+p+q键一起按
+```
+
+#### 7）删除镜像
 
 ```
 docker rmi 镜像id/镜像名
