@@ -7,7 +7,8 @@
   - [git的基本命令](git/git2.md)
 ### docker知识库
 
-  - [基础](docker/docker.md)
+  - [基础操作命令](docker/docker.md)
+  - [使用](docker/docker的使用.md)
 
 ### mysql数据库知识库
 
@@ -97,7 +98,7 @@
         - cookie的使用：如何设置cookie，删除cookie，如何设置失效
         - session的使用：如何使用session，删除session，session中数据存储的时效。在Django中如何配置session，数据库中django_session表的使用
         - 案例1：cookie和session实现的原理
-       
+      
       - [cookies/session](django/4.Django会话/1.cookie与session.md)
       - [登录/注册--自己实现](django/4.Django会话/2.django注册登录(1).md)
       - [登录/注册--django实现](django/4.Django会话/3.django注册登录(2).md)
@@ -109,7 +110,7 @@
         - 定义模型中上传文件字段，安装Pillow，定义上传文件的media路径，定义页面中如何解析media中上传图片
         - 中间件案例1： 实现登录注册功能
         - 上传文件与解析案例2: 实现文件上传功能
-     
+         
       - [验证码/分页](django/6.Django分页与权限/1.django分页.md)
       - [中间件](django/5.Django中间件与表单与文件上传/1.django中间件.md)
       - [文件上传](django/5.Django中间件与表单与文件上传/2.django文件上传.md)
@@ -128,13 +129,13 @@
   - [第八天:日志/restful]
 
           - setting.py中日志logging文件的配置，logging的四大组成，loggers，handlers，filters，formatters的处理流程，以及日志打印
-          
+        
       - [日志](django/7.Django日志与celery/1.django日志.md)
       - [celery](django/7.Django日志与celery/2.django_celery.md)
-      
+
 
   - [第九天:restframework2]
- 
+
 		 - 架构设计指导原则，rest的核心定义，如何定义符合规范的api接口。资源、请求、状态码的理解。
          - Django中restframework安装，settings.py中的定义，以及如何定义对资源的CRUD操作
          - 重构api响应结构，api中异常响应结构重构与定义
@@ -235,7 +236,7 @@
         - 应用案例1: 登录、注册、登录验证
         - 应用案例2: 邮件发送
         - 应用案例3: 文件上传
-       
+      
 	  - [钩子函数](flask/3.1.5-flask配置/flask中g对象和钩子.md)
 	  - [文件上传](flask/3.1.5-flask配置/flask文件上传.md)
 	  - [拓展](flask/3.1.5-flask配置/flask拓展.md)
@@ -280,7 +281,7 @@
      	- xpath语法、re正则表达式语法
      	- 应用案例1：获取豆瓣电影中动态加载电影资源信息
      	- 应用案例2:爬取知乎发现里面的提问的链接数，和链接地址
-       
+       ​       
 	  - [采集(bs4)](spider/2数据采集bs.md)
 	  - [采集(requests)](spider/2数据采集requests.md)
       - [提取xpath/re](spider/2.2spider_re_xpath.md)
@@ -293,7 +294,7 @@
         - 进程、线程概念：多线程定义，守护线程，线程启动
         - 线程锁
         - 应用案例1：I/O密集型，计算密集型的单线程多线程对比
-           
+        
       - [并发、并行、同步、异步线程、进程](spider/3.0spider_process_threading.md)
       - [线程锁](spider/3.1spider_threading_lock.md)
       - [应用案例1:计算密集型和IO密集型的性能对比](spider/3.2spider_threading_IO_calc_GIL.md)
@@ -357,7 +358,7 @@
 
 
 ### Tornado知识库
-	
+
   - [第一天: 入门基础]
 
 	    - Tornado配置：虚拟环境搭建和tornado的安装、最小tornado的web应用、启动命令端口配置等
@@ -369,28 +370,26 @@
 	 - [Tornado路由规则/HTTP行为方法/切入点函数](tornado/3.2.1-Tornado开发基础/tornado路由与切入点函数.md)
 
   - [第二天: 进阶]
-	      
-		- tornado静态资源与模板: 模型的继承与模板语法、静态资源的加载static_url等
-		- 数据库: sqlalchemy的安装、模型定义、模型迁移等
-		- Tornado WebSocket网络协议: 保持浏览器与服务器之间的通信，并实现持久化连接，数据的双向传递等。 
-		
-		
-	 - [Tornado模板与静态资源加载](tornado/3.2.2-Tornado进阶/tornado模板资源.md)
-	 - [Tornado模型](tornado/3.2.2-Tornado进阶/tornado数据库.md)
-	 
+     ​      
+     - tornado静态资源与模板: 模型的继承与模板语法、静态资源的加载static_url等
+       - 数据库: sqlalchemy的安装、模型定义、模型迁移等
+       - Tornado WebSocket网络协议: 保持浏览器与服务器之间的通信，并实现持久化连接，数据的双向传递等。 
+
+      - [Tornado模板与静态资源加载](tornado/3.2.2-Tornado进阶/tornado模板资源.md)
+      - [Tornado模型](tornado/3.2.2-Tornado进阶/tornado数据库.md)
 
   - [第三天: 进阶2]
- 		
+	 		
 		- tornado跨站请求伪造XSRF
 		- 同步、异步、阻塞、非阻塞概念，以及同步Web服务
 		- ab压力测试
 		- tornado异步服务与异步生成器
   		- 应用案例1: 开发websocket聊天系统
-		
+	​	
 	 - [Tornado跨站请求伪造](tornado/3.2.3-Tornado进阶2/tornado跨站请求.md)
 	 - [Tornado异步服务](tornado/3.2.3-Tornado进阶2/tornado异步生成器与异步服务.md)
 	 - [应用案例1: websocket聊天室](tornado/3.2.3-Tornado进阶2/tornado-websocket.md)
- 	 
+	
   - [第四天: 人脸识别项目]
 
 	     - tornado人脸识别，实现注册登录功能
@@ -444,12 +443,12 @@
 	 - [应用案例2: 数据引入与属性修改](vue/vue入门基础/vue数据引入与属性修改.md)
 
   - [第二天: 提升]
-	    
+	​    
         - Vue的全局操作、生命周期
         - Vue中axios的使用
         - Vue的Django进行前后交互中的跨域解决问题
         - Vue部署
-        
+      
      - [Vue生命周期](vue/vue提升/vue生命周期.md)
      - [Vue的axios使用](vue/vue提升/vue的axios使用.md)
 	 - [Django后端的跨域配置](vue/vue提升/vue跨域.md)
