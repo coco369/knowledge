@@ -53,18 +53,10 @@ docker镜像可以看作是一个特殊的文件系统，除了提供容器运�
 ***
 ### 1. Ubuntu中安装docker
 
-#### 下载/更新curl
-
 ```
 sudo apt-get update 
-sudo apt-get install curl
+sudo apt-get install docker-io
 ```
-#### 获取最新的docker包
-
-```
-curl -ssl https://get.docker.com/ | sh
-```
-
 ***
 ### 1.1 CentOS7中安装docker
 
