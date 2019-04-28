@@ -85,7 +85,7 @@ systemctl restart docker
 #### 1）运行交互式容器
 
 ```
-docker run (--name=容器名称，自定义) -it ubuntu /bin/bash
+docker run (--name=容器名称，自定义) -it 镜像名 /bin/bash
 ```
 
 #### 2）进入进行中的容器，安装相关py库(pip install -r xxx.txt)
@@ -141,7 +141,13 @@ docker rm 容器id/容器名
 control+p+q键一起按
 ```
 
-#### 7）删除镜像
+#### 7）查看镜像
+
+```
+docker images
+```
+
+#### 8）删除镜像
 
 ```
 docker rmi 镜像id/镜像名
