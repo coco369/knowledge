@@ -58,7 +58,7 @@ registry:latest：这个是刚才pull下来的镜像；
 
 本文档中将忽略在容器中安装依赖，并打包成镜像。而是直接将busybox镜像重新打包成新的镜像。
 
-打标签命令：**docker tag 老的镜像名:版本 新的镜像名:版本**
+打标签命令：**docker tag 老的镜像名:版本 docker私有仓库地址/新的镜像名:版本**， 注意其中的'docker私有仓库地址'可以写IP:端口的形式也可以写域名的形式
 
 ![图](images/2client_tag_busybox.png)
 
@@ -69,9 +69,15 @@ registry:latest：这个是刚才pull下来的镜像；
 - docker私有仓库的5000端口是否在防火墙中打开
 - daemon.json文件中提交镜像的地址是否修改为私有docker仓库的地址
 
+如果出现以下错误，则表示防火墙没开：
+
 ![图](images/3client_push_busybox.png)
 
-步骤2: 如出现以上错误，则修改/etc/docker/daemon.json中的内容，内容修改如下：
+如果出现以下截图错误，则表示daemon.json文件中的docker私有仓库地址没定义:
+
+![图](images/6client_push_busybox.png)
+
+步骤2: 出现上图所示错误，则修改/etc/docker/daemon.json中的内容，内容修改如下：
 
 ![图](images/4client_docker_daemon.png)
 
