@@ -44,4 +44,37 @@ registry:latest：这个是刚才pull下来的镜像；
 
 **注意:** 初始化私有仓库中镜像为空，当上传了镜像后，则镜像仓库中将出现上传的镜像。如上图所示，busybox就为上传到私有仓库的镜像。
 
-### 2. 镜像的拉取与使用
+### 2. 镜像的PUSH与使用
+
+​        步骤1中的操作用于创建私有docker仓库，其用于保存公司中所有项目所依赖的镜像文件。因此其他服务器可以自定义镜像并提交或拉取该私有docker仓库中的镜像。如下操作实现镜像的push提交。
+
+#### 1）下载一个体积小的busybox镜像
+
+**![图](images/1client_pull_busybox.png)**
+
+#### 2）根据busybox镜像打包成新镜像
+
+**注意：**基于拉取的镜像而运行容器，并在容器中安装项目所依赖的各种包和开发环境，最终将容器打包成新的镜像，以待项目使用。
+
+本文档中将忽略在容器中安装依赖，并打包成镜像。而是直接将busybox镜像重新打包成新的镜像。
+
+打标签命令：**docker tag 老的镜像名:版本 新的镜像名:版本**
+
+![图](images/2client_tag_busybox.png)
+
+#### 3）上传新镜像到私有docker仓库中
+
+步骤1: 将打包好的镜像push到私有docker仓库中，如果出现上传失败，则可以通过以下两点进行分析：
+
+- docker私有仓库的5000端口是否在防火墙中打开
+- daemon.json文件中提交镜像的地址是否修改为私有docker仓库的地址
+
+![图](images/3client_push_busybox.png)
+
+步骤2: 如出现以上错误，则修改/etc/docker/daemon.json中的内容，内容修改如下：
+
+![图](images/4client_docker_daemon.png)
+
+步骤3: 再次push镜像，成功提示如下：
+
+![图](images/5client_push_busybox.png)
