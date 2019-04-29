@@ -9,23 +9,22 @@
 
   - [基础操作命令](docker/docker.md)
   - [镜像和容器的基础使用](docker/docker的使用.md)
-  - [私有服务搭建与使用](docker私有服务器搭建.md)
+  - [私有服务搭建与使用](docker/docker私有服务器搭建.md)
 
 ### mysql数据库知识库
 
-  - [第一天:基础]
-      - [Mysql数据库基础语法](sql/mysql.md)
-  - [第二天:提升练习]
-      - [语法练习1](sql/mysql2_1.md)
-      - [语法练习2](sql/mysql2_2.md)
-  - [第三天:mysql与python交互]
-      - [交互](sql/mysql3.md)
+- [Mysql数据库基础语法](sql/mysql.md)
+
+- [语法练习1](sql/mysql2_1.md)
+- [语法练习2](sql/mysql2_2.md)
+
+- [mysql与python交互](sql/mysql3.md)
+
 ### redis知识库
 
-  - [第一天:安装/基础]
-      - [redis安装以及基础语法](sql/redis.md)
-  - [第二天:订阅]
-	  - [订阅](sql/redis1.md)
+- [redis安装以及基础语法](sql/redis.md)
+
+- [订阅](sql/redis1.md)
 
 ### mongodb知识库
 
