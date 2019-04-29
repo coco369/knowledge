@@ -1,5 +1,5 @@
 # 知识库
-知识库，总结在项目中实际使用的git命令，docker部署，mongodb，mysql等知识点
+python学习之路，就是不断累积，不断学习的过程。该知识库讲解了Python Web框架内容，如Django、DjangoRestFramework、tornado、flask，redis，MySQL，MongoDB，docker，Vue等内容
 
 ### git知识库
 
