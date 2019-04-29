@@ -77,7 +77,7 @@ registry:latest：这个是刚才pull下来的镜像；
 
 ![图](images/6client_push_busybox.png)
 
-步骤2: 出现上图所示错误，则修改/etc/docker/daemon.json中的内容，内容修改如下：
+步骤2: 出现上图所示错误，则修改/etc/docker/daemon.json中的内容，添加镜像仓库地址insecure-registries参数，内容修改如下：
 
 ![图](images/4client_docker_daemon.png)
 
