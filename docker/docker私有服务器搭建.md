@@ -84,3 +84,6 @@ registry:latest：这个是刚才pull下来的镜像；
 步骤3: 再次push镜像，成功提示如下：
 
 ![图](images/5client_push_busybox.png)
+
+**注意:** 在修改了daemon.json文件后需要重启docker，重启命令为systemctl restart docker或者service docker restart
+
