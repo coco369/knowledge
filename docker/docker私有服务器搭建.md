@@ -87,3 +87,24 @@ registry:latest：这个是刚才pull下来的镜像；
 
 **注意:** 在修改了daemon.json文件后需要重启docker，重启命令为systemctl restart docker或者service docker restart
 
+### 3. 镜像的制作与上传
+
+​        前两步骤只是简单的向私有docker服务器中上传镜像文件，在实际开发中私有docker服务器中将保存不同项目所依赖的镜像文件，而不同项目的启动配置Dockerfile文件中将从该私有docker服务器中拉取镜像文件，并将所需要执行的代码注入到镜像中，并创建容器和开放端口即可。
+
+ 项目依赖容器的创建与上传的详细步骤如下：
+
+步骤1: 拉取基础Ubuntu镜像，并创建容器
+
+![图](images/docker_run_new_contains.png)
+
+步骤2: 在容器中安装python3以及项目所依赖的第三方包
+
+步骤3: 将配置好环境的容器镜像打包，创建为一个镜像
+
+![图](images/docker_commit_new_images.png)
+
+步骤4: 将镜像上传到私有docker仓库中
+
+![图](images/docker_push_new_images.png)
+
+ 
