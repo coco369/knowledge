@@ -44,6 +44,12 @@ registry:latest：这个是刚才pull下来的镜像；
 
 **注意:** 初始化私有仓库中镜像为空，当上传了镜像后，则镜像仓库中将出现上传的镜像。如上图所示，busybox就为上传到私有仓库的镜像。
 
+### 4）私有仓库中镜像的删除
+
+​        **删除私有仓库中的镜像**文件可以通过共享文件进行操作。在启动registry镜像时，指定了-v参数，其表示将把宿主机的/data/registry目录绑定 到 容器/var/lib/registry目录。因此直接删除/data/registry/docker/registry/v2/中的镜像文件即可。
+
+![图](images/docker_registry_RM.png)
+
 ### 2. 镜像的PUSH与使用
 
 ​        步骤1中的操作用于创建私有docker仓库，其用于保存公司中所有项目所依赖的镜像文件。因此其他服务器可以自定义镜像并提交或拉取该私有docker仓库中的镜像。如下操作实现镜像的push提交。
@@ -93,17 +99,57 @@ registry:latest：这个是刚才pull下来的镜像；
 
  项目依赖容器的创建与上传的详细步骤如下：
 
-步骤1: 拉取基础Ubuntu镜像，并创建容器
+#### 步骤1: 拉取基础Ubuntu镜像，并创建容器
 
 ![图](images/docker_run_new_contains.png)
 
 步骤2: 在容器中安装python3以及项目所依赖的第三方包
 
-步骤3: 将配置好环境的容器镜像打包，创建为一个镜像
+##### 1）安装python3.6
+
+**先执行命令：**
+
+```
+# 更新
+apt update
+# 安装python3
+apt install python3
+```
+
+![图](images/docker_install_python3.png)
+
+##### 2）安装pip3
+
+执行命令：
+```
+# 安装pip3
+apt install python3-pip
+```
+
+
+![图](images/docker_install_pip3.png)
+
+##### 3) 安装vim
+
+由于在docker的ubuntu基础镜像中没有vim，因此需自行安装，安装命令如下：
+```
+# 安装vim
+apt install vim
+```
+
+##### 4）安装项目依赖的环境
+
+执行命令：
+```
+# 安装vim
+pip3 install -r requirement.txt
+```
+
+### 步骤3: 将配置好环境的容器镜像打包，创建为一个镜像
 
 ![图](images/docker_commit_new_images.png)
 
-步骤4: 将镜像上传到私有docker仓库中
+### 步骤4: 将镜像上传到私有docker仓库中
 
 ![图](images/docker_push_new_images.png)
 
