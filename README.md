@@ -10,6 +10,7 @@ python学习之路，就是不断累积，不断学习的过程。该知识库�
   - [基础操作命令](docker/docker.md)
   - [镜像和容器的基础使用](docker/docker的使用.md)
   - [私有服务搭建与使用](docker/docker私有服务器搭建.md)
+  - [docker部署](docker部署.md)
 
 ### mysql数据库知识库
 
