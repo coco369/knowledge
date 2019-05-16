@@ -1,5 +1,18 @@
-# 知识库
-python学习之路，就是不断累积，不断学习的过程。该知识库讲解了Python Web框架内容，如Django、DjangoRestFramework、tornado、flask，redis，MySQL，MongoDB，docker，Vue等内容
+# Django学习知识库
+> Auth: 王海飞
+>
+> Data：2018-04-20
+>
+> Email：779598160@qq.com
+>
+> github：https://github.com/coco369/knowledge
+>
+
+------
+
+​        python学习之路，就是不断累积，不断学习的过程。该知识库讲解了Python Web框架内容，如Django、DjangoRestFramework、tornado、flask，redis，MySQL，MongoDB，docker，Vue等内容。如下展示知识结构目录图
+
+[TOC]
 
 ### git知识库
 
