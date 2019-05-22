@@ -58,10 +58,15 @@
 <a href="django/images/Django大纲.png">思维导图</a>
 
   - [虚拟环境与项目初认知](django/1.Django基础入门)
+
+
+
         - 虚拟环境搭建 - mkvirtualenv的使用 / virtualenv的使用 / python3中venv模块的使用 / Pycharm中虚拟环境的配置
         - 项目初认知: MVC模式 or MVT模式 / 创建Django工程目录 / 创建应用app
         - admin管理后台：超级用户的创建，模型注册，模型中数据展示(list_display)、搜索(search_field)、过滤(list_filter)等
+
   - [第二天:模型]
+
         - M模型：模型的定义，字段的定义，字段参数的定义。Meta元数据定义，定义表名称
         - 数据库配置，pymysql驱动配置，数据迁移执行命令
         - ORM对象关系映射概念：什么是ORM，ORM用于做什么？
@@ -72,6 +77,7 @@
         - 数据的删除：delete()
       - [模型设计](django/2.Django模型/1.django模型定义.md)
       - [数据的CRUD练习](django/2.Django模型/2.django数据的CRUD练习.md)
+
   - [第三天:模型加餐/模板]
 
         - 模型设计概念：一对一，一对多，多对多的模型定义
@@ -84,6 +90,7 @@
           
       - [模型关联设计](django/2.Django模型/3.django模型关联关系.md)
       - [模板](django/3.Django模板与路由/1.django模板.md)
+
   - [第四天:视图1]
 
         - URL的正则匹配与带参URL和不带参URL定义
@@ -92,6 +99,7 @@
         - 请求与响应：请求中属性和方法，响应中属性和方法
 
       - [路由/反向解析](django/3.Django模板与路由/2.django路由.md)
+
   - [第五天:视图2]
 
         - form表单：字段的定义、form中错误信息的重定义、页面中错误信息的展示
@@ -104,6 +112,7 @@
       - [cookies/session](django/4.Django会话/1.cookie与session.md)
       - [登录/注册--自己实现](django/4.Django会话/2.django注册登录(1).md)
       - [登录/注册--django实现](django/4.Django会话/3.django注册登录(2).md)
+
   - [第六天:插件]
 
         - 中间件middleware的工作原理，如何拦截各阶段的请求，重构拦截各阶段的方法
@@ -117,17 +126,22 @@
       - [文件上传](django/5.Django中间件与表单与文件上传/2.django文件上传.md)
       - [表单form](django/5.Django中间件与表单与文件上传/3.djangoform表单.md)
       - [文件上传练习](django/5.Django中间件与表单与文件上传/4.django文件上传练习.md)
+
   - [第七天:权限、角色]
 
          - 如何拓展Django的User模型，并自定义相关的权限
          - 权限系统中User模型、Group模型、Permission模型的ManyToManyFiled关联关系，以及数据的增、删、清空。
          - 权限装饰器: permission_reqired('应用app.权限名')
          - 菜单控制：通过全局perms变量进行权限和菜单的控制
+
        - [权限系统](django/6.Django分页与权限/2.django权限控制.md)
+
   - [第八天:日志/restful]
 
          - setting.py中日志logging文件的配置，logging的四大组成，loggers，handlers，filters，formatters的处理流程，以及日志打印
+
       - [日志](django/7.Django日志与celery/1.django日志.md)
+
       - [celery](django/7.Django日志与celery/2.django_celery.md)
 
 
