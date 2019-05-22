@@ -57,20 +57,14 @@
 
 <a href="django/images/Django大纲.png">思维导图</a>
 
-  - [第一天:环境与创建项目]
-
-        - 环境搭建: virtualenv的安装与使用,pycharm中环境的配置
-        - Django概念: MVC模式/MVT模式
-        - 项目创建: 创建Django工程目录，创建应用app，使用admin管理后台
+  - [虚拟环境与项目初认知](django/1.Django基础入门)
+        - 虚拟环境搭建 - mkvirtualenv的使用 / virtualenv的使用 / python3中venv模块的使用 / Pycharm中虚拟环境的配置
+        - 项目初认知: MVC模式 or MVT模式 / 创建Django工程目录 / 创建应用app
         - admin管理后台：超级用户的创建，模型注册，模型中数据展示(list_display)、搜索(search_field)、过滤(list_filter)等
 
-      - [django概念介绍](django/1.Django基础入门/1.django概念.md)
-      - [virtualenv环境](django/1.Django基础入门/2.virtualenv虚拟环境.md)
-      - [创建django项目](django/1.Django基础入门/3.django简单项目.md)
-      - [admin管理](django/1.Django基础入门/4.django管理后台.md)
+      - [django/1.Django基础入门/4.django管理后台.md)
 
   - [第二天:模型]
-
         - M模型：模型的定义，字段的定义，字段参数的定义。Meta元数据定义，定义表名称
         - 数据库配置，pymysql驱动配置，数据迁移执行命令
         - ORM对象关系映射概念：什么是ORM，ORM用于做什么？
@@ -112,7 +106,7 @@
         - cookie的使用：如何设置cookie，删除cookie，如何设置失效
         - session的使用：如何使用session，删除session，session中数据存储的时效。在Django中如何配置session，数据库中django_session表的使用
         - 案例1：cookie和session实现的原理
-      
+
       - [cookies/session](django/4.Django会话/1.cookie与session.md)
       - [登录/注册--自己实现](django/4.Django会话/2.django注册登录(1).md)
       - [登录/注册--django实现](django/4.Django会话/3.django注册登录(2).md)
@@ -124,7 +118,7 @@
         - 定义模型中上传文件字段，安装Pillow，定义上传文件的media路径，定义页面中如何解析media中上传图片
         - 中间件案例1： 实现登录注册功能
         - 上传文件与解析案例2: 实现文件上传功能
-         
+          
       - [验证码/分页](django/6.Django分页与权限/1.django分页.md)
       - [中间件](django/5.Django中间件与表单与文件上传/1.django中间件.md)
       - [文件上传](django/5.Django中间件与表单与文件上传/2.django文件上传.md)
@@ -133,17 +127,17 @@
 
   - [第七天:权限、角色]
 
-          - 如何拓展Django的User模型，并自定义相关的权限
-          - 权限系统中User模型、Group模型、Permission模型的ManyToManyFiled关联关系，以及数据的增、删、清空。
-          - 权限装饰器: permission_reqired('应用app.权限名')
-          - 菜单控制：通过全局perms变量进行权限和菜单的控制
+         - 如何拓展Django的User模型，并自定义相关的权限
+         - 权限系统中User模型、Group模型、Permission模型的ManyToManyFiled关联关系，以及数据的增、删、清空。
+         - 权限装饰器: permission_reqired('应用app.权限名')
+         - 菜单控制：通过全局perms变量进行权限和菜单的控制
 
        - [权限系统](django/6.Django分页与权限/2.django权限控制.md)
 
   - [第八天:日志/restful]
 
-          - setting.py中日志logging文件的配置，logging的四大组成，loggers，handlers，filters，formatters的处理流程，以及日志打印
-        
+         - setting.py中日志logging文件的配置，logging的四大组成，loggers，handlers，filters，formatters的处理流程，以及日志打印
+
       - [日志](django/7.Django日志与celery/1.django日志.md)
       - [celery](django/7.Django日志与celery/2.django_celery.md)
 
