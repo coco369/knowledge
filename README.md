@@ -59,13 +59,13 @@
 
   - [虚拟环境与项目初认知](django/1.Django基础入门)
 
+      - 虚拟环境搭建 - mkvirtualenv的使用 / virtualenv的使用 / python3中venv模块的使用 / Pycharm中虚拟环境的配置
 
+      - 项目初认知: MVC模式 or MVT模式 / 创建Django工程目录 / 创建应用app
 
-        - 虚拟环境搭建 - mkvirtualenv的使用 / virtualenv的使用 / python3中venv模块的使用 / Pycharm中虚拟环境的配置
-        - 项目初认知: MVC模式 or MVT模式 / 创建Django工程目录 / 创建应用app
-        - admin管理后台：超级用户的创建，模型注册，模型中数据展示(list_display)、搜索(search_field)、过滤(list_filter)等
+      - admin管理后台：超级用户的创建，模型注册，模型中数据展示(list_display)、搜索(search_field)、过滤(list_filter)等
 
-  - [第二天:模型]
+  - [第二天:模型](django/2.Django模型)
 
         - M模型：模型的定义，字段的定义，字段参数的定义。Meta元数据定义，定义表名称
         - 数据库配置，pymysql驱动配置，数据迁移执行命令
@@ -75,8 +75,6 @@
         - 数据的创建：create()，对象save()，初始化模型再save()
         - 数据的更新：update()，对象save()
         - 数据的删除：delete()
-      - [模型设计](django/2.Django模型/1.django模型定义.md)
-      - [数据的CRUD练习](django/2.Django模型/2.django数据的CRUD练习.md)
 
   - [第三天:模型加餐/模板]
 
