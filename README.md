@@ -61,42 +61,40 @@
 
       - 虚拟环境搭建 - mkvirtualenv的使用 / virtualenv的使用 / python3中venv模块的使用 / Pycharm中虚拟环境的配置
 
-      - 项目初认知: MVC模式 or MVT模式 / 创建Django工程目录 / 创建应用app
+      - 项目初认知 - MVC模式 or MVT模式 / 创建Django工程目录 / 创建应用app
 
-      - admin管理后台：超级用户的创建，模型注册，模型中数据展示(list_display)、搜索(search_field)、过滤(list_filter)等
+      - admin管理后台 - 超级用户的创建，模型注册，模型中数据展示(list_display)、搜索(search_field)、过滤(list_filter)等
 
-  - [第二天:模型](django/2.Django模型)
+  - [模型](django/2.Django模型)
 
-        - M模型：模型的定义，字段的定义，字段参数的定义。Meta元数据定义，定义表名称
-        - 数据库配置，pymysql驱动配置，数据迁移执行命令
-        - ORM对象关系映射概念：什么是ORM，ORM用于做什么？
-        - 比较运算符，F/Q对象，限制结果集：contains，startswith，endswith，in，gt，gte，lt，lte，pk等
-        - 数据的查询，all，filter，get，first，last，values等
-        - 数据的创建：create()，对象save()，初始化模型再save()
-        - 数据的更新：update()，对象save()
-        - 数据的删除：delete()
+      - 模型概念 - ORM概念 / 模型的定义 / 字段的定义 / 字段参数的定义 / Meta元数据定义 / 表名定义 / 一对一关联 / 一对多关联 / 多对多关联
 
-  - [第三天:模型加餐/模板]
+      - 数据库配置 - pymysql驱动配置 / 数据迁移命令 
 
-        - 模型设计概念：一对一，一对多，多对多的模型定义
-        - 模型设计案例：学生和学生拓展表一对一模型设计，学生和课程表多对多模型设计，学生和班级一对多模型设计
-        - 模板1：在settings.py文件中静态static的配置定义，在页面中静态文件的加载
-        - 模板2：模板中逻辑运算符，if、ifequal、forloop、for empty等
-        - 模板3：父模板中定义block块和子模板中继承与调用父模板中block块
-        - 模板4：模板中注解，注解代码的可见与不可见，三种注解的区别
-        - 模板5：模板中定义修饰变量的过滤器，使用管道符‘|’，以及Django中过滤器的自定义
-          
-      - [模型关联设计](django/2.Django模型/3.django模型关联关系.md)
-      - [模板](django/3.Django模板与路由/1.django模板.md)
+      - 比较运算符 - F对象 / Q对象
 
-  - [第四天:视图1]
+      - 限制结果集 - contains / startswith / endswith / in / gt / gte / lt / lte / pk等
+
+      - 数据的查询 - all / filter / get / first / last / values等
+
+      - 数据的创建 - create() /  save() 
+
+      - 数据的更新 - update() / save()
+
+      - 数据的删除 - delete()
+
+  - [模板](django/3.Django模板与路由)
+
+      - 模板与静态配置 - 静态staticfiles_dirs的定义 / 静态资源的加载 / 资源反向解析url_for
+
+      - 模板语法 - 模板中逻辑运算符(if、ifequal、forloop、for 、empty等) / 模板继承 / 模板注解 / 过滤器(管道符'|')
+
+  - [视图](django/3.Django模板与路由)
 
         - URL的正则匹配与带参URL和不带参URL定义
         - 带参URL的redirect跳转与参数传递，以及页面内中URL反向解析的定义
         - Django中DEBUG为False和True的区别,以及当DEBUG为False时，静态文件解析与错误(403、404、500)视图的定义
         - 请求与响应：请求中属性和方法，响应中属性和方法
-
-      - [路由/反向解析](django/3.Django模板与路由/2.django路由.md)
 
   - [第五天:视图2]
 
