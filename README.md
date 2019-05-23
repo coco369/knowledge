@@ -85,43 +85,46 @@
 
   - [模板](django/3.Django模板与路由)
 
-      - 模板与静态配置 - 静态staticfiles_dirs的定义 / 静态资源的加载 / 资源反向解析url_for
+      - 模板与静态配置 - 静态staticfiles_dirs的定义 / 静态资源的加载 / 资源反向解析url_for(有参和无参情况)
 
       - 模板语法 - 模板中逻辑运算符(if、ifequal、forloop、for 、empty等) / 模板继承 / 模板注解 / 过滤器(管道符'|')
 
   - [视图](django/3.Django模板与路由)
 
-        - URL的正则匹配与带参URL和不带参URL定义
-        - 带参URL的redirect跳转与参数传递，以及页面内中URL反向解析的定义
-        - Django中DEBUG为False和True的区别,以及当DEBUG为False时，静态文件解析与错误(403、404、500)视图的定义
-        - 请求与响应：请求中属性和方法，响应中属性和方法
+      - 路由规则 - URL正则匹配 / 带参URL定义 / 不带参URL定义
 
-  - [第五天:视图2]
+      - 响应 - redirect重定向(传参重定向 / 不传参重定向) / 模板渲染 / JSON数据响应 / 错误状态码(403、404、500)视图定义
 
-        - form表单：字段的定义、form中错误信息的重定义、页面中错误信息的展示
-        - 登录注册注销：django中如何快速的实现登录注册注销功能
-        - 什么是会话技术，什么是HTTP无状态协议，解决HTTP无状态协议的方案----> cookie + session
-        - cookie的使用：如何设置cookie，删除cookie，如何设置失效
-        - session的使用：如何使用session，删除session，session中数据存储的时效。在Django中如何配置session，数据库中django_session表的使用
-        - 案例1：cookie和session实现的原理
+      - 请求 - 请求属于与方法(method、path、user、FILEWS、GET、POST等) / 匿名用户AnonymousUser 
 
-      - [cookies/session](django/4.Django会话/1.cookie与session.md)
-      - [登录/注册--自己实现](django/4.Django会话/2.django注册登录(1).md)
-      - [登录/注册--django实现](django/4.Django会话/3.django注册登录(2).md)
+      - form表单验证 - 字段的定义 / 错误响应抛出 / 校验失败错误信息解析 / 校验clean方法 / 校验字段clean_fields方法 
 
-  - [第六天:插件]
+- [Cookie与Session](django/4.Django会话)
 
-        - 中间件middleware的工作原理，如何拦截各阶段的请求，重构拦截各阶段的方法
-        - 数据分页：掌握Paginator分页的工作原理，实现分页的方式
-        - 定义模型中上传文件字段，安装Pillow，定义上传文件的media路径，定义页面中如何解析media中上传图片
-        - 中间件案例1： 实现登录注册功能
-        - 上传文件与解析案例2: 实现文件上传功能
-          
-      - [验证码/分页](django/6.Django分页与权限/1.django分页.md)
-      - [中间件](django/5.Django中间件与表单与文件上传/1.django中间件.md)
-      - [文件上传](django/5.Django中间件与表单与文件上传/2.django文件上传.md)
-      - [表单form](django/5.Django中间件与表单与文件上传/3.djangoform表单.md)
-      - [文件上传练习](django/5.Django中间件与表单与文件上传/4.django文件上传练习.md)
+     - 会话技术 - HTTP无状态协议 / 解决HTTP无状态协议 / Cookie产生场景 / Session产生场景
+
+     - Cookie - 设置cookie / 删除cookie / 设置失效时长
+
+     - Session - django_session表的定义 / 操作Session(增删改查) / 数据存储的时效
+
+     - 登陆注册功能 - 使用django中高耦合用户模块实现功能 / 使用Cookie + Token形式实现功能 / 登陆状态校验装饰器
+
+  - [中间件、表单、文件上传](django/5.Django中间件与表单与文件上传)
+
+        - 中间件middleware - 工作原理与处理流程 / 拦截各阶段的请求 / 重构拦截各阶段请求
+        - form表单验证 - 字段的定义 / 错误响应抛出 / 校验失败错误信息解析 / 校验clean方法 / 校验字段clean_fields方法 
+        - 文件上传 - Pillow安装 / 存储路径media地址定义 / 模板解析文件 
+
+- [分页与权限](django/6.Django分页与权限)
+
+       - 数据分页：掌握Paginator分页的工作原理，实现分页的方式
+       - 中间件案例1： 实现登录注册功能
+       - 上传文件与解析案例2: 实现文件上传功能
+     - [验证码/分页](django/6.Django分页与权限/1.django分页.md)
+     - [中间件](django/5.Django中间件与表单与文件上传/1.django中间件.md)
+     - [文件上传](django/5.Django中间件与表单与文件上传/2.django文件上传.md)
+     - [表单form](django/5.Django中间件与表单与文件上传/3.djangoform表单.md)
+     - [文件上传练习](django/5.Django中间件与表单与文件上传/4.django文件上传练习.md)
 
   - [第七天:权限、角色]
 
