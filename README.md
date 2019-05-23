@@ -109,11 +109,11 @@
 
      - 登陆注册功能 - 使用django中高耦合用户模块实现功能 / 使用Cookie + Token形式实现功能 / 登陆状态校验装饰器
 
-  - [中间件、表单、文件上传](django/5.Django中间件与表单与文件上传)
+- [中间件、表单、文件上传](django/5.Django中间件与表单与文件上传)
 
-        - 中间件middleware - 工作原理与处理流程 / 拦截各阶段的请求 / 重构拦截各阶段请求 / 登陆状态校验中间件
-        - form表单验证 - 字段的定义 / 错误响应抛出 / 校验失败错误信息解析 / 校验clean方法 / 校验字段clean_fields方法 
-        - 文件上传 - Pillow安装 / 存储路径media地址定义 / 模板解析文件
+       - 中间件middleware - 工作原理与处理流程 / 拦截各阶段的请求 / 重构拦截各阶段请求 / 登陆状态校验中间件
+       - form表单验证 - 字段的定义 / 错误响应抛出 / 校验失败错误信息解析 / 校验clean方法 / 校验字段clean_fields方法 
+       - 文件上传 - Pillow安装 / 存储路径media地址定义 / 模板解析文件
 
 - [分页与权限](django/6.Django分页与权限)
 
@@ -125,54 +125,44 @@
 
      - 菜单控制 - 通过全局perms变量进行权限和菜单的控制
 
-  - [第八天:日志/restful]
+- [日志/celery](django/7.Django日志与celery)
 
-         - setting.py中日志logging文件的配置，logging的四大组成，loggers，handlers，filters，formatters的处理流程，以及日志打印
+     - 日志的配置与构成 - logging的四大组件(loggers 、handlers、filters、formatters) / 日志处理流程 / 日志中间件
 
-      - [日志](django/7.Django日志与celery/1.django日志.md)
-
-      - [celery](django/7.Django日志与celery/2.django_celery.md)
+     - celery
 
 
-  - [第九天:restframework2]
+  - [DRF](django/8.Django的DRF)
 
-		 - 架构设计指导原则，rest的核心定义，如何定义符合规范的api接口。资源、请求、状态码的理解。
-         - Django中restframework安装，settings.py中的定义，以及如何定义对资源的CRUD操作
-         - 重构api响应结构，api中异常响应结构重构与定义
-         - 定义序列化serializer，验证每一个字段的错误信息，配置参数等
-         
-       - [restful概念](django/8.Django的DRF/1.restful概念.md)
-       - [响应结构/ajax-CRUD](django/8.Django的DRF/2.rest响应重构与mixins父类.md)
+      - 架构设计指导原则 - 接口定义规则 / REST风格 / 资源 / HTTP请求方式 / HTTP状态码
 
-  - [第十天:restframework3]
+      - DRF的应用 - djangorestframework安装 / django-filter安装 / 接口的定义 / 资源的CRUD
 
-         - api返回数据的分页配置，过滤类的定义与配置
-		 - 调用postman实现通过api对数据进行CRUD操作
-         - 总结drf中的视图、序列化器、过滤器等
+      - 重构api响应结构 - 响应结构重构与定义
 
-      - [分页/过滤/筛选](django/8.Django的DRF/3.rest过滤分页筛选.md)
-      - [总结](django/8.Django的DRF/4.djangorestframework总结.md)
+      - 序列化serializer - 字段校验 / 错误信息自定义 / 验证方法validate / Serializer和ModelSerializer
 
-  - [第十一天到十五天：项目(后端渲染页面)]
+      - 分页配置
+
+      - 过滤类filter_class - 过滤字段 / 过滤方法method
+
+
+  - [项目(后端渲染页面)]
       - [爱鲜蜂案例2班](https://github.com/coco369/axf)
       - [爱鲜蜂案例3班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1803/1.django/day09/%E4%BB%A3%E7%A0%81/axf)
       - [爱鲜蜂案例4班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1804/1.django/day14/%E4%BB%A3%E7%A0%81/axf4)
       - [天天生鲜案例5班]
       	 - [前台代码](https://github.com/coco369/django-teaching-15days/tree/master/qf_1805/1.django/day15/%E4%BB%A3%E7%A0%81/fresh_shop)
       	 - [后台代码](https://github.com/coco369/django-teaching-15days/tree/master/qf_1805/1.django/day15/%E4%BB%A3%E7%A0%81/fresh_shop_back)
-	
-  - [第十一天到十五天: 项目(前后分离渲染)]
-	
-	     - 前端vue框架
-	     - 后端drf框架
-	   - [vue框架源代码地址](https://github.com/coco369/m_axf)
-	   - [开发前技术准备](django/项目技术准备/准备.md)
-	   - [drf框架后端源代码](https://github.com/coco369/m_axf_drf)
-	
+  - [项目(前后分离渲染)]
+         - 前端vue框架
+            - 后端drf框架
+          - [vue框架源代码地址](https://github.com/coco369/m_axf)
+          - [开发前技术准备](django/项目技术准备/准备.md)
+          - [drf框架后端源代码](https://github.com/coco369/m_axf_drf)
   - [部署]
       - [centos7部署项目](部署/centos部署.md)
       - [ubuntu部署项目](部署/ubuntu部署.md)
-
   - [拓展]
       - [调试工具](django/9.Django扩展/1.debug的安装与使用.md)
       - [kindeditor富文本编辑器](django/9.Django扩展/2.kindeditor富文本编辑器.md)
