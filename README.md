@@ -111,9 +111,11 @@
 
 - [中间件、表单、文件上传](django/5.Django中间件与表单与文件上传)
 
-       - 中间件middleware - 工作原理与处理流程 / 拦截各阶段的请求 / 重构拦截各阶段请求 / 登陆状态校验中间件
-       - form表单验证 - 字段的定义 / 错误响应抛出 / 校验失败错误信息解析 / 校验clean方法 / 校验字段clean_fields方法 
-       - 文件上传 - Pillow安装 / 存储路径media地址定义 / 模板解析文件
+     - 中间件middleware - 工作原理与处理流程 / 拦截各阶段的请求 / 重构拦截各阶段请求 / 登陆状态校验中间件
+
+     - form表单验证 - 字段的定义 / 错误响应抛出 / 校验失败错误信息解析 / 校验clean方法 / 校验字段clean_fields方法 
+
+     - 文件上传 - Pillow安装 / 存储路径media地址定义 / 模板解析文件
 
 - [分页与权限](django/6.Django分页与权限)
 
@@ -131,20 +133,13 @@
 
      - celery
 
-
-  - [DRF](django/8.Django的DRF)
-
-      - 架构设计指导原则 - 接口定义规则 / REST风格 / 资源 / HTTP请求方式 / HTTP状态码
-
-      - DRF的应用 - djangorestframework安装 / django-filter安装 / 接口的定义 / 资源的CRUD
-
-      - 重构api响应结构 - 响应结构重构与定义
-
-      - 序列化serializer - 字段校验 / 错误信息自定义 / 验证方法validate / Serializer和ModelSerializer
-
-      - 分页配置
-
-      - 过滤类filter_class - 过滤字段 / 过滤方法method
+- [DRF](django/8.Django的DRF)
+  - 架构设计指导原则 - 接口定义规则 / REST风格 / 资源 / HTTP请求方式 / HTTP状态码
+  - DRF的应用 - djangorestframework安装 / django-filter安装 / 接口的定义 / 资源的CRUD
+  - 重构api响应结构 - 响应结构重构与定义
+  - 序列化serializer - 字段校验 / 错误信息自定义 / 验证方法validate / Serializer和ModelSerializer
+  - 分页配置
+  - 过滤类filter_class - 过滤字段 / 过滤方法method
 
 
   - [项目(后端渲染页面)]
