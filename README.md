@@ -111,29 +111,19 @@
 
   - [中间件、表单、文件上传](django/5.Django中间件与表单与文件上传)
 
-        - 中间件middleware - 工作原理与处理流程 / 拦截各阶段的请求 / 重构拦截各阶段请求
+        - 中间件middleware - 工作原理与处理流程 / 拦截各阶段的请求 / 重构拦截各阶段请求 / 登陆状态校验中间件
         - form表单验证 - 字段的定义 / 错误响应抛出 / 校验失败错误信息解析 / 校验clean方法 / 校验字段clean_fields方法 
-        - 文件上传 - Pillow安装 / 存储路径media地址定义 / 模板解析文件 
+        - 文件上传 - Pillow安装 / 存储路径media地址定义 / 模板解析文件
 
 - [分页与权限](django/6.Django分页与权限)
 
-       - 数据分页：掌握Paginator分页的工作原理，实现分页的方式
-       - 中间件案例1： 实现登录注册功能
-       - 上传文件与解析案例2: 实现文件上传功能
-     - [验证码/分页](django/6.Django分页与权限/1.django分页.md)
-     - [中间件](django/5.Django中间件与表单与文件上传/1.django中间件.md)
-     - [文件上传](django/5.Django中间件与表单与文件上传/2.django文件上传.md)
-     - [表单form](django/5.Django中间件与表单与文件上传/3.djangoform表单.md)
-     - [文件上传练习](django/5.Django中间件与表单与文件上传/4.django文件上传练习.md)
+     - 分页 - Paginator工作原理 / 分页角码 / 上一页 / 下一页 / 总数据库 / 当前页等
 
-  - [第七天:权限、角色]
+     - 权限模型定义 - User模型 / Group模型 / Permission模型 / 模型的ManyToManyFiled关联关系 / 权限中间表数据的增、删、清空
 
-         - 如何拓展Django的User模型，并自定义相关的权限
-         - 权限系统中User模型、Group模型、Permission模型的ManyToManyFiled关联关系，以及数据的增、删、清空。
-         - 权限装饰器: permission_reqired('应用app.权限名')
-         - 菜单控制：通过全局perms变量进行权限和菜单的控制
+     - 权限装饰器 - permission_reqired('应用app.权限名')
 
-       - [权限系统](django/6.Django分页与权限/2.django权限控制.md)
+     - 菜单控制 - 通过全局perms变量进行权限和菜单的控制
 
   - [第八天:日志/restful]
 
