@@ -141,26 +141,28 @@
   - 分页配置
   - 过滤类filter_class - 过滤字段 / 过滤方法method
 
+- [项目(后端渲染页面)]
+  - [爱鲜蜂案例2班](https://github.com/coco369/axf)
+  - [爱鲜蜂案例3班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1803/1.django/day09/%E4%BB%A3%E7%A0%81/axf)
+  - [爱鲜蜂案例4班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1804/1.django/day14/%E4%BB%A3%E7%A0%81/axf4)
+  - [天天生鲜案例5班]
+     - [前台代码](https://github.com/coco369/django-teaching-15days/tree/master/qf_1805/1.django/day15/%E4%BB%A3%E7%A0%81/fresh_shop)
+      - [后台代码](https://github.com/coco369/django-teaching-15days/tree/master/qf_1805/1.django/day15/%E4%BB%A3%E7%A0%81/fresh_shop_back)
 
-  - [项目(后端渲染页面)]
-      - [爱鲜蜂案例2班](https://github.com/coco369/axf)
-      - [爱鲜蜂案例3班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1803/1.django/day09/%E4%BB%A3%E7%A0%81/axf)
-      - [爱鲜蜂案例4班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1804/1.django/day14/%E4%BB%A3%E7%A0%81/axf4)
-      - [天天生鲜案例5班]
-      	 - [前台代码](https://github.com/coco369/django-teaching-15days/tree/master/qf_1805/1.django/day15/%E4%BB%A3%E7%A0%81/fresh_shop)
-      	 - [后台代码](https://github.com/coco369/django-teaching-15days/tree/master/qf_1805/1.django/day15/%E4%BB%A3%E7%A0%81/fresh_shop_back)
-  - [项目(前后分离渲染)]
-         - 前端vue框架
-            - 后端drf框架
-          - [vue框架源代码地址](https://github.com/coco369/m_axf)
-          - [开发前技术准备](django/项目技术准备/准备.md)
-          - [drf框架后端源代码](https://github.com/coco369/m_axf_drf)
-  - [部署]
-      - [centos7部署项目](部署/centos部署.md)
-      - [ubuntu部署项目](部署/ubuntu部署.md)
-  - [拓展]
-      - [调试工具](django/9.Django扩展/1.debug的安装与使用.md)
-      - [kindeditor富文本编辑器](django/9.Django扩展/2.kindeditor富文本编辑器.md)
+- [项目(前后分离渲染)]
+    - 前端vue框架
+  - 后端drf框架
+     - [vue框架源代码地址](https://github.com/coco369/m_axf)
+     - [开发前技术准备](django/项目技术准备/准备.md)
+     - [drf框架后端源代码](https://github.com/coco369/m_axf_drf)
+
+- [部署]
+  - [centos7部署项目](部署/centos部署.md)
+  - [ubuntu部署项目](部署/ubuntu部署.md)
+
+- [拓展]
+  - [调试工具](django/9.Django扩展/1.debug的安装与使用.md)
+  - [kindeditor富文本编辑器](django/9.Django扩展/2.kindeditor富文本编辑器.md)
 
 ### Flask知识库
 
