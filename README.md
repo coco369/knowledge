@@ -175,55 +175,30 @@
        - 请求与响应：POST/GET请求传参，类字典的区别
        - 蓝图Flask_Blueprint - 路由模块化管理 / 路由前缀url_prefix / 重定向url_for方向解析
 
-  - [第二天:视图]
+  - [视图](flask/3.1.2-flask视图)
+     -  cookie概念与用法 - cookie的设置与删除 / cookie + token实现状态保持
+     -  session概念与用法 - flask默认使用cookie存储session的数据 /  引入flask_session扩展库，实现使用数据库存储session中数据
+     -  装饰器 - 登陆状态校验装饰器
+     -  案例1 - 分别使用两种存储session数据方式实现模拟登陆功能，以及装饰器的定义使用
+     -  案例2 - 使用flask-login扩展库实现用户登录注销功能
 
-     -  session/cookie概念与用法：
-     		-  1) flask默认使用cookie存储session的数据。 
-     		-  2)引入flask_session扩展库，实现使用数据库存储session中数据。
-     	-  应用案例1：分别使用两种存储session数据方式实现模拟登陆功能，以及装饰器的定义使用
-     	-  应用案例2：使用flask-login扩展库实现用户登录注销功能
+  - [模板](flask/3.1.3-flask模板)
+        - 模板概念 - 基础模板的定义 / 模板的继承 / 挖坑以及填坑 / 静态文件static的配置
+        - 模板中逻辑控制 - for / if / loop / 过滤器 / 宏定义macro
+        - 表单 - Flask-WTF的form表单定义 / 字段校验DareRequired / 长度校验Length / 字段相等EqualTo / 方法validate_fields定义 / 异常抛出ValidateError / 错误信息解析errors 
 
-       - [session/cookie](flask/3.1.2-flask视图/cookie与会话(1).md)
-       - [应用案例1：自定义登录校验](flask/3.1.2-flask视图/会话(2).md)
-       - [应用案例2：flask-login登录校验](flask/3.1.2-flask视图/flask-login登录注册.md)
-       - [flask模板](flask/3.1.2-flask视图/flask模板.md)
-
-  - [第三天: 模板]
-
-        - 基础模板的定义，模板的继承，挖坑以及填坑。宏定义
-          - 模板中逻辑控制，过滤器，以及静态static的配置
-          - 应用案例1: flask-wtf的form表单的使用
-
-        - [flask模板](flask/3.1.3-flask模板/flask模板.md)
-        - [flask表单](flask/3.1.3-flask模板/flask表单验证.md)
-
-  - [第四天: 数据库]
-
-     - 模型的定义，数据库的创建，模型之间的关联关系的定义以及CRUD操作
-     	- 深入数据库的增删改查，查询数据filter和filter_by
-        - 运算符--contains、startswith、__gt__等
-        - 筛选--offset、limit、get、first、paginate等
-        - 逻辑运算符--and_、or_、not_
-        - 模型之间的一对多的关联关系的定义
-       
-       - [flask模型初窥](flask/3.1.4-flask数据库/flask模型1.md)
-       - [flask模型深入1](flask/3.1.4-flask数据库/flask模型2.md)
-       - [flask模型深入2](flask/3.1.4-flask数据库/flask模型3.md)
-
-  - [第五天: 配置]
-
-        - 钩子函数: before_request, after_request, teardown_request
+  - [数据库](flask/3.1.4-flask数据库)
+     - 模型 - 模型字段定义 / 模型字段约束 / 模型表明tablename定义 / 模型一对一关联 / 模型一对多关联
+     - ORM操作(增 / 改) - 事务add() / add_all() / commit()
+     - ORM操作(删) - 事务delete()
+     - ORM操作(查) - filter / filter_by / contains、startswith 、like 、endswith、gt、ge、lt、le、offset、limit、get、first、paginate、and__、or_、not_、in_、notin_
+  - [拓展](flask/3.1.5-flask拓展)
+        - 钩子函数 - before_request, after_request, teardown_request
         - 应用上下文g对象
         - 应用案例1: 钩子函数+g对象的使用，实现pymysql连接MySQL，并执行查询操作
         - 应用案例1: 登录、注册、登录验证
         - 应用案例2: 邮件发送
         - 应用案例3: 文件上传
-
-        - [钩子函数](flask/3.1.5-flask配置/flask中g对象和钩子.md)
-        - [文件上传](flask/3.1.5-flask配置/flask文件上传.md)
-        - [拓展](flask/3.1.5-flask配置/flask拓展.md)
-        - [邮件发送](flask/3.1.5-flask配置/flask邮件发送.md)
-          
 
   - [第六天到第10天：项目]
       - [爱家案例](https://github.com/coco369/aj)
