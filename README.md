@@ -169,33 +169,44 @@
 <a href="flask/images/Flask大纲.png">思维导图</a>
 
   - [Flask初认知](flask/3.1.1-flask开发基础)
+
        - Flask框架 - 微型框架的定义 / Django、Flask、Sanic、Tornado等框架的对比
        - Flask最小应用项目 - 最简Web项目定义 / 启动命令参数 / Flask_Script的使用
        - 路由规则 -  转化器的定义(int、string、uuid、float、path等) 
        - 请求与响应：POST/GET请求传参，类字典的区别
        - 蓝图Flask_Blueprint - 路由模块化管理 / 路由前缀url_prefix / 重定向url_for方向解析
+
   - [视图](flask/3.1.2-flask视图)
+
      -  cookie概念与用法 - cookie的设置与删除 / cookie + token实现状态保持
      -  session概念与用法 - flask默认使用cookie存储session的数据 /  引入flask_session扩展库，实现使用数据库存储session中数据
      -  装饰器 - 登陆状态校验装饰器
      -  案例1 - 分别使用两种存储session数据方式实现模拟登陆功能，以及装饰器的定义使用
      -  案例2 - 使用flask-login扩展库实现用户登录注销功能
+
   - [模板](flask/3.1.3-flask模板)
-        - 模板概念 - 基础模板的定义 / 模板的继承 / 挖坑以及填坑 / 静态文件static的配置
+
+      - 模板概念 - 基础模板的定义 / 模板的继承 / 挖坑以及填坑 / 静态文件static的配置
+
         - 模板中逻辑控制 - for / if / loop / 过滤器 / 宏定义macro
         - 表单 - Flask-WTF的form表单定义 / 字段校验DareRequired / 长度校验Length / 字段相等EqualTo / 方法validate_fields定义 / 异常抛出ValidateError / 错误信息解析errors 
+
   - [数据库](flask/3.1.4-flask数据库)
+
      - 模型 - 模型字段定义 / 模型字段约束 / 模型表明tablename定义 / 模型一对一关联 / 模型一对多关联
      - ORM操作(增 / 改) - 事务add() / add_all() / commit()
      - ORM操作(删) - 事务delete()
      - ORM操作(查) - filter / filter_by / contains、startswith 、like 、endswith、gt、ge、lt、le、offset、limit、get、first、paginate、and__、or_、not_、in_、notin_
+
   - [拓展](flask/3.1.5-flask拓展)
+
         - 钩子函数 - before_request, after_request, teardown_request
         - 应用上下文g对象
         - 应用案例1: 钩子函数+g对象的使用，实现pymysql连接MySQL，并执行查询操作
         - 应用案例1: 登录、注册、登录验证
         - 应用案例2: 邮件发送
         - 应用案例3: 文件上传
+
   - [第六天到第10天：项目]
       - [爱家案例](https://github.com/coco369/aj)
         - [爱家案例2班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1802/2.flask/day9/%E4%BB%A3%E7%A0%81/day06)
@@ -203,7 +214,9 @@
         
         - [centos7部署项目](部署/aj_centos部署.md)
         - [ubuntu部署博客项目](部署/blog部署.md)
+
   - [Flask和Django区别]
+
       - [区别](flask/flask和django的区别.md)
 
 
