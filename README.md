@@ -120,17 +120,13 @@
 - [分页与权限](django/6.Django分页与权限)
 
      - 分页 - Paginator工作原理 / 分页角码 / 上一页 / 下一页 / 总数据库 / 当前页等
-
      - 权限模型定义 - User模型 / Group模型 / Permission模型 / 模型的ManyToManyFiled关联关系 / 权限中间表数据的增、删、清空
-
      - 权限装饰器 - permission_reqired('应用app.权限名')
-
      - 菜单控制 - 通过全局perms变量进行权限和菜单的控制
 
 - [日志/celery](django/7.Django日志与celery)
 
      - 日志的配置与构成 - logging的四大组件(loggers 、handlers、filters、formatters) / 日志处理流程 / 日志中间件
-
      - celery
 
 - [DRF](django/8.Django的DRF)
