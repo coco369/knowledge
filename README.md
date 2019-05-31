@@ -168,53 +168,48 @@
 
 <a href="flask/images/Flask大纲.png">思维导图</a>
 
-  - [第一天:入门基础]
-  
-	  	- flask配置：微的定义，最小flask的web应用，虚拟环境搭建，安装flask
-		- mvc概念,项目的符合MVC模式的拆分
-		- 项目运行管理：flask_script库使用，debug配置等
-		- 路由: 路由匹配规则
-		- 请求与响应：POST/GET请求传参，类字典的区别
+  - [Flask初认知](flask/3.1.1-flask开发基础)
+       - Flask框架 - 微型框架的定义 / Django、Flask、Sanic、Tornado等框架的对比
+       - Flask最小应用项目 - 最简Web项目定义 / 启动命令参数 / Flask_Script的使用
+       - 路由规则 -  转化器的定义(int、string、uuid、float、path等) 
+       - 请求与响应：POST/GET请求传参，类字典的区别
+       - 蓝图Flask_Blueprint - 路由模块化管理 / 路由前缀url_prefix / 重定向url_for方向解析
 
-	  - [flask简介/路由规则](flask/3.1.1-flask开发基础/flask入门与路由.md)
-	  - [flask请求与响应与错误处理](flask/3.1.1-flask开发基础/flask请求与响应与异常.md)
-	  - [flask蓝图](flask/3.1.1-flask开发基础/flask蓝图.md)
-	
   - [第二天:视图]
-  
-		-  session/cookie概念与用法：
-			-  1) flask默认使用cookie存储session的数据。 
-			-  2)引入flask_session扩展库，实现使用数据库存储session中数据。
-		-  应用案例1：分别使用两种存储session数据方式实现模拟登陆功能，以及装饰器的定义使用
-		-  应用案例2：使用flask-login扩展库实现用户登录注销功能
 
-	  - [session/cookie](flask/3.1.2-flask视图/cookie与会话(1).md)
-	  - [应用案例1：自定义登录校验](flask/3.1.2-flask视图/会话(2).md)
-	  - [应用案例2：flask-login登录校验](flask/3.1.2-flask视图/flask-login登录注册.md)
-	  - [flask模板](flask/3.1.2-flask视图/flask模板.md)
+     -  session/cookie概念与用法：
+     		-  1) flask默认使用cookie存储session的数据。 
+     		-  2)引入flask_session扩展库，实现使用数据库存储session中数据。
+     	-  应用案例1：分别使用两种存储session数据方式实现模拟登陆功能，以及装饰器的定义使用
+     	-  应用案例2：使用flask-login扩展库实现用户登录注销功能
+
+       - [session/cookie](flask/3.1.2-flask视图/cookie与会话(1).md)
+       - [应用案例1：自定义登录校验](flask/3.1.2-flask视图/会话(2).md)
+       - [应用案例2：flask-login登录校验](flask/3.1.2-flask视图/flask-login登录注册.md)
+       - [flask模板](flask/3.1.2-flask视图/flask模板.md)
 
   - [第三天: 模板]
 
-	    - 基础模板的定义，模板的继承，挖坑以及填坑。宏定义
-	    - 模板中逻辑控制，过滤器，以及静态static的配置
-	    - 应用案例1: flask-wtf的form表单的使用
+        - 基础模板的定义，模板的继承，挖坑以及填坑。宏定义
+          - 模板中逻辑控制，过滤器，以及静态static的配置
+          - 应用案例1: flask-wtf的form表单的使用
 
-	  - [flask模板](flask/3.1.3-flask模板/flask模板.md)
-	  - [flask表单](flask/3.1.3-flask模板/flask表单验证.md)
+        - [flask模板](flask/3.1.3-flask模板/flask模板.md)
+        - [flask表单](flask/3.1.3-flask模板/flask表单验证.md)
 
   - [第四天: 数据库]
-  
-		- 模型的定义，数据库的创建，模型之间的关联关系的定义以及CRUD操作
-		- 深入数据库的增删改查，查询数据filter和filter_by
+
+     - 模型的定义，数据库的创建，模型之间的关联关系的定义以及CRUD操作
+     	- 深入数据库的增删改查，查询数据filter和filter_by
         - 运算符--contains、startswith、__gt__等
         - 筛选--offset、limit、get、first、paginate等
         - 逻辑运算符--and_、or_、not_
         - 模型之间的一对多的关联关系的定义
        
-	  - [flask模型初窥](flask/3.1.4-flask数据库/flask模型1.md)
-	  - [flask模型深入1](flask/3.1.4-flask数据库/flask模型2.md)
-	  - [flask模型深入2](flask/3.1.4-flask数据库/flask模型3.md)
-	
+       - [flask模型初窥](flask/3.1.4-flask数据库/flask模型1.md)
+       - [flask模型深入1](flask/3.1.4-flask数据库/flask模型2.md)
+       - [flask模型深入2](flask/3.1.4-flask数据库/flask模型3.md)
+
   - [第五天: 配置]
 
         - 钩子函数: before_request, after_request, teardown_request
@@ -223,23 +218,23 @@
         - 应用案例1: 登录、注册、登录验证
         - 应用案例2: 邮件发送
         - 应用案例3: 文件上传
-      
-	  - [钩子函数](flask/3.1.5-flask配置/flask中g对象和钩子.md)
-	  - [文件上传](flask/3.1.5-flask配置/flask文件上传.md)
-	  - [拓展](flask/3.1.5-flask配置/flask拓展.md)
-	  - [邮件发送](flask/3.1.5-flask配置/flask邮件发送.md)
-	    
-	
+
+        - [钩子函数](flask/3.1.5-flask配置/flask中g对象和钩子.md)
+        - [文件上传](flask/3.1.5-flask配置/flask文件上传.md)
+        - [拓展](flask/3.1.5-flask配置/flask拓展.md)
+        - [邮件发送](flask/3.1.5-flask配置/flask邮件发送.md)
+          
+
   - [第六天到第10天：项目]
-	  - [爱家案例](https://github.com/coco369/aj)
-	  - [爱家案例2班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1802/2.flask/day9/%E4%BB%A3%E7%A0%81/day06)
-	  - [爱家案例3班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1803/2.flask/day09/%E4%BB%A3%E7%A0%81/aj)
-	  
-	  - [centos7部署项目](部署/aj_centos部署.md)
-	  - [ubuntu部署博客项目](部署/blog部署.md)
-	
+      - [爱家案例](https://github.com/coco369/aj)
+        - [爱家案例2班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1802/2.flask/day9/%E4%BB%A3%E7%A0%81/day06)
+        - [爱家案例3班](https://github.com/coco369/django-teaching-15days/tree/master/qf_1803/2.flask/day09/%E4%BB%A3%E7%A0%81/aj)
+        
+        - [centos7部署项目](部署/aj_centos部署.md)
+        - [ubuntu部署博客项目](部署/blog部署.md)
+
   - [Flask和Django区别]
-	  - [区别](flask/flask和django的区别.md)
+      - [区别](flask/flask和django的区别.md)
 
 
 ### 爬虫
