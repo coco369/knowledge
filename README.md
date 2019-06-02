@@ -274,9 +274,9 @@
 ### Tornado知识库
 
   - [入门基础](tornado/3.2.1-Tornado开发基础) 
-        - Tornado配置 - 虚拟环境搭建 / tornado的安装 / 最小tornado的web应用 / 启动命令端口配置
-        - 请求与响应 - HTTP行为方法 / 切入点函数 / 请求参数(get_argument) / 响应参数
-        - 路由 - 路由匹配规则
+      - Tornado配置 - 虚拟环境搭建 / tornado的安装 / 最小tornado的web应用 / 启动命令端口配置
+      - 请求与响应 - HTTP行为方法 / 切入点函数 / 请求参数(get_argument) / 响应参数
+      - 路由 - 路由匹配规则
   - [进阶](tornado/3.2.2-Tornado进阶)
      - tornado静态资源与模板 - 模型的继承与模板语法 / 静态资源的加载static_url
      - 数据库 -  sqlalchemy的安装 / 模型定义 / 模型迁移
