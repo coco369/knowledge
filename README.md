@@ -317,10 +317,10 @@
 ### VUE框架
 
   - [入门](vue/vue入门基础)
-        - Vue配置 - node.js安装 / cnpm的安装 / vue的安装 / vue项目的创建 / 项目启动run / 项目build
-        - Vue组件 - 自定义组件 / 加载组件 / 配置链接地址
-        - Vue内部指令 - v-text / v-html / v-if / v-else / v-show / v-model / v-bind / v-on等
-        - Vue计算属性 - computed / 监听watch
+      - Vue配置 - node.js安装 / cnpm的安装 / vue的安装 / vue项目的创建 / 项目启动run / 项目build
+      - Vue组件 - 自定义组件 / 加载组件 / 配置链接地址
+      - Vue内部指令 - v-text / v-html / v-if / v-else / v-show / v-model / v-bind / v-on等
+      - Vue计算属性 - computed / 监听watch
   - [提升](vue/vue提升)
-        - Vue的全局操作 - 生命周期 / axios请求 / 跨域配置 
-        - Vue部署 - 项目build相关配置 / Nginx配置 / 反向代理配置
+      - Vue的全局操作 - 生命周期 / axios请求 / 跨域配置 
+      - Vue部署 - 项目build相关配置 / Nginx配置 / 反向代理配置

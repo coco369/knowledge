@@ -100,7 +100,20 @@
 
 <b> 4) app.listen(8888)</b>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Application对象被创建后，可以调用listen()方法来监听端口。如本例子中监听的端口为8888。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Application对象被创建后，可以调用listen()方法来监听端口和IP地址。如本例子中监听的端口为8888，由于IP地址没有定义，因此可直接访问127.0.0.1或者公网IP地址。
+
+​	如果app.listen(port=8888，address=‘localhost’)则表示只能通过本地127.0.0.1:8888访问。
+
+​	如果app.listen(port=8888, address='0.0.0.0')则表示可以通过127.0.0.1:8888或公网IP地址:8888访问。其效果和app.listen(8888)是一样的，address参数默认可不写。
+
+重点: app.listen()调用的代码如下:
+
+```
+from tornado.httpserver import HTTPServer
+server = HTTPServer(self, **kwargs)
+server.listen(port, address)
+return server
+```
 
 <b> 5）tornado.ioloop.IOLoop.current().start()</b>
 
@@ -206,9 +219,7 @@ if __name__ == "__main__":
 - 如果num_processes参数为None或者<=0,则表示自动根据机器硬件的cpu核数创建同等数目的子进程。
 - 如果num_processes参数>0，则创建num_processes个子进程。
 
-因此在windows中num_processes一般不写或者写1。
-
-
+因此在windows中num_processes一般不写或者写1。ss
 
 ### 6. 取消日志打印
 
