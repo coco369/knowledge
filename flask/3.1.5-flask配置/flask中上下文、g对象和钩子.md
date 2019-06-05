@@ -60,7 +60,7 @@ teardown_request
 
 #### 2. 上下文
 
-&nbsp;&nbsp;&nbsp;&nbsp;Flask项目中有两个上下文，一个是应用上下文（app），另外一个是请求上下文（request）。
+&nbsp;&nbsp;&nbsp;&nbsp;Flask项目中有两个上下文，一个是应用上下文（AppContent, 应用上下文，是对flask一切对象的封装），另外一个是请求上下文（RequestContent,请求上下文，是对request请求对象的封装）。
 
 &nbsp;&nbsp;&nbsp;&nbsp;请求上下文request和应用上下文current_app都是一个全局变量。所有请求都共享的。Flask有特殊的机制可以保证每次请求的数据都是隔离的，即A请求所产生的数据不会影响到B请求。所以可以直接导入request对象，也不会被一些脏数据影响了，并且不需要在每个函数中使用request的时候传入request对象。这两个上下文具体的实现方式和原理可以没必要详细了解。只要了解这两个上下文的四个属性就可以了：
 
