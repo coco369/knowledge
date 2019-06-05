@@ -185,7 +185,9 @@
 
 路由匹配规则会自动匹配URL路由表，并调用处理器RedirectHandler中的HTTP行为方法get()，在该方法中进行跳转处理，使用redirect(url)方法进行跳转到url地址。在HelloHandler的get()方法中使用self.write()向缓存中写入数据，当函数结束后才将缓存中的数据渲染到页面中。
 
+### 6. 回调add_callback
 
+IOLoop.current().add_callback(回调任务)
 
 
 
