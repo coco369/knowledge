@@ -27,40 +27,42 @@
 
 	创建tornadoenv虚拟环境:
 	virtualenv --no-site-packages -p D:\python3\python.exe tornadoenv
-
+	
 	激活windows下虚拟环境:
 	cd Scripts
 	activate
-	
+
 #### 2.2 安装
-	
+
 	在激活的虚拟环境tornadoenv中安装:
 	pip install tornado
 
 
-### 3. 基于tornado的最简单应用
+### 3. 基于tornado的最简单应用（单进程）
 
 创建FirstTornado.py文件
-	
-	import tornado.ioloop
+
+```
+import tornado.ioloop
 	import tornado.web
-	
+
 	
 	class MainHandler(tornado.web.RequestHandler):
 	    def get(self):
 	        self.write("Hello, world")
-	
+
 	
 	def make_app():
 	    return tornado.web.Application(handlers=[
 	        (r"/hello", MainHandler),
 	    ])
-	
+
 	
 	if __name__ == "__main__":
 	    app = make_app()
 	    app.listen(8888)
 	    tornado.ioloop.IOLoop.current().start()
+```
 
 
 运行：python FirstTornado.py
@@ -97,47 +99,60 @@
 
 <b> 4) app.listen(8888)</b>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Application对象被创建后，可以调用listen()方法来监听端口。如本例子中监听的端口为8888。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Application对象被创建后，可以调用listen()方法来监听端口和IP地址。如本例子中监听的端口为8888，由于IP地址没有定义，因此可直接访问127.0.0.1或者公网IP地址。
+
+​	如果app.listen(port=8888，address=‘localhost’)则表示只能通过本地127.0.0.1:8888访问。
+
+​	如果app.listen(port=8888, address='0.0.0.0')则表示可以通过127.0.0.1:8888或公网IP地址:8888访问。其效果和app.listen(8888)是一样的，address参数默认可不写。
+
+重点: app.listen()调用的代码如下:
+
+```
+from tornado.httpserver import HTTPServer
+server = HTTPServer(self, **kwargs)
+server.listen(port, address)
+return server
+```
 
 <b> 5）tornado.ioloop.IOLoop.current().start()</b>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用于创建一个Tornado的IOLoop的实例，并一直运行Tornado项目，用于接收处理客户端的访问请求。
 
-在虚拟环境tornadoenv中运行FirstTornado.py文件，然后在浏览器中访问http://127.0.0.1:8888/hello地址
+在虚拟环境tornadoenv中运行FirstTornado.py文件，然后在浏览器中访问http://127.0.0.1:8888/hello地址或者http://公网ip地址:8888/hello地址
 
 ### 4. 修改启动方式，使用命令行参数启动服务
 
 修改最简单的tornado程序,命名为helloTornado2.py。 如下:
+```
+import tornado.ioloop
+import tornado.web
+from tornado.options import define, options, parse_command_line
+	
+# 定义默认的端口
+define('port', default=8000, type=int)
 
-	import tornado.ioloop
-	import tornado.web
-	from tornado.options import define, options, parse_command_line
 	
-	# 定义默认的端口
-	define('port', default=8000, type=int)
-	
-	
-	class MainHandler(tornado.web.RequestHandler):
-	    def get(self):
-	        self.write("Hello, world")
-	
-	
-	def make_app():
-	    return tornado.web.Application(handlers=[
-	        (r"/hello", MainHandler),
-	    ])
-	
-	
-	if __name__ == "__main__":
-	    # 解析命令行
-	    parse_command_line()
-	    # 获取Application对象
-	    app = make_app()
-	    # 监听端口
-	    app.listen(options.port)
-	    # 启动IOLoop实例
-	    tornado.ioloop.IOLoop.current().start()
+class MainHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.write("Hello, world")
 
+
+def make_app():
+    return tornado.web.Application(handlers=[
+        (r"/hello", MainHandler),
+    ])
+
+	
+if __name__ == "__main__":
+    # 解析命令行
+    parse_command_line()
+    # 获取Application对象
+    app = make_app()
+    # 监听端口
+    app.listen(options.port)
+    # 启动IOLoop实例
+    tornado.ioloop.IOLoop.current().start()
+```
 
 <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tornado中包含了一个有用的读取命令行的模块（tornado.options），可以使用tornado.options模块来指定应用监听HTTP请求的端口。</b>
 
@@ -165,3 +180,54 @@
 <b style="color:red;"> 启动并运行helloTornado2.py </b>
 
 	python helloTornado2.py --port=8888
+
+
+
+### 5. 基于tornado的最简单应用（多进程）
+
+```
+import tornado.ioloop
+import tornado.web
+import tornado.httpserver
+from tornado.options import define, options, parse_command_line
+
+define('port', default=8000, type=int)
+
+class MainHandler(tornado.web.RequestHandler):
+	def get(self):
+		self.write("Hello, world")
+
+if __name__ == "__main__":
+
+	# 解析命令行
+	parse_command_line()
+	# 获取Application对象
+	app = make_app()
+	# 获取httpserver对象
+	server = tornado.httpserver.HTTPServer(app)
+	# 监听端口
+	server.bind(options.port)
+	server.start(0)
+	# 启动IOLoop实例
+	tornado.ioloop.IOLoop.current().start()
+```
+
+注意: 指定多进程的方式只能在linux下才可行，在windows下会报错。实例中代码server.start(num_processes)方法用于指定开启几个进程。
+
+- 如果num_processes默认为1，表示开启一个进程。
+- 如果num_processes参数为None或者<=0,则表示自动根据机器硬件的cpu核数创建同等数目的子进程。
+- 如果num_processes参数>0，则创建num_processes个子进程。
+
+因此在windows中num_processes一般不写或者写1。ss
+
+### 6. 取消日志打印
+
+```
+from tornado.options import options，parse_command_line
+
+# 取消日志打印
+options.logging=None
+# 解析命令行
+parse_command_line()
+```
+
