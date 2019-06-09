@@ -12,6 +12,63 @@
 
 ***
 
+ 部署分为直接部署、或通过配置文件Dockerfile文件进行部署。
+
+1. 简单粗暴的部署方式
+
+   1） 下拉基础镜像
+
+   docker pull ubuntu
+
+   2） 创建容器
+
+   docker run -it 镜像名:版本 /bin/bash
+
+   3)  在容器中安装python3、pip3、项目的依赖包
+
+   apt install python3
+
+   apt install python3-pip
+
+   pip3 install -r requirment.txt
+
+   4）将服务器中的代码拷贝到容器中
+
+   docker cp 服务器中代码的路径 容器ID:容器中保存代码的路径
+
+   5）映射端口
+
+   <1> 删除之前创建的容器，重新创建容器，并指定映射端口
+
+   docker run -i -t -d -p 公网IP:容器内部映射端口  镜像名:版本
+
+   <2>修改现有容器的配置文件，并重启整个docker(不推荐，因为会重启整个docker) 
+
+   6）配置blognginx.conf文件，并监听映射公网IP端口
+
+   server{
+       listen    80;
+       server_name 149.129.117.194;
+
+       location / {
+           proxy_pass http://149.129.117.194:5000;
+       }
+   }
+
+   注意: 需要在/etc/nginx/nginx.conf中include导入自定义的blognginx.conf文件，并重启systemctl restart nginx。
+
+   7) 进入容器，并启动项目即可
+
+注意可能在整个操作过程中会安装工具: 如安装vim（apt install vim）、安装netstat（apt install net-tools），还有宿主的数据库的安装与访问
+
+
+
+2. 通过配置Dockerfile文件进行部署方式
+
+
+
+
+
 ### 1.Dockerfile文件定义
 
 ```
