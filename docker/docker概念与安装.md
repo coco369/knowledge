@@ -72,21 +72,35 @@ yum list installed | grep docker
 ```
 systemctl restart docker
 ```
-### 2. 制作镜像
+### 2. 基于基础镜像Ubuntu制作新镜像
 
-#### 1）运行交互式容器
+#### 1）下拉基础镜像Ubuntu
+
+```
+docker pull <镜像名称>  如: docker pull ubuntu
+```
+
+#### 2）运行交互式容器
 
 ```
 docker run (--name=容器名称，自定义) -it 镜像名 /bin/bash
 ```
 
-#### 2）进入进行中的容器，安装相关py库(pip install -r xxx.txt)
+注意: 如果启动报如下的错误，解决办法如下所示:
+```
+错误提示: [root@izj6c0zsm04q86s2tu4e12z /]# docker run -it docker.io/ubuntu:latest /bin/bash
+/usr/bin/docker-current: Error response from daemon: oci runtime error: container_linux.go:235: starting container process caused "process_linux.go:258: applying cgroup configuration for process caused \"Cannot set property TasksAccounting, or unknown property.\"".
+```
+
+解决办法: yum update
+
+#### 3）如果已退出容器，则使用exec参数进行容器，安装相关py库(pip install -r xxx.txt)
 
 ```
 docker exec -it 容器名或者容器的id /bin/bash
 ```
 
-#### 3）将安装好插件的容器编译好镜像并上传镜像
+#### 4）将安装好插件的容器编译好镜像并上传镜像
 
 ```
 docker commit -a 作者 -m '注解' 容器名 镜像名:镜像版本号
