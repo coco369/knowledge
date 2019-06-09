@@ -172,39 +172,35 @@
 ### 爬虫
 
 
-  - [第一天:爬虫]
-  
-      	- 概念：爬虫的由来/用来做什么
-      	- 数据采集与分析：urllib/requests/bs4/mongodb/mysql/redis等
-      	- 请求头-反爬虫：User-Agent，Accept，Accept-Language等
-      	- 百度搜索：中文的编码解码
-      	- ssl: ssl认证
-      	- 应用案例1：urllib获取百度首页源代码/爬取智联某工作某地点的岗位信息
-      	- 应用案例2：猫眼网站信息
-      	- 作业1：爬取智联上某工作某地点的工作名称，公司等信息
-      	- 作业2：爬取格言网(https://www.geyanw.com/)上的某一个模块的名言警句
+  - [爬虫入门](spider/1.爬虫入门)
 
-      - [爬虫基础概念](spider/1爬虫基本概念.md)
-      - [爬虫引入/User-Agent讲解](spider/1.0spider_concept_urllib.md)
-      - [应用案例1:爬取智联工作/百度源码](spider/1.1spider_baidu_zhilian_search.md)
-      - [应用案例2:猫眼](spider/1猫眼网站实战.md)
+       - 爬虫概念 - 爬虫原理 / 请求(请求头、cookie、headers等) / 响应(响应状态码、响应内容、响应headers等)
+       - 数据采集库 - urllib / requests /  BeautifulSoup/ Scrapy /正则表达式
+       - 案例1 - 使用urllib库爬取智联上某工作某地点的工作名称，公司等信息
+       - 案例2 - 使用requests库爬取猫眼电影的信息
 
-  - [第二天:数据采集]
-    
-     	- 爬取工具：requests使用、bs4使用、urllib使用
-     	- xpath语法、re正则表达式语法
-     	- 应用案例1：获取豆瓣电影中动态加载电影资源信息
-     	- 应用案例2:爬取知乎发现里面的提问的链接数，和链接地址
-       ​       
-	  - [采集(bs4)](spider/2数据采集bs.md)
-	  - [采集(requests)](spider/2数据采集requests.md)
+  - [数据采集]
+
+      - 数据采集与分析：beautifulsoup4使用 / xpath语法
+
+      - 应用案例1：获取豆瓣电影中动态加载电影资源信息
+
+      - 应用案例2:爬取知乎发现里面的提问的链接数，和链接地址
+
+        ​       
+
+        - [采集(bs4)](spider/2数据采集bs.md)
+        - [采集(requests)](spider/2数据采集requests.md)
+
       - [提取xpath/re](spider/2.2spider_re_xpath.md)
+
       - [应用案例1:爬知乎的提问/豆瓣电影信息](spider/2.1spider_movies_questions.md)
+
       - [应用案例2:爬取搜狐体育的新闻信息](spider/2.3spider_souhu_sports.md)
 
   - [第三天:多线程爬虫]
-  
-    	- 概念：线程、进程、同步、异步、并发、阻塞、非阻塞、并发、并行
+
+     - 概念：线程、进程、同步、异步、并发、阻塞、非阻塞、并发、并行
         - 进程、线程概念：多线程定义，守护线程，线程启动
         - 线程锁
         - 应用案例1：I/O密集型，计算密集型的单线程多线程对比
@@ -216,7 +212,7 @@
 
   - [第四天:协程/数据持久化]
 
-   		- 迭代器、生成器的原理概念、斐波那契的实现
+      - 迭代器、生成器的原理概念、斐波那契的实现
         - 协程的概念，原理，生产者-消费者的实现
         - 数据持久化，redis安装配置、缓存，mongodb安装配置、语法、缓存
         - aiohttp:异步非阻塞的
