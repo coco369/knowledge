@@ -82,7 +82,7 @@ WORKDIR /home/src/answer_django
 
 
 ENTRYPOINT ["python3"]
-CMD ["manage.py", "runserver", "0.0.0.0:8099"]
+CMD ["manage.py", "runserver", "-h", "0.0.0.0", "-p", "8099"]
 ```
 
 ![图](images/docker_bushu_build.png)
