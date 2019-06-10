@@ -36,7 +36,7 @@
 		bs4为第三方的库，需要安装才能使用
 
 		pip install beautifulsoup4
-	
+		
 		使用的时候 from bs4 import BeautifulSoup 这样导入
 
 	Python 标准库中自带了 xml 模块，但是性能不够好，而且缺乏一些人性化的 API，相比之下，第三方库 lxml 是用 Cython 实现的，而且增加了很多实用的功能。
@@ -44,7 +44,7 @@
 		安装lxml，在新版本中无法使用from lxml import etree
 		
 		pip install lxml 并不推荐这样去安装lxml
-	
+		
 		推荐安装的方法：访问网站(https://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml)下载lxml的安装whl文件，然后进行安装。
 
 我这儿下载的是lxml-4.2.1-cp36-cp36m-win_amd64.whl，安装命令如下
@@ -53,7 +53,7 @@
 
 截图：
 
-![图](images/lxml_whl.png)
+![图](../images/lxml_whl.png)
 
 
 3. 动态数据解析
@@ -127,66 +127,63 @@
 
 分析以上代码中，默认提交的请求头中的User-Agent到底传递了什么值：
 
-![图](images/spider_01_useragent.png)
+![图](../images/spider_01_useragent.png)
 
 接下来，就是优化以上的代码，实现目的就是告诉服务器我们这个请求是来源于浏览器的。
-​	
-	header = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko)Chrome/65.0.3325.181 Safari/537.36'}
-	
-	res = urllib.request.Request('https://www.baidu.com', headers=header)
-	
-	# 读取url的页面源码
-	r = urllib.request.urlopen(res)
-	# decode解码，encode编码
-	print(r.read().decode('utf-8'))
+```
+header = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko)Chrome/65.0.3325.181 Safari/537.36'}
 
+res = urllib.request.Request('https://www.baidu.com', headers=header)
+
+# 读取url的页面源码
+r = urllib.request.urlopen(res)
+# decode解码，encode编码
+print(r.read().decode('utf-8'))
+```
 按照这样去解析，就可以获取到百度的首页源代码了，展示部门代码如下：
+```
+<html>
+<head>
 
-	<html>
-	<head>
-	
-	<meta http-equiv="content-type" content="text/html;charset=utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta content="always" name="referrer">
-	<meta name="theme-color" content="#2932e1">
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-	<link rel="search" type="application/opensearchdescription+xml" href="/content-search.xml" title="百度搜索" />
-	<link rel="icon" sizes="any" mask href="//www.baidu.com/img/baidu_85beaf5496f291521eb75ba38eacbd87.svg">
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta content="always" name="referrer">
+<meta name="theme-color" content="#2932e1">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="search" type="application/opensearchdescription+xml" href="/content-search.xml" title="百度搜索" />
+<link rel="icon" sizes="any" mask href="//www.baidu.com/img/baidu_85beaf5496f291521eb75ba38eacbd87.svg">
 
+<link rel="dns-prefetch" href="//s1.bdstatic.com"/>
+<link rel="dns-prefetch" href="//t1.baidu.com"/>
+<link rel="dns-prefetch" href="//t2.baidu.com"/>
+<link rel="dns-prefetch" href="//t3.baidu.com"/>
+<link rel="dns-prefetch" href="//t10.baidu.com"/>
+<link rel="dns-prefetch" href="//t11.baidu.com"/>
+<link rel="dns-prefetch" href="//t12.baidu.com"/>
+<link rel="dns-prefetch" href="//b1.bdstatic.com"/>
 
-​	
-	<link rel="dns-prefetch" href="//s1.bdstatic.com"/>
-	<link rel="dns-prefetch" href="//t1.baidu.com"/>
-	<link rel="dns-prefetch" href="//t2.baidu.com"/>
-	<link rel="dns-prefetch" href="//t3.baidu.com"/>
-	<link rel="dns-prefetch" href="//t10.baidu.com"/>
-	<link rel="dns-prefetch" href="//t11.baidu.com"/>
-	<link rel="dns-prefetch" href="//t12.baidu.com"/>
-	<link rel="dns-prefetch" href="//b1.bdstatic.com"/>
-	
-	<title>百度一下，你就知道</title>
+<title>百度一下，你就知道</title>
 
+<style id="css_index" index="index" type="text/css">html,body{height:100%}
+html{overflow-y:auto}
+body{font:12px arial;text-align:;background:#fff}
+body,p,form,ul,li{margin:0;padding:0;list-style:none}
+body,form,#fm{position:relative}
+td{text-align:left}
+img{border:0}
+a{color:#00c}
+a:active{color:#f60}
+input{border:0;padding:0}
+#wrapper{position:relative;_position:;min-height:100%}
+#head{padding-bottom:100px;text-align:center;*z-index:1}
 
-	<style id="css_index" index="index" type="text/css">html,body{height:100%}
-	html{overflow-y:auto}
-	body{font:12px arial;text-align:;background:#fff}
-	body,p,form,ul,li{margin:0;padding:0;list-style:none}
-	body,form,#fm{position:relative}
-	td{text-align:left}
-	img{border:0}
-	a{color:#00c}
-	a:active{color:#f60}
-	input{border:0;padding:0}
-	#wrapper{position:relative;_position:;min-height:100%}
-	#head{padding-bottom:100px;text-align:center;*z-index:1}
-	
-	...忽略....
-	...忽略....
-	...忽略....
-	
-	</body>
-	</html>
+...忽略....
+...忽略....
+...忽略....
 
+</body>
+</html>
+```
 
 #### 4. ssl认证
 
@@ -208,19 +205,18 @@ SSL 证书由浏览器中“受信任的根证书颁发机构”在验证服务�
 
 如果不忽略ssl的安全认证的话，网页的源码会提示ssl认证问题，需要提供ssl认证。我们在做爬虫的时候，自动设置忽略掉ssl认证即可。代码如下：
 
-	import ssl
-	import urllib.request
+```
+import ssl
+import urllib.request
+
+def main():
+    url = 'https://www.12306.cn/mormhweb/'
+    # 忽略未经审核的ssl认证
+    context = ssl._create_unverified_context()
+    res = urllib.request.urlopen(url, context=context)
+    print(res.read().decode('utf-8'))
 
 
-​	
-	def main():
-	    url = 'https://www.12306.cn/mormhweb/'
-	    # 忽略未经审核的ssl认证
-	    context = ssl._create_unverified_context()
-	    res = urllib.request.urlopen(url, context=context)
-	    print(res.read().decode('utf-8'))
-
-
-​	
-	if __name__ == '__main__':
-	    main()
+if __name__ == '__main__':
+	main()
+```
