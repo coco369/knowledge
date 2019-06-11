@@ -71,14 +71,14 @@ bookstore 的<font style="color:red; font-weight:bold;">后代</font>是 book、
 XPath 使用路径表达式在 XML 文档中选取节点。节点是通过沿着路径或者 step 来选取的。
 
 
-![图](images/lxml_xpath1.png)
+![图](../images/lxml_xpath1.png)
 
 简单的案例：
 
 使用lxml来解析我们的网页结构，自定义一个简单的html结构，其中包含div和ul和li标签
 
 	from lxml import etree	
-
+	
 	html = '''
 		<!DOCTYPE html>
 		<html lang="en">
@@ -194,11 +194,12 @@ XPath 使用路径表达式在 XML 文档中选取节点。节点是通过沿着
 该案例比只爬取岗位个数更进一步，需要使用xpath来解析整个页面，获取想要的数据。
 
 	from urllib import parse
-
+	
 	import requests
 	from lxml import etree
-	
-	
+
+
+​	
 	def zhaopin_msg(url):
 	    """
 	     获取智联上招聘信息
@@ -209,7 +210,7 @@ XPath 使用路径表达式在 XML 文档中选取节点。节点是通过沿着
 		# 使用urllib去获取源码，修改该部分代码，使用requests去获取源码
 	    # req = urllib.request.Request(url=url, headers=header)
 	    # res = urllib.request.urlopen(req)
-
+	
 		res = requests.get(url=url, headers=header)
 	
 	    # 查询岗位名称和公司名称
@@ -217,8 +218,9 @@ XPath 使用路径表达式在 XML 文档中选取节点。节点是通过沿着
 	    content1 = tree.xpath('//tr/td/div/a[1]/text()')
 	    content2 = tree.xpath('//tr/td/a[1]/text()')
 	    return content1, content2
-	
-	
+
+
+​	
 	if __name__ == '__main__':
 	
 	    # 获取从客户端接收到的参数
@@ -255,8 +257,9 @@ XPath 使用路径表达式在 XML 文档中选取节点。节点是通过沿着
 	{2,5} 出现次数2≤x≤5
 	
 	| 或     例如，“z|food”能匹配“z”或“food”(此处请谨慎)。“[z|f]ood”则匹配“zood”或“food”或"zood"。
-	
-	
+
+
+​	
 	[] 中括号中任意一个符合即可（中括号里面没有分转义字符）   '[abc]ooby123'----只要开头符合[]中任意一个即可
 	
 	[^] 只要不出现[]的即可
@@ -265,7 +268,8 @@ XPath 使用路径表达式在 XML 文档中选取节点。节点是通过沿着
 	
 	. 任意字符
 
-	
+
+​	
 	\s 匹配不可见字符 \n \t    '你\s好'----可以匹配‘你 好’
 	
 	\S 匹配可见字符，即普通字符
@@ -273,8 +277,9 @@ XPath 使用路径表达式在 XML 文档中选取节点。节点是通过沿着
 	\w 匹配下划线在内的任何单词字符
 	
 	\W 和上一个相反
-	
-	
+
+
+​	
 	[\u4E00-\u9FA5] 只能匹配汉字
 	
 	() 要取出的信息就用括号括起来
