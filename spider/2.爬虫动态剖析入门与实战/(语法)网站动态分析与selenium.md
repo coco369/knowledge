@@ -24,15 +24,15 @@
 
 我们以[豆瓣电影](https://movie.douban.com/explore#!type=movie&tag=%E7%83%AD%E9%97%A8&sort=recommend&page_limit=20&page_start=0)为例，说明什么是JavaScript逆向工程。其实所谓的JavaScript逆向工程就是找到通过Ajax请求动态获取数据的接口。
 
-![图](images/spider_douban_javascript.png)
+![图](../images/spider_douban_javascript.png)
 
 但是当我们在浏览器中通过右键菜单“显示网页源代码”的时候，居然惊奇的发现页面的HTML代码中连一个电影的名称都搜索不到。
 
-![图](images/spider_douban_javascript_code.png)
+![图](../images/spider_douban_javascript_code.png)
 
 那网页中的数据到底是怎么加载出来的呢，其实网页中的数据就是一个动态加载出来的。可以在浏览器的“开发人员工具”的“网络”中可以找到获取这些图片数据的网络API接口，如下图所示。
 
-![图](images/spider_douban_javascript_xhr.png)
+![图](../images/spider_douban_javascript_xhr.png)
 
 那么结论就很简单了，只要我们找到了这些网络API接口，那么就能通过这些接口获取到数据，当然实际开发的时候可能还要对这些接口的参数以及接口返回的数据进行分析，了解每个参数的意义以及返回的JSON数据的格式，这样才能在我们的爬虫中使用这些数据。
 
@@ -40,7 +40,7 @@
 ### 2. selenium自动框架
 
 使用自动化测试工具Selenium，它提供了浏览器自动化的API接口，这样就可以通过操控浏览器来获取动态内容。首先可以使用pip来安装Selenium。
- 
+
 #### 2.1 安装
 
 	pip install selenium
@@ -50,10 +50,10 @@
 我们通过Selenium实现对Chrome浏览器的操控，如果要操控其他的浏览器，可以创对应的浏览器对象，例如Chrome、Firefox、Edge等，还有手机端的浏览器Android、BlackBerry等，另外无界面浏览器PhantomJS也同样支持。
 
 	from selenium import webdriver
-
+	
 	browser = webdriver.Firefox()
-    browser = webdriver.Ie()
-    browser = webdriver.Opera()
+	browser = webdriver.Ie()
+	browser = webdriver.Opera()
 	browser = webdriver.Chrome()
 	browser = webdriver.PhantomJS()
 
@@ -66,7 +66,7 @@
 驱动已经下载好了，保存地址在(spider/chromedriver_win32/)中
 
 #### 2.3 访问url
-	
+
 可以用get()方法来请求一个网页，参数传入链接URL即可
 
 
@@ -93,7 +93,7 @@
 
 	find_element_by_id(id)
 	就等价于find_element(By.ID, id)
-
+	
 	find_element_by_css_selector('#xxx')
 	等价于find_elements(By.CSS_SELECTOR, '.service-bd li')
 
@@ -101,7 +101,7 @@
 ##### 获取多个元素
 
 >find_elements_by_css_selector('#xxx li')是根据id=xxx来获取下面的所有li的结果
-	
+
 
 #### 2.5 查找淘宝导航条的所有条目
 
@@ -124,19 +124,54 @@
 
 在Selenium中，get()方法会在网页框架加载结束之后就结束执行，此时如果获取page_source可能并不是浏览器完全加载完成的页面，如果某些页面有额外的Ajax请求，我们在网页源代码中也不一定能成功获取到。所以这里我们需要延时等待一定时间确保元素已经加载出来。在这里等待的方式有两种，一种隐式等待，一种显式等待。
 
+##### 隐式等待(当查找元素或元素并没有立即出现的时候，隐式等待将等待一段时间再查找 DOM，默认的时间是0)
+
 以访问知乎发现页面为案例：
 
 	from selenium import webdriver
 	
 	chromedriver = 'C:\Program Files (x86)\Google\Chrome\Application\chromedriver'
 	browser = webdriver.Chrome(chromedriver)
-
+	
 	# 用implicitly_wait()方法实现了隐式等待。
 	browser.implicitly_wait(10)
-
+	
 	browser.get('https://www.zhihu.com/explore')
 	input = browser.find_element_by_class_name('zu-top-add-question')
 	print(input)
+
+##### 显式等待(表明某个条件成立才执行获取元素的操作、也可以等待的时候指定一个最大的时间)
+
+以 淘宝首页为案例:
+
+```
+from selenium import webdriver
+
+browser = webdriver.Chrome()
+browser.get('https://www.taobao.com/')
+wait = WebDriverWait(browser, 10)
+input = wait.until(EC.presence_of_element_located((By.ID, 'q')))
+button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '.btn-search')))
+print(input, button)
+```
+
+- title_is 标题是某内容
+- title_contains 标题包含某内容
+- presence_of_element_located 元素加载出，传入定位元组，如(By.ID, 'p')
+- visibility_of_element_located 元素可见，传入定位元组
+- visibility_of 可见，传入元素对象
+- presence_of_all_elements_located 所有元素加载出
+- text_to_be_present_in_element 某个元素文本包含某文字
+- text_to_be_present_in_element_value 某个元素值包含某文字
+- frame_to_be_available_and_switch_to_it frame加载并切换
+- invisibility_of_element_located 元素不可见
+- element_to_be_clickable 元素可点击
+- staleness_of 判断一个元素是否仍在DOM，可判断页面是否已经刷新
+- element_to_be_selected 元素可选择，传元素对象
+- element_located_to_be_selected 元素可选择，传入定位元组
+- element_selection_state_to_be 传入元素对象以及状态，相等返回True，否则返回False
+- element_located_selection_state_to_be 传入定位元组以及状态，相等返回True，否则返回False
+- alert_is_present 是否出现Alert
 
 #### 2.7 前进后退
 
@@ -147,7 +182,7 @@
 	browser.forward()
 
 #### 2.8 Cookies操作
-	
+
 	from selenium import webdriver
 	
 	chromedriver = 'C:\Program Files (x86)\Google\Chrome\Application\chromedriver'
@@ -229,8 +264,9 @@
 
 	from bs4 import BeautifulSoup
 	from selenium import webdriver
-	
-	
+
+
+​	
 	def main():
 	    chromedriver = 'C:\Program Files (x86)\Google\Chrome\Application\chromedriver'
 	    driver = webdriver.Chrome(chromedriver)
@@ -239,8 +275,9 @@
 	    for img_tag in soup.body.select('img[src]'):
 	        print(img_tag.attrs.get('src'))
 	        print(img_tag.attrs.get('alt'))
-	
-	
+
+
+​	
 	if __name__ == '__main__':
 	    main()
 
