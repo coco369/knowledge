@@ -12,31 +12,31 @@
 
 ### 1. 使用selenium，模拟登陆知乎
 
-![图](images/zhihu_signin.png)
+![图](../images/zhihu_signin.png)
 
 使用selenium去模拟浏览器的行为去登陆知乎，需要清楚登陆页面中的输入用户名和密码，还有登陆按钮的样式，这样selenium才能通过样式id或者class去获取到该按钮，进行相关的填入用户信息和提交的操作
 
 	from selenium import webdriver
 	import time
-
+	
 	# 创建浏览器对象
 	chromedriver = 'C:\Program Files (x86)\Google\Chrome\Application\chromedriver'
 	browser=webdriver.Chrome(chromedriver)
-
+	
 	# 请求加载登录链接
 	browser.get('https://www.zhihu.com/signin')
 	time.sleep(3)
-
+	
 	# 输入账号
 	browser.find_element_by_css_selector("input[name='username']").send_keys('17078075655')
-
+	
 	# 输入密码
 	browser.find_element_by_css_selector("input[name='password']").send_keys('19910825580lb')
-
+	
 	# 模拟点击登录
 	browser.find_element_by_css_selector(".SignFlow-submitButton").click()
 	time.sleep(3)
-
+	
 	# 截图
 	browser.save_screenshot("zhihu.png")
 	browser.quit()
@@ -45,13 +45,14 @@
 
 
 ### 2. 使用selenium去爬取豆瓣电影的信息
-	
+
 简单的：
 
 	from bs4 import BeautifulSoup
 	from selenium import webdriver
-	
-	
+
+
+​	
 	def main():
 	    chromedriver = 'C:\Program Files (x86)\Google\Chrome\Application\chromedriver'
 	    driver = webdriver.Chrome(chromedriver)
@@ -61,8 +62,9 @@
 	    for img_tag in soup.body.select('img[src]'):
 	        print(img_tag.attrs.get('src'))
 	        print(img_tag.attrs.get('alt'))
-	
-	
+
+
+​	
 	if __name__ == '__main__':
 	    main()
 
@@ -73,8 +75,9 @@
 	import time
 	
 	from selenium import webdriver
-	
-	
+
+
+​	
 	def more_movie(browser):
 	    try:
 	        time.sleep(3)
@@ -85,8 +88,9 @@
 	        time.sleep(3)
 	    except:
 	        print('到底了')
-	
-	
+
+
+​	
 	def scroll_douban():
 	    chromedriver = 'C:\Program Files (x86)\Google\Chrome\Application\chromedriver'
 	    browser = webdriver.Chrome(chromedriver)
@@ -110,9 +114,10 @@
 	
 	    # 关闭浏览器的窗口
 	    browser.close()
-	
-	
+
+
+​	
 	if __name__ == '__main__':
 	
 	    scroll_douban()
-	
+
