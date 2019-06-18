@@ -20,7 +20,7 @@
 在items.py文件中定义字段，这些字段用来保存数据，方便后续的操作。
 
 	import scrapy
-	
+
 
 	class DoubanItem(scrapy.Item):
 	
@@ -55,14 +55,15 @@ LinkExtractor常用的参数有：
 	from scrapy.spiders import CrawlSpider, Rule
 	
 	from dbspider.items import DoubanItem
-	
-	
+
+
+​	
 	class MovieSpider(CrawlSpider):
 	    name = 'douban'
-
+	
 		# 不在此允许范围内的域名就会被过滤
 	    allowed_domains = ['movie.douban.com']
-
+	
 	    start_urls = ['https://movie.douban.com/top250']
 	    rules = (
 	        Rule(LinkExtractor(allow=(r'https://movie.douban.com/top250.*')), callback='parse_item'),
@@ -94,7 +95,7 @@ LinkExtractor常用的参数有：
 
 运行结果，可能出乎我们的意料，我们发现了在请求电影https://movie.douban.com/top250地址的时候，报了一个403的错误。众所周知，403明显是权限禁止访问了。这个时候就需要去设置我们之前设置过的USER_AGENT的参数了
 
-![图](images/scrapy_douban_403.png)
+![图](../images/scrapy_douban_403.png)
 
 在settings.py中添加如下的USER_AGENT信息：
 
@@ -102,7 +103,7 @@ LinkExtractor常用的参数有：
 
 再次：我们再去运行scrapy crawl douban的命令，即可正常获取信息
 
-![图](images/scrapy_douban_top_start_auto.png)
+![图](../images/scrapy_douban_top_start_auto.png)
 
 从返回的结果中可以看出，我们定义了匹配的rule规则后，电影top250的分页地址信息，也都全部加载出来了，并且GET请求也成功的获取到了对应url的信息。在接下来，我们做数据持久化的时候，相当方便了。
 
@@ -112,7 +113,6 @@ LinkExtractor常用的参数有：
 	
 	from scrapy.conf import settings
 	from scrapy import log
-	
 	
 	class DoubanPipeline(object):
 	
@@ -160,7 +160,6 @@ LinkExtractor常用的参数有：
 	SPIDER_MODULES = ['dbspider.spiders']
 	NEWSPIDER_MODULE = 'dbspider.spiders'
 	
-	
 	# Crawl responsibly by identifying yourself (and your website) on the user-agent
 	#USER_AGENT = 'dbspider (+http://www.yourdomain.com)'
 	USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'
@@ -182,12 +181,10 @@ LinkExtractor常用的参数有：
 	# Disable cookies (enabled by default)
 	COOKIES_ENABLED = False
 	
-	
 	MONGODB_SERVER = '127.0.0.1'
 	MONGODB_PORT = 27017
 	MONGODB_DB = 'douban'
 	MONGODB_COLLECTION = 'movie'
-	
 	# Disable Telnet Console (enabled by default)
 	#TELNETCONSOLE_ENABLED = False
 	
@@ -248,4 +245,4 @@ LinkExtractor常用的参数有：
 
 #### 运行效果，mongodb中的存储结果展示
 
-![图](images/scrapy_douban_movies_result.png)
+![图](../images/scrapy_douban_movies_result.png)
