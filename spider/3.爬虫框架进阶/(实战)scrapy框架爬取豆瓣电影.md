@@ -55,12 +55,9 @@ LinkExtractor常用的参数有：
 	from scrapy.spiders import CrawlSpider, Rule
 	
 	from dbspider.items import DoubanItem
-
-
-​	
+	
 	class MovieSpider(CrawlSpider):
 	    name = 'douban'
-	
 		# 不在此允许范围内的域名就会被过滤
 	    allowed_domains = ['movie.douban.com']
 	
@@ -88,8 +85,9 @@ LinkExtractor常用的参数有：
 	        item['classification'] = [i.split('/')[2] for i in director]
 	        return item
 
-
 完成前面两步骤的时候，我们就可以来运行我们的项目了。运行命令 scrapy crawl douban。其中我们可以在控制台看到爬取到的数据，如果想将这些数据保存到文件中，可以通过-o参数来指定文件名，Scrapy支持我们将爬取到的数据导出成JSON、CSV、XML、pickle、marshal等格式。
+
+注意: 将数据保存为result.json格式数据时，需要指定编码。因此在settings.py文件中定义FEED_EXPORT_ENCODING='utf-8'
 
 	scrapy crawl douban -o result.json
 
