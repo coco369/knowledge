@@ -172,99 +172,34 @@
 ### 爬虫
 
 
-  - [爬虫入门](spider/1.爬虫入门)
+  - [爬虫入门与实战](spider/1.爬虫入门与实战)
 
        - 爬虫概念 - 爬虫原理 / 请求(请求头、cookie、headers等) / 响应(响应状态码、响应内容、响应headers等)
-       - 数据采集库 - urllib / requests /  BeautifulSoup/ Scrapy /正则表达式
+       - 数据采集库 - urllib / requests /  Selenium/ / Scrapy
+       - 数据分析 - 正则表达式 / lxml / BeautifulSoup4  / xpath
        - 案例1 - 使用urllib库爬取智联上某工作某地点的工作名称，公司等信息
        - 案例2 - 使用requests库爬取猫眼电影的信息
 
-  - [数据采集]
+       - 案例3 - 获取豆瓣电影中动态加载电影资源信息
 
-      - 数据采集与分析：beautifulsoup4使用 / xpath语法
+       - 案例4- 爬取知乎发现里面的提问的链接数，和链接地址
 
-      - 应用案例1：获取豆瓣电影中动态加载电影资源信息
+  - [爬虫动态剖析与实战](spider/2.爬虫动态剖析入门与实战)
 
-      - 应用案例2:爬取知乎发现里面的提问的链接数，和链接地址
+     - 自动化工具Selenium - 动态网站分析 / Selenium中标准选择器、CSS选择器、标签选择器语法
+     - 案例1 - 知乎和豆瓣电影的动态信息的爬取 
+     - 案例2 - 验证码破解（B站极验验证码的破解、图片验证码的破解）
 
-        ​       
+  - [Scrapy框架](spider/3.爬虫框架进阶)
 
-        - [采集(bs4)](spider/2数据采集bs.md)
-        - [采集(requests)](spider/2数据采集requests.md)
+      - Scrapy框架 - Scrapy框架图解 / 下载中间件 / Spider中间件 / Spiders爬虫 / Item实体 / Pipelines项目管道 
+      - 代理 - IP代理切换proxy / User_Agent用户代理切换 / Cookie代理池切换
+      - 分布式Scrapy-redis - 分布式概念 / 爬取队列维护 / 主机master / 从机slave
 
-      - [提取xpath/re](spider/2.2spider_re_xpath.md)
+  - [爬虫性能](spider/4.爬虫性能)
 
-      - [应用案例1:爬知乎的提问/豆瓣电影信息](spider/2.1spider_movies_questions.md)
-
-      - [应用案例2:爬取搜狐体育的新闻信息](spider/2.3spider_souhu_sports.md)
-
-  - [第三天:多线程爬虫]
-
-     - 概念：线程、进程、同步、异步、并发、阻塞、非阻塞、并发、并行
-        - 进程、线程概念：多线程定义，守护线程，线程启动
-        - 线程锁
-        - 应用案例1：I/O密集型，计算密集型的单线程多线程对比
-        
-      - [并发、并行、同步、异步线程、进程](spider/3.0spider_process_threading.md)
-      - [线程锁](spider/3.1spider_threading_lock.md)
-      - [应用案例1:计算密集型和IO密集型的性能对比](spider/3.2spider_threading_IO_calc_GIL.md)
-      - [应用案例2:多线程爬虫](spider/3.3spider_threading_douban.md)
-
-  - [第四天:协程/数据持久化]
-
-      - 迭代器、生成器的原理概念、斐波那契的实现
-        - 协程的概念，原理，生产者-消费者的实现
-        - 数据持久化，redis安装配置、缓存，mongodb安装配置、语法、缓存
-        - aiohttp:异步非阻塞的
-
-      - [协程](spider/4.0spider_yield.md)
-      - [练习题](spider/4.1spider_yield_practice.md)
-      - [数据库持久化](spider/4.2spider_sql_engine.md)
-      - [应用案例1:使用协程爬取豆瓣电影并持久化](spider/4.3spider_async_await.md)
-
-
-
- - [第五天:动态解析]
-
-		- 动态内容分析: 什么是动态内容，分析豆瓣的动态内容加载
-		- javascript逆向，selenium自动化测试框架
-		- 应用案例1: 使用selenium模拟登陆知乎
-		- 应用案例2: 使用selenium解析豆瓣电影信息
-		
-	  - [动态内容解析/selenium用法](spider/5.0spider_javascript_analyst.md)
-	  - [模拟登陆知乎并截图/解析豆瓣电影信息](spider/5.1spider_selenium_login_zhihu_and_douban_movies.md)
-
-  - [第六天:验证]
-	
-		- 模拟登陆:请求url分析,请求参数分析，模拟登陆状态保持
-		- form模拟登陆、验证码
-
-	- [应用案例1：模拟登陆github](spider/6.0spider_github_login.md)
-	- [应用案例2: 验证码识别](6.1spider_verifi_aliyun.md)
-
-  - [第七天--第十天]
-  
-	    - scrapy框架组件，处理流程，数据持久化
-	    - scrapy项目环境搭建，创建项目命令，执行启动操作，各相关文件的处理逻辑
-	    - scrapy_redis分布式爬虫原理
-	    
-	    - 案例1：爬取起点小说网的小说分类，以及分类的url
-	    - 案例2：爬取豆瓣电影的信息，并使用mongodb持久化
-		- 案例3：爬取链家房源信息，并存储在csv文件
-		- 案例4：爬取微博大V的粉丝数，关注，博客等信息
-
-      	- [scrapy框架的介绍以及案例1](spider/7.0spider_scrapy1.md)
-      	- [scrapy爬虫豆瓣信息](spider/7.1spider_scrapy2.md) 
-      	- [scrapy爬取链家信息](spider/code/scrapy框架/lianjiaspider)
-      	- [scrapy爬取微博用户信息](spider/7.2spider_weibo_scrapy3.md)
-	  
-	- [分析接口](spider/7.2spider_weibo_scrapy3.md)
-	- [分析用户信息](spider/7.3spider_weibo_scrapy_user_info.md)
-	- [分析关注信息](spider/7.4spider_weibo_scrapy_follows_info.md)
-	- [分析粉丝信息](spider/7.5spider_weibo_scrapy_fans_info.md)
-	- [IP代理池/User-Agent设置](spider/7.6spider_weibo_scrapy_ips_user_agent.md)
-	- [scrapy爬取豆瓣即将上线电影/正在热播电影信息](spider/code/scrapy框架/doubanMoviespider)
-	- [分布式爬虫](spider/7.7spider_scrapy_redis.md)
+        - 同步、异步、协程、多线程、单线程、多进程
+        - 异步aiohttp
 
 
 ### Tornado知识库
