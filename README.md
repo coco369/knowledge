@@ -198,6 +198,7 @@
   - [同步与异步](tornado/3.2.3-Tornado异步、协程)
      - tornado跨站请求伪造XSRF - 概念 / 防范
      - 同步与异步 - 同步 / 异步 / 阻塞 / 非阻塞 / 协程 / 异步生成器 / ab压力测试
+     - 队列 
      - 应用案例1: 开发websocket聊天系统
   - [实战项目](tornado/3.2.4-Tornado项目)
          - 案例1: WebSocket聊天室
