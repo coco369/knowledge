@@ -190,22 +190,17 @@
       - Tornado配置 - 虚拟环境搭建 / tornado的安装 / 最小tornado的web应用 / 启动命令端口配置
       - 请求与响应 - HTTP行为方法 / 切入点函数 / 请求参数(get_argument) / 响应参数
       - 路由 - 路由匹配规则
-  - [进阶](tornado/3.2.2-Tornado进阶)
+  - [进阶](tornado/3.2.2-Tornado路由、模板、数据库)
      - tornado静态资源与模板 - 模型的继承与模板语法 / 静态资源的加载static_url
      - 数据库 -  sqlalchemy的安装 / 模型定义 / 模型迁移
      - Tornado WebSocket网络协议: - 保持浏览器与服务器之间的通信，并实现持久化连接，数据的双向传递等
 
-  - [同步与异步](tornado/3.2.3-Tornado进阶2)
+  - [同步与异步](tornado/3.2.3-Tornado异步、协程)
      - tornado跨站请求伪造XSRF - 概念 / 防范
      - 同步与异步 - 同步 / 异步 / 阻塞 / 非阻塞 / 协程 / 异步生成器 / ab压力测试
      - 应用案例1: 开发websocket聊天系统
-  - [人脸识别项目](tornado/3.2.4-Tornado项目)
-         - tornado人脸识别，实现注册登录功能
-
-
-
-  - [数据监控后台项目](tornado/3.2.5-Tornado项目)
-        - 数据监控项目: 前端页面采用echarts展示图像报表、后端采用tornado进行数据实时更新
+  - [实战项目](tornado/3.2.4-Tornado项目)
+         - 案例1: WebSocket聊天室
 
 
 
