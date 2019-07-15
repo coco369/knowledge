@@ -97,93 +97,128 @@
 	# 用户代理, 使得服务器能够识别请求是通过浏览器请求过来的，其中包含浏览器的名称/版本等信息
 	User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36
 
-其中在爬虫中最重要的就是User-Agent：在下面urllib的使用中就会详细的解释User-Agent的使用
-
+其中在爬虫中最重要的就是User-Agent
 
 ### 3. urllib的使用
 
-使用urllib来获取百度首页的源码
-​	 
-	import urllib.request
-	
-	r = urllib.request.urlopen('https://www.baidu.com')
-	print(r.read().decode('utf-8'))
+#### 3.1 语法1
 
-按照我们的想法来说，输出的结果应该是百度首页的源码才对，但是输出却不对(多请求几次，就会出现如下的结果)，如下结果：
+#####         urllib.request.urlopen(url, data, timeout) ，其中传入data则表示发送POST请求，不传入data则表示发送GET请求
 
-	<html>
-	<head>
-		<script>
-			location.replace(location.href.replace("https://","http://"));
-		</script>
-	</head>
-	<body>
-		<noscript><meta http-equiv="refresh" content="0;url=http://www.baidu.com/"></noscript>
-	</body>
-	</html>
+3.1.1 传入url参数
+```
+import urllib.request
+import urllib.error
+import urllib.parse
 
+# 只传入地址url的情况
+url = 'http://www.baidu.com'
+response = urllib.request.urlopen(url)
+print(response)
+# read()读取响应内容，默认格式为bytes
+text = response.read().decode('utf-8')
 
-以上的结果并不是我们想要的，我们可以来查看一下为什么会出现这种问题的原因。我们可以想到刚才说的，请求头中的最重要的参数User-Agent参数，该参数是用来告诉服务器，请求的url是来源于哪儿的，是来源于浏览器还是来源于其他地方的。如果是来源于非浏览器的会就不会返回源码信息给你的，直接拦截掉你的请求
+# 传入地址url和参数data的情况
+# 参数放在url地址中，请求方式为GET
+url = 'http://www.baidu.com/s?wd=python'
+response = urllib.request.urlopen(url)
+text = response.read().decode('utf-8')
+```
+3.1.2 传入url参数和data参数
+```
+# 参数放在urlopen(data)中，表示请求方式为POST
+url = 'http://www.baidu.com/s'
+data = {
+    'wd': 'python'
+}
+# urlencode()方法将字典转化为key=value的形式
+data = urllib.parse.urlencode(data)
+# bytes()方法将data转化为bytes类型
+data = bytes(data, encoding='utf-8')
+response = urllib.request.urlopen(url, data)
+text = response.read().decode('utf-8')
+```
+3.1.3 传入url参数和timeout参数
+```
+# 传入timeout参数
+url = 'http://www.baidu.com'
+try:
+    response = urllib.request.urlopen(url, timeout=0.01)
+    text = response.read().decode('utf-8')
+    print(text)
+except urllib.error.URLError as e:
+    print('超时')
+```
 
-分析以上代码中，默认提交的请求头中的User-Agent到底传递了什么值：
+#### 3.2 语法
+##### urlopen()方法接收一个请求参数request对象：
+
+##### 	request = urllib.request.Request(url, data, headers, method)
+
+##### 	urllib.request.urlopen(对象request)
+
+3.2.1 传入地址url的情况
+
+```
+# Request(url)只传入地址url的情况
+url = 'https://movie.douban.com/top250'
+request = urllib.request.Request(url)
+response = urllib.request.urlopen(request)
+text = response.read().decode('utf-8')
+```
+
+3.2.2 Request(url, data)传入地址url和参数data的情况
+```
+# data是bytes类型，请求为POST
+url = 'http://www.baidu.com/s'
+data = {
+    'wd': 'python'
+}
+data = urllib.parse.urlencode(data)
+data = bytes(data, encoding='utf-8')
+request = urllib.request.Request(url, data)
+response = urllib.request.urlopen(request)
+text = response.read().decode('utf-8')
+```
+
+3.2.3 Request(url, headers), headers表示请求头，如User_Agent参数
+```
+# User_Agent参数可被服务端获取进行判断，判断该请求为爬虫还是人工
+
+url = 'http://httpbin.org/get'
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'
+}
+request = urllib.request.Request(url, headers=headers)
+response = urllib.request.urlopen(request)
+text = response.read().decode('utf-8')
+print(text)
+```
+
+3.2.4 修改代理IP
+```
+url = 'http://httpbin.org/get'
+proxies = {
+    'http': 'http://113.120.63.179:9999'
+}
+proxy_handler = urllib.request.ProxyHandler(proxies=proxies)
+opener = urllib.request.build_opener(proxy_handler)
+# 设置User-Agent
+# 设置User-Agent方法1
+opener.addheaders = [('User-Agent', '')]
+opener.open(url)
+# 设置User-Agent方法2
+request = urllib.request.Request(url, headers=headers)
+response = opener.open(request)
+
+text = response.read().decode('utf-8')
+print(text)
+```
+
+注意:  如果用户代理User-Agent参数不修改，则默认User-Agent参数为‘Python-urllib/3.7’，从源码中可以发现如下代码，如下图所示：
 
 ![图](../images/spider_01_useragent.png)
 
-接下来，就是优化以上的代码，实现目的就是告诉服务器我们这个请求是来源于浏览器的。
-```
-header = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko)Chrome/65.0.3325.181 Safari/537.36'}
-
-res = urllib.request.Request('https://www.baidu.com', headers=header)
-
-# 读取url的页面源码
-r = urllib.request.urlopen(res)
-# decode解码，encode编码
-print(r.read().decode('utf-8'))
-```
-按照这样去解析，就可以获取到百度的首页源代码了，展示部门代码如下：
-```
-<html>
-<head>
-
-<meta http-equiv="content-type" content="text/html;charset=utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta content="always" name="referrer">
-<meta name="theme-color" content="#2932e1">
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-<link rel="search" type="application/opensearchdescription+xml" href="/content-search.xml" title="百度搜索" />
-<link rel="icon" sizes="any" mask href="//www.baidu.com/img/baidu_85beaf5496f291521eb75ba38eacbd87.svg">
-
-<link rel="dns-prefetch" href="//s1.bdstatic.com"/>
-<link rel="dns-prefetch" href="//t1.baidu.com"/>
-<link rel="dns-prefetch" href="//t2.baidu.com"/>
-<link rel="dns-prefetch" href="//t3.baidu.com"/>
-<link rel="dns-prefetch" href="//t10.baidu.com"/>
-<link rel="dns-prefetch" href="//t11.baidu.com"/>
-<link rel="dns-prefetch" href="//t12.baidu.com"/>
-<link rel="dns-prefetch" href="//b1.bdstatic.com"/>
-
-<title>百度一下，你就知道</title>
-
-<style id="css_index" index="index" type="text/css">html,body{height:100%}
-html{overflow-y:auto}
-body{font:12px arial;text-align:;background:#fff}
-body,p,form,ul,li{margin:0;padding:0;list-style:none}
-body,form,#fm{position:relative}
-td{text-align:left}
-img{border:0}
-a{color:#00c}
-a:active{color:#f60}
-input{border:0;padding:0}
-#wrapper{position:relative;_position:;min-height:100%}
-#head{padding-bottom:100px;text-align:center;*z-index:1}
-
-...忽略....
-...忽略....
-...忽略....
-
-</body>
-</html>
-```
 
 #### 4. ssl认证
 
@@ -219,4 +254,8 @@ def main():
 
 if __name__ == '__main__':
 	main()
+```
+
+```
+
 ```
