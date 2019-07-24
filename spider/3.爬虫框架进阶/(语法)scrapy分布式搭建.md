@@ -1,5 +1,5 @@
 
-# 爬虫学习使用指南
+# 爬虫学习使用指南--scrapy分布式
 
 >Auth: 王海飞
 >
@@ -41,7 +41,7 @@
 > a) 项目拆分的过于复杂，给运维带来了很高的维护成本
 
 > b) 数据的一致性，分布式事务，分布式锁等问题不能得到很好的解决 
-	
+
 优点：
 
 > a) 一个业务模块崩了，并不影响其他的业务
@@ -55,13 +55,13 @@
 
 我们还是先回顾下scrapy的运行原理的构造图:
 
-![图](images/spider_scrapy_zhujian.png)
+![图](../images/spider_scrapy_zhujian.png)
 
 该图很好的阐释了在不是scrapy的服务器中的运行结构图，在维护爬取的url队列的时候，使用scheduler进行调度的。那么如果要修改为分布式的scrapy爬虫的话，其实就是将爬取的队列进行共享，多台部署了scrapy爬虫的服务器共享该爬取队列。
 
 ### 2. 分布式架构：
 
-![图](images/scrapy_redis_tu.png)
+![图](../images/scrapy_redis_tu.png)
 
 master-主机：维护爬虫队列。
 
@@ -83,7 +83,7 @@ scrapy_redis是scrapy框架下的一个插件，通过重构调度器来使我�
 安装redis：
 
 	# redis可以仅在master主机上安装
-
+	
 	pip install redis
 
 安装数据存储数据库，采用mongodb [见: 安装配置地址](../sql/mongodb.md)
@@ -103,7 +103,7 @@ master主机改造： 在master主机上安装redis并启动，最好设置密�
 ##### spiders文件中定义的爬虫py文件修改如下：
 
 如下爬虫实现的功能是拿到需要爬取的成都各大区县的二手房页面url地址，包括分页的地址。并将数据存储到redis中
-	
+```	
 	import json
 	
 	from scrapy import Request
@@ -111,8 +111,7 @@ master主机改造： 在master主机上安装redis并启动，最好设置密�
 	from scrapy.selector import Selector
 	
 	from lianjiaspider.items import LianjiaspiderItem, MasterItem
-	
-	
+
 	class LianJiaSpider(Spider):
 	
 	    name = 'lianjia'
@@ -146,7 +145,7 @@ master主机改造： 在master主机上安装redis并启动，最好设置密�
 	            item = MasterItem()
 	            item['url'] = self.domains_url + response.meta.get('href') + 'pg' + str(i)
 	            yield item
-
+```
 
 ##### 定义Item
 
@@ -187,12 +186,13 @@ slave从机改造：slave从机访问redis，直接去访问master主机上的re
 	from scrapy.selector import Selector
 	
 	from lianjiaspider.items import LianjiaspiderItem
-	
-	
+
+
+​	
 	class LianJiaSpider(RedisSpider):
 	
 	    name = 'lianjia'
-
+	
 		# 指定访问redis的爬取urls的队列
 	    redis_key = 'lianjia:start_urls'
 	
@@ -235,19 +235,19 @@ slave从机改造：slave从机访问redis，直接去访问master主机上的re
 	
 	# 如果这一项设为True，那么在Redis中的URL队列不会被清理掉，但是在分布式爬虫共享URL时，要防止重复爬取。如果设为False，那么每一次读取URL后都会将其删掉，但弊端是爬虫暂停后重新启动，他会重新开始爬取。 
 	SCHEDULER_PERSIST = True
-
+	
 	# REDIS_START_URLS_AS_SET指的是使用redis里面的set类型（简单完成去重），如果你没有设置，默认会选用list。
 	REDIS_START_URLS_AS_SET = True
-
+	
 	# DUPEFILTER_CLASS 是去重队列，负责所有请求的去重
 	DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
-
+	
 	# 爬虫的请求调度算法，有三种可供选择
 	# scrapy_redis.queue.SpiderQueue：队列。先入先出队列，先放入Redis的请求优先爬取；
 	# scrapy_redis.queue.SpiderStack：栈。后放入Redis的请求会优先爬取；
 	# scrapy_redis.queue.SpiderPriorityQueue：优先级队列。根据优先级算法计算哪个先爬哪个后爬
 	SCHEDULER_QUEUE_CLASS = "scrapy_redis.queue.SpiderQueue"
-
+	
 	# 设置链接redis的配置，或者如下分别设置端口和IP地址
 	REDIS_URL = 'redis://127.0.0.1:6379'
 	
