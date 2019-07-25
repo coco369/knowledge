@@ -20,26 +20,25 @@
 
 我们想要模拟登陆GitHub网站，首先打开GitHub 登录页面是 https://github.com/login，开启开发者模式调试功能，在登录页面中填入 Username 和 Password 之后，可以看到实际提交表单的地址是https://github.com/session
 
-![图](images/spider_github_session.png)
+![图](../images/spider_github_session.png)
 
 通过开发者工具调试可以看出，登录的时候调用的是一个https://github.com/session的url，并且是一个post请求。在后面我们模拟登陆，就可以模拟一个post请求，并传递参数到这个地址即可。
 
-![图](images/spider_github_login.png)
+![图](../images/spider_github_login.png)
 
 在以上分析中，可以知道在模拟登陆的时候，需要传递那些参数。其中commit 和 utf8 两项是定值；login 和 password 分别是用户名和密码，这很好理解。唯独authenticity_token 是一长串无规律的字符。该字段类似于django中的csrf。那么怎么去获取该字段呢，在查看源码的时候其实就可以看到了,该字段是一个隐藏hidden的input标签，其中value的值就是我们需要的信息，该值可以通过正则匹配获取到。
 
-![图](images/spider_githb_token.png)
+![图](../images/spider_githb_token.png)
 
 以上分析就可以自己来实现一个模拟登陆github的功能了，来我们自己动手试试~
 
 ### 2. 模拟登陆
 
 案例代码：
-	
+```	
 	import requests
 	import re
-	
-	
+
 	def get_authenticity_token(login_url):
 	    user_headers = {
 	        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36',
@@ -52,8 +51,8 @@
 	    authenticity_token = pattern.findall(response.content.decode('utf-8'))[1]
 	
 	    return authenticity_token, session, user_headers
-	
-	
+
+
 	def login_github(login_url, session_url, user, password):
 	
 	    authenticity_token, session, user_headers = get_authenticity_token(login_url)
@@ -68,7 +67,7 @@
 	
 	    response = session.post(session_url, headers=user_headers, data=login_data)
 	    print(response)
-	
+
 	
 	if __name__ == '__main__':
 	    session_url = 'https://github.com/session'
@@ -76,5 +75,4 @@
 	    user = 'yyy'
 	    password = 'xxxx'
 	    login_github(login_url, session_url, user, password)
-
-
+```
