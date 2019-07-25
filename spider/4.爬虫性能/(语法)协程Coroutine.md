@@ -40,7 +40,7 @@ Python 3.5：引入了async和await，可以使用async def来定义一个协程
 
 
 #### 1. 迭代器
-	
+
 迭代器和生成器都是python中最重要的知识点。迭代器可以遍历整个对象，在你需要取值的时候，调用next就可以依次获取迭代器中的下一个值，在迭代中中只能往下取值，不能再往上取值的
 
 案例代码：
@@ -49,7 +49,7 @@ Python 3.5：引入了async和await，可以使用async def来定义一个协程
 
     s = iter([1, 2, 3, 4])
     print(type([1, 2, 3, 4]))
-
+    
     print(type(s))
     print(s.__next__())
     print(s.__next__())
@@ -62,7 +62,7 @@ Python 3.5：引入了async和await，可以使用async def来定义一个协程
 	1
 	2
 	3
-
+	
 	Process finished with exit code 0
 
 
@@ -77,8 +77,9 @@ Python 3.5：引入了async和await，可以使用async def来定义一个协程
 
 
 	import sys
-	
-	
+
+
+​	
 	def fibonacci(n):
 	    # 生成器函数 - 斐波那契
 	    a, b, counter = 0, 1, 0
@@ -88,8 +89,9 @@ Python 3.5：引入了async和await，可以使用async def来定义一个协程
 	        yield a
 	        a, b = b, a + b
 	        counter += 1
-	
-	
+
+
+​	
 	if __name__ == '__main__':
 	
 	    f = fibonacci(10)  # f 是一个迭代器，由生成器返回生成
@@ -106,14 +108,14 @@ Python 3.5：引入了async和await，可以使用async def来定义一个协程
 运行结果为：
 
 	0 1 1 2 3 5 8 13 21 34 55 
-
+	
 	Process finished with exit code 0
 
 执行线路图：
 
 查看执行的流程可以使用debug模式去运行，通过断点调试可以很清晰的了解到整个代码的运行流程。
 
-![图](images/yield_shenchengqi.png)
+![图](../images/yield_shenchengqi.png)
 
 
 ### 3. 协程
@@ -123,8 +125,9 @@ Python 3.5：引入了async和await，可以使用async def来定义一个协程
 
 
 	import time
-	
-	
+
+
+​	
 	def consumer():
 	    r = '1xx'
 	    while True:
@@ -134,8 +137,9 @@ Python 3.5：引入了async和await，可以使用async def来定义一个协程
 	        print('[CONSUMER] 吃鸡翅 %s...' % n)
 	        time.sleep(1)
 	        r = '吃完啦，饱饱的了'
-	
-	
+
+
+​	
 	def produce(customer):
 	    # 启动迭代器
 	    customer.__next__()
@@ -149,8 +153,9 @@ Python 3.5：引入了async和await，可以使用async def来定义一个协程
 	        print('[PRODUCER] 吃鸡翅状态 return: %s' % r)
 	    # 关闭消费者
 	    customer.close()
-	
-	
+
+
+​	
 	if __name__ == '__main__':
 	    print('开始协程')
 	    customer = consumer()
@@ -170,15 +175,15 @@ Python 3.5：引入了async和await，可以使用async def来定义一个协程
 	[CONSUMER] 吃鸡翅 3...
 	[PRODUCER] 吃鸡翅状态 return: 吃完啦，饱饱的了
 	结束协程
-
+	
 	Process finished with exit code 0
 
 代码分析：
- 
+
 1. 在获取迭代器的时候，有三种获取方式
 	
 	next(customer)
-    
+  
 	customer.send(None)
 
 	customer.\_\_next\_\_()
