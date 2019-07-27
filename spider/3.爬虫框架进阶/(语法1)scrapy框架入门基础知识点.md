@@ -1,4 +1,5 @@
 
+
 # 爬虫学习使用指南--scrapy框架
 
 >Auth: 王海飞
@@ -19,8 +20,12 @@ Scrapy是一个为了爬取网站数据，提取结构性数据而编写的应�
 
 Scrapy 使用了 Twisted异步网络库来处理网络通讯。整体架构大致如下:
 
+
+流程图1：
 ![图](../images/spider_scrapy_zhujian.png)
 
+流程图2：
+![图](../images/scrapy_jiagou1.png)
 
 [中文官网](https://scrapy-chs.readthedocs.io/zh_CN/0.24/index.html)
 
@@ -39,7 +44,7 @@ Scrapy 使用了 Twisted异步网络库来处理网络通讯。整体架构大�
 
 ![图](../images/scrapy_win32api.png)
 
-按照自己电脑上的python版本，进行下载安装。安装的时候，先进入虚拟环境中，然后执行easy_install pywin32-221.win-amd64-py3.6.exe 命令即可将包安装在我们当前的虚拟环境中了。
+按照自己电脑上的python版本，进行下载安装。安装的时候，先进入虚拟环境中，然后执行pip install pywin32-221.win-amd64-py3.6.whl 命令即可将包安装在我们当前的虚拟环境中了。如果已安装好pywin32，则进入python解释器中导入win32api，如果导入成功则表示安装pywin32成功。否则安装失败。
 
 ![图](../images/easyinstall_win32api.png)
 
@@ -98,6 +103,7 @@ Scrapy的整个数据处理流程由Scrapy引擎进行控制，通常的运转�
 	
 8. 引擎将抓取到的数据条目送入条目管道，把新的URL发送给调度器放入队列中。
 	
+
 上述操作中的2-8步会一直重复直到调度器中没有需要请求的URL，爬虫停止工作。
 
 
@@ -107,8 +113,26 @@ Scrapy的整个数据处理流程由Scrapy引擎进行控制，通常的运转�
 
 ![图](../images/scrapy_run_not_error.png)
 
+从图中可以看出scrapy下有非常多的参数，如shell、startproject等参数。如下讲解shell参数和startproject参数
 
-#### 4.1 创建项目
+
+
+#### 4.1 进入交互式终端<shell参数>
+
+​        Scrapy shell**也称"Scrapy终端"，是**一个交互终端**，使**我们可以**在未启动spider爬虫的情况下**尝试及调试代码。
+
+​        更为方便的是，可以直接在终端中测试XPath或CSS表达式**，**而不用import导入相应模块**。通过查看其运行的结果，**方便了我们分析目标网页**，并从中**测试我们的表达式是否提取到了数据。
+
+操作步骤如下：
+
+1. 进入虚拟环境（激活爬虫虚拟环境）
+2. 执行交互式命令：scrapy shell 目标网站。scrapy将在交互式终端中爬取目标网站的内容。
+3. 查看响应状态response，并通过响应response.xpath()语法来获取页面的内容。
+4. 退出交互式终端，exist()命令。
+
+
+
+#### 4.2 创建scrapy项目<startprojec参数>
 
 	scrapy startproject dbspider
 
@@ -134,7 +158,13 @@ Scrapy的整个数据处理流程由Scrapy引擎进行控制，通常的运转�
 
 ### 5. 编写爬虫
 
-爬取起点中文网的网页源码,爬取小说分类名称以及url
+爬虫文件的创建可以<b>用户自己在spiders文件夹下创建</b>也可以通过如下<b>命令创建爬虫</b>，命令所示：
+
+```
+scrapy genspider 爬虫名 爬取网站地址
+```
+
+爬取起点中文网的网页源码,爬取小说分类名称以及url。
 
 案例代码：
 
