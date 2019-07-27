@@ -51,14 +51,30 @@ docker镜像可以看作是一个特殊的文件系统，除了提供容器运�
 ![导图](images/docker-command.jpg)
 
 ***
-### 1. Ubuntu中安装docker
+### 1. 安装docker
+
+​		docker可安装在Linux操作系统中、Mac操作系统中、Windows操作系统中。如下将分别演示在Windows操作系统中安装docker与Ubuntu/CtetOS中安装docker。
+
+#### 1.1 Windows中安装docker
+
+​		从docker官网上下载windows下的docker进行安装，不过请注意系统要求是**windows1064位 pro及以上版本或者教育版 
+
+ 　　官网下载：https://store.docker.com/editions/community/docker-ce-desktop-windows
+
+![图](images/widows_docker_download.png)
+
+将下载后的docker软件进行安装即可。
+
+****
+
+#### 1.2 Ubuntu中安装docker
 
 ```
 sudo apt-get update 
 sudo apt-get install docker-io
 ```
 ***
-### 1.1 CentOS7中安装docker
+#### 1.3 CentOS7中安装docker
 
 #### 安装docker
 
@@ -72,7 +88,7 @@ yum list installed | grep docker
 ```
 systemctl restart docker
 ```
-### 2. 基于基础镜像Ubuntu制作新镜像
+### 2. 基于基础镜像Ubuntu系统制作新镜像
 
 #### 1）下拉基础镜像Ubuntu
 

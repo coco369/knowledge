@@ -12,7 +12,7 @@
 
 ### 前言
 
-根据权威机构发布的全球互联网可访问性审计报告，全球约有四分之三的网站其内容或部分内容是通过JavaScript动态生成的，这就意味着在浏览器窗口中“查看网页源代码”时无法在HTML代码中找到这些内容，也就是说我们之前用的抓取数据的方式无法正常运转了。解决这样的问题基本上有两种方案：
+​		根据权威机构发布的全球互联网可访问性审计报告，全球约有四分之三的网站其内容或部分内容是通过JavaScript动态生成的，这就意味着在浏览器窗口中“查看网页源代码”时无法在HTML代码中找到这些内容，也就是说我们之前用的抓取数据的方式无法正常运转了。解决这样的问题基本上有三种方案，如下介绍其中的两种解决方案：
 
 >一是JavaScript逆向工程；
 
@@ -267,19 +267,19 @@ print(input, button)
 
 
 ​	
-	def main():
-	    chromedriver = 'C:\Program Files (x86)\Google\Chrome\Application\chromedriver'
-	    driver = webdriver.Chrome(chromedriver)
-	    driver.get('https://movie.douban.com/explore#!type=movie&tag=%E7%83%AD%E9%97%A8&sort=recommend&page_limit=20&page_start=0')
-	    soup = BeautifulSoup(driver.page_source, 'lxml')
-	    for img_tag in soup.body.select('img[src]'):
-	        print(img_tag.attrs.get('src'))
-	        print(img_tag.attrs.get('alt'))
+​	def main():
+​	    chromedriver = 'C:\Program Files (x86)\Google\Chrome\Application\chromedriver'
+​	    driver = webdriver.Chrome(chromedriver)
+​	    driver.get('https://movie.douban.com/explore#!type=movie&tag=%E7%83%AD%E9%97%A8&sort=recommend&page_limit=20&page_start=0')
+​	    soup = BeautifulSoup(driver.page_source, 'lxml')
+​	    for img_tag in soup.body.select('img[src]'):
+​	        print(img_tag.attrs.get('src'))
+​	        print(img_tag.attrs.get('alt'))
 
 
 ​	
-	if __name__ == '__main__':
-	    main()
+​	if __name__ == '__main__':
+​	    main()
 
 运行结果：
 
