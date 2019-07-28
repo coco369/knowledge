@@ -24,14 +24,63 @@
 
 ​		通过创建splash的docker容器来创建splash服务。如下在windows中安装docker，并创建容器。或者在CentOS中安装docker容器。CentOS、Windows中安装docker，请移步[地址](../../docker/docker概念与安装.md)。
 
-下拉镜像
+##### 下拉Splash镜像
 
-创建容器
+```
+docker pull scrapinghub/splash
+```
+##### 创建容器
+
+```
+#启动splash服务，并通过http，https，telnet提供服务
+#通常一般使用http模式 ，可以只启动一个8050就好 
+#Splash 将运行在 0.0.0.0 at ports 8050 (http), 8051 (https) and 5023 (telnet).
+docker run -p 5023:5023 -p 8050:8050 -p 8051:8051 scrapinghub/splash
+```
+
+##### 启动docker容器后，在浏览器中直接访问本地地址:8050，即可看到如下图所示界面：
+
+![图](../images/splash1.png)
+
+#### 3. splash的使用
+
+解析动态信息加载网站，以下访问豆瓣电影为例:
+```
+import requests
 
 
+def main():
+    splash_url = 'http://149.129.98.163:8050/render.html'
+    url = 'https://movie.douban.com/explore#!type=movie&tag=%E7%83%AD%E9%97%A8&sort=recommend&page_limit=20&page_start=0'
+
+    args = {
+        'url': url,  # 爬取的地址
+        'timeout': 10,  # 超时时间
+        'images': 0  # 是否加载图片
+    }
+    response = requests.get(splash_url, params=args)
+    print(response.text)
 
 
+if __name__ == '__main__':
+    main()
 
+```
 
+执行以上的程序，可从控制台的输出打印中发现，response.text中会加载出需要js渲染后的数据。
 
- 
+<b>传参说明</b>：
+
+​		url： 爬取的地址
+
+​		timeout：超时时间
+
+​		roxy：代理
+
+​		wait：等待渲染时间
+
+​		images: 是否下载，默认1（下载）
+
+​		js_source: 渲染页面前执行的js代码
+
+​		
