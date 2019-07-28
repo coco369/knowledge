@@ -64,7 +64,6 @@ def main():
 
 if __name__ == '__main__':
     main()
-
 ```
 
 执行以上的程序，可从控制台的输出打印中发现，response.text中会加载出需要js渲染后的数据。
