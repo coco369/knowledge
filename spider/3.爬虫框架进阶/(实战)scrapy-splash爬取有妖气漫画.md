@@ -41,8 +41,10 @@ scrapy startproject u17splash
 # 配置splash服务地址
 SPLASH_URL = 'http://149.129.98.163:8050'
 
+# 去重过滤器
 DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
 
+# 使用Splash的Http缓存
 HTTPCACHE_STORAGE = 'scrapy_splash.SplashAwareFSCacheStorage'
 
 # 配置下载中间件
