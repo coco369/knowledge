@@ -76,12 +76,34 @@
 
 ###  4. 手机APP抓包
 
+​	利用fiddler抓取手机端端包，需要配置fiddler，让其允许远程连接。配置选项为Tools->Options->Connections，勾选Allow remote cpmputers to connect,可看见Fiddler监听端口是：8888；
 
+​	点击ok后，重启fiddler客户端即可让远程手机端访问8888端口了。
+
+fiddler抓取手机访问app中的包的实现步骤如下：
+
+**步骤1:** 让手机和PC端处于同一网络下，然后更改手机的无线网代理，设置->无线局域网->点击已连接的无线网->找到HTTP代理（配置代理）->点击‘手动’，服务器：输入PC端ip地址，端口：输入fiddler端口，点击‘存储’即可。
+
+1. 输入的PC端ip地址可在cmd中执行ipconfig命令进行查询。
+
+2. 输入fiddler端口地址可在fiddler中设置，默认为8888端口。
+
+**步骤2:** 手机端打开浏览器，输入http://ip:port（端口号是fiddler的端口号）。
+
+如下图在手机端浏览器中访问 ip地址:port端口，如10.7.10.1:8888,可看到如下的截图：
 
 ![图](../images/fiddler_mobile1.jpg)
 
+​    **注意：**在手机端展示如上图效果后，点击最下面的按钮，下载证书文件。
+
+**步骤3:** 在手机中找到刚才下载好的证书文件，并点击‘确定’按钮。
+
 ![图](../images/fiddler_mobile2.jpg)
 
-抓取网易云app中某首歌曲
+**步骤4:** 手机中访问网易云音乐，即可在fiddler中抓取到网易云发送到请求。从请求中找到content-type为audio的请求，该请求地址即为当前手机中播放的歌曲地址。然后再通过requests请求刚抓取到的地址，即可下载音乐内容。
+
+抓取网易云app中某首歌曲截图如下：
 
 ![图](../images/fiddler_music1.png)
+
+**注意：上图中抓取到的音乐地址为：m8.music.126.net/xxx/xxx/xxx地址**
