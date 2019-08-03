@@ -12,6 +12,8 @@
 
 ​	本文档提供了Go学习的详细进阶路线图，列出了学习Go开发所需的各类知识和技能，而且每个知识点也附上啦相应的学习资源。相信无论是零基础的新手，还是对Go语言有一定了解的开发者，都能够有所收获。
 
+## 给我一个 Star！ ⭐️
+
 如下图所示
 
 ![img](images/go学习路线.jpg)
@@ -221,8 +223,6 @@ gRPC-Go：https://github.com/grpc/grpc-go
 gRPC-Gateway：https://github.com/grpc-ecosystem/grpc-gateway
 
 **5、Go模式：**https://github.com/tmrts/go-patterns
-
-以上就是本期CSDN为大家推荐的《2019年Go语言开发者指南》，最后为大家献上传送门，预祝大家五一学习愉快，peace～
 
 > GitHub项目地址：
 >
