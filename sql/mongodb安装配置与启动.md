@@ -116,8 +116,22 @@ centos下安装 yum install net-tools 就可以使用netstat -lntp 去查看进�
 | table joins | ---         | 表连接/嵌套文档        |
 | primary key | primary key | 主键/主键（`_id`字段） |
 
+### 4. Mac下安装
 
-### 4. robomongo可视化工具
+#### 4.1 使用brew进行安装
+
+```undefined
+brew install mongodb
+```
+
+4.2 启动，并指定数据存储位置
+```
+mongod --dbpath=/data/db/
+```
+
+注意：通过brew进行安装的内容，如mongodb。其存在的路径为：**/usr/local/Cella**r中
+
+### 5. robomongo可视化工具
 
 
 在windows开发环境中，需要可视化mongodb数据库，通常都会使用robomongo这个可视化工具。请自行去官网下载
