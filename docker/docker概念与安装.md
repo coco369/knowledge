@@ -71,7 +71,7 @@ docker镜像可以看作是一个特殊的文件系统，除了提供容器运�
 
 ```
 sudo apt-get update 
-sudo apt-get install docker-io
+sudo apt-get install docker.io
 ```
 ***
 #### 1.3 CentOS7中安装docker
