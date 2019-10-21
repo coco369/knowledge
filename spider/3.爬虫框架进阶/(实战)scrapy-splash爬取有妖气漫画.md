@@ -26,7 +26,7 @@
 ```
 pip install scrapy
 
-pip install scapy-splash
+pip install scrapy-splash
 ```
 ### 2. 实战代码
 
@@ -86,5 +86,3 @@ class U17Spider(Spider):
 4. 输出结果
 
    ![](../images/scrapy-splash-u17-result.png)
-
-   
