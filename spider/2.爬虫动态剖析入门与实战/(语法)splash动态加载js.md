@@ -42,7 +42,7 @@ docker run -p 5023:5023 -p 8050:8050 -p 8051:8051 scrapinghub/splash
 
 ![图](../images/splash1.png)
 
-#### 3. splash的使用
+#### 3. splash的简单语法
 
 解析动态信息加载网站，以下访问豆瓣电影为例:
 ```
@@ -82,4 +82,56 @@ if __name__ == '__main__':
 
 ​		js_source: 渲染页面前执行的js代码
 
-​		
+注意：通过js渲染的地址还有今日头条中街拍的地址, 如[地址](https://www.toutiao.com/a6749328462969831944/)
+
+#### 4. splash的高级语法
+
+解析动态信息加载网站，以下访问豆瓣电影为例，实现效果为多模拟点击几次  ’ 加载更多 ‘  按钮。
+
+```
+import requests
+
+
+def main():
+    splash_url = 'http://47.240.49.131:8050/execute'
+    url = 'https://movie.douban.com/explore#!type=movie&tag=%E7%83%AD%E9%97%A8&sort=recommend&page_limit=20&page_start=20'
+
+    lua = '''
+        function main(splash)
+          splash:go("{url}")
+          submit = splash:select('.more')
+          submit:mouse_click()
+          splash:wait(3)
+          submit = splash:select('.more')
+          submit:mouse_click()
+          splash:wait(3)
+          return splash:html()
+        end
+    '''
+    data = {
+        "timeout": 15,
+        "lua_source": lua.replace('{url}', url)
+    }
+
+    response = requests.get(splash_url, params=data)
+    print(response.text)
+
+
+if __name__ == '__main__':
+    main()
+```
+
+
+
+##### 参数说明：
+
+​	timeout 超时
+​	lua_source lua脚本
+​	proxy 代理
+
+其中lua脚本中：splash:go(url地址)表示执行反问url地址。splash:select(css样式)表示通过css样式查询元素。
+
+​			    splash:mouse_click()表示点击操作。splash:wait(时间)表示休眠时间。
+
+​			    return splash:html()表示返回渲染后的页面。
+
