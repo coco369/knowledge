@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 func main() {
 	// 定义数组arr0，长度为3，且元素为int类型
@@ -20,4 +23,8 @@ func main() {
 		arr2[a] = a
 	}
 	fmt.Println(arr2)
+
+	arr3 := [3] int {1,2,3}
+	fmt.Println(reflect.TypeOf(arr3))
+	fmt.Println(arr3)
 }
