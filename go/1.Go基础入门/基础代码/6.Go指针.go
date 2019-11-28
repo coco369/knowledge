@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+// 指针不能做运算
+
 func main() {
 	var a int
 	/* 声明指针变量 */
