@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 // 指针不能做运算
+// 指针就类似于python中的可变变量与不可变变量
 
 func main() {
 	var a int
