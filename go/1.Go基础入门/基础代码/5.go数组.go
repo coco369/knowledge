@@ -20,11 +20,22 @@ func main() {
 	// 定义长度为3，且存储int类型的数组
 	var arr2 [3]int
 	for a := 0; a < 3; a++ {
-		arr2[a] = a
+		arr2[a] = a + 3
 	}
 	fmt.Println(arr2)
+
+	// 循环获取arr2中的值, 使用range关键字
+	for i,v := range arr2 {
+		fmt.Println(i, v)
+	}
 
 	arr3 := [3] int {1,2,3}
 	fmt.Println(reflect.TypeOf(arr3))
 	fmt.Println(arr3)
+
+	// 定义二维数组,4行5列
+	var arr4 = [4][5]int{}
+	//arr4[1][0] = {1,2}
+	fmt.Println(arr4)
+
 }
