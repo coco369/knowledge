@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3191702-d464-4927-8e5a-d786d219f182" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/11.3Go切片扩展3.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/12.Go的map.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,10 +14,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/11.3Go切片扩展3.go">
+        <entry file="file://$PROJECT_DIR$/12.Go的map.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+            <state relative-caret-position="320">
+              <caret line="57" column="1" lean-forward="true" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -48,6 +48,7 @@
         <option value="$PROJECT_DIR$/11.1Go切片扩展.go" />
         <option value="$PROJECT_DIR$/11.2Go切片扩展2.go" />
         <option value="$PROJECT_DIR$/11.3Go切片扩展3.go" />
+        <option value="$PROJECT_DIR$/12.Go的map.go" />
       </list>
     </option>
   </component>
@@ -107,7 +108,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build 11.3Go切片扩展3.go">
+  <component name="RunManager" selected="Go Build.go build 12.Go的map.go">
     <configuration name="go build 11.1Go切片扩展.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="基础代码" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -140,21 +141,21 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build 5.1 go数组函数2.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build 12.Go的map.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="基础代码" />
       <working_directory value="$PROJECT_DIR$/" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/5.1 go数组函数2.go" />
+      <filePath value="$PROJECT_DIR$/12.Go的map.go" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build 12.Go的map.go" />
         <item itemvalue="Go Build.go build 11.3Go切片扩展3.go" />
         <item itemvalue="Go Build.go build 11.2Go切片扩展2.go" />
         <item itemvalue="Go Build.go build 11.1Go切片扩展.go" />
         <item itemvalue="Go Build.go build 11.Go切片.go" />
-        <item itemvalue="Go Build.go build 5.1 go数组函数2.go" />
       </list>
     </recent_temporary>
   </component>
@@ -162,12 +163,12 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19456366" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19742489" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32920793" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32920793" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39975247" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -268,8 +269,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/11.3Go切片扩展3.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+        <state relative-caret-position="545">
+          <caret line="54" column="19" lean-forward="true" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12.Go的map.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="57" column="1" lean-forward="true" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
         </state>
       </provider>
     </entry>
