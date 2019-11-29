@@ -55,4 +55,15 @@ func main () {
 		fmt.Println("key:gender不存在")
 	}
 
+	// 删除元素
+	name, ok := m["name"]
+	fmt.Println(name, ok)
+
+	fmt.Println("删除m中的name之前")
+	// delete(map, "键")： 删除map中的键值对
+	delete(m, "name")
+
+	fmt.Println("删除m中的name之后")
+	name, ok = m["name"]
+	fmt.Println(name, ok)
 }
