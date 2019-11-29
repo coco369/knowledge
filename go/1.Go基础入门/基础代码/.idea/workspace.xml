@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3191702-d464-4927-8e5a-d786d219f182" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/11.2Go切片扩展2.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11.3Go切片扩展3.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/11.1Go切片扩展.go" beforeDir="false" afterPath="$PROJECT_DIR$/11.1Go切片扩展.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,20 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/11.1Go切片扩展.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/11.2Go切片扩展2.go">
+        <entry file="file://$PROJECT_DIR$/11.3Go切片扩展3.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+            <state relative-caret-position="447">
+              <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -57,6 +47,7 @@
         <option value="$PROJECT_DIR$/11.Go切片.go" />
         <option value="$PROJECT_DIR$/11.1Go切片扩展.go" />
         <option value="$PROJECT_DIR$/11.2Go切片扩展2.go" />
+        <option value="$PROJECT_DIR$/11.3Go切片扩展3.go" />
       </list>
     </option>
   </component>
@@ -116,7 +107,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build 11.2Go切片扩展2.go">
+  <component name="RunManager" selected="Go Build.go build 11.3Go切片扩展3.go">
     <configuration name="go build 11.1Go切片扩展.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="基础代码" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -130,6 +121,14 @@
       <working_directory value="$PROJECT_DIR$/" />
       <kind value="FILE" />
       <filePath value="$PROJECT_DIR$/11.2Go切片扩展2.go" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build 11.3Go切片扩展3.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="基础代码" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/11.3Go切片扩展3.go" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -149,21 +148,13 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build 5.1 go数组函数.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="基础代码" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/5.1 go数组函数.go" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build 11.3Go切片扩展3.go" />
         <item itemvalue="Go Build.go build 11.2Go切片扩展2.go" />
         <item itemvalue="Go Build.go build 11.1Go切片扩展.go" />
         <item itemvalue="Go Build.go build 11.Go切片.go" />
         <item itemvalue="Go Build.go build 5.1 go数组函数2.go" />
-        <item itemvalue="Go Build.go build 5.1 go数组函数.go" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +162,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18955651" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19456366" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -270,8 +261,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/11.2Go切片扩展2.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
+        <state relative-caret-position="360">
           <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/11.3Go切片扩展3.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
         </state>
       </provider>
     </entry>
