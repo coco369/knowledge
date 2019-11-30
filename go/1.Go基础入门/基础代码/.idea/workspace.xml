@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3191702-d464-4927-8e5a-d786d219f182" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/14.1Go面向对象的封装.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/apis.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/14.1Go面向对象的封装.go" beforeDir="false" afterPath="$PROJECT_DIR$/14.1Go面向对象的封装.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,14 +12,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/14.1Go面向对象的封装.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            <state relative-caret-position="639">
+              <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
               <folding>
-                <element signature="e#14#80#0" expanded="true" />
+                <element signature="e#14#56#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -29,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/apis.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+            <state>
+              <caret selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -177,7 +176,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build 14.1Go面向对象的封装.go" />
-        <item itemvalue="Go Build.go build 14.1Go.go" />
         <item itemvalue="Go Build.go build 11.Go切片.go" />
         <item itemvalue="Go Build.go build 14.Go面向对象.go" />
         <item itemvalue="Go Build.go build 13.Go的字符串.go" />
@@ -188,7 +186,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21459228" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21745351" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -336,17 +334,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/apis.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        <state>
+          <caret selection-end-line="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/14.1Go面向对象的封装.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        <state relative-caret-position="639">
+          <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
           <folding>
-            <element signature="e#14#80#0" expanded="true" />
+            <element signature="e#14#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
