@@ -39,6 +39,7 @@ import (
 func main () {
 
 	fmt.Println(api.HelloWorld())
+	fmt.Println(api.Name)
 	fmt.Println(http.Cookie{})
 }
 
