@@ -9,6 +9,8 @@ type A struct {
 	UserAgent string
 }
 
+
+// 定义结构体中的方法，定义格式为func (变量 结构体名) 方法名 (参数) 返回参数类型 {}
 func (a A) Get(url string) string {
 	res, err := http.Get(url)
 	if err != nil{
