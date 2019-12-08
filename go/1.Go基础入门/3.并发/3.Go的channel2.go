@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 // 接收一个参数，参数类型为channel
 func worker(c chan int) {
@@ -22,6 +25,17 @@ func chanDemo2() {
 
 }
 
+func chanDemo3() {
+	c := make(chan int)
+	go worker(c)
+	c <- 'a'
+	c <- 2
+	c <- 3
+	time.Sleep(time.Microsecond)
+
+}
+
 func main() {
-	chanDemo2()
+	//chanDemo2()
+	chanDemo3()
 }
