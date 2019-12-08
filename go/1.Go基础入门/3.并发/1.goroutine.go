@@ -21,6 +21,7 @@ func main() {
 		// 以下实现以并发的方式调用匿名函数func
 		go func() { // 表示并发执行func函数，而函数中将一直执行输出打印操作
 			for { // for表示一直执行
+				// fmt.Printf表示一直在执行IO操作进行输出，当执行完毕后，协程将主动交出控制权，其他当协程才好运行
 				fmt.Printf("hello from goroutine %d\n", i)
 			}
 		}()
