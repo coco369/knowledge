@@ -7,9 +7,16 @@ import (
 	"time"
 )
 
+/*
+   pk表示主键 autoincr 自增
+   如果Field名就叫做Id，并且类型为int64，如果不加tag，会自动被xorm视为主键，并且自增。
+   如果想用Id以外、或者非int64类型作为主键，必须要显示的在tag中指定，`xorm:"pk autoincr"`
+*/
+
 type User struct {
-	ID int `xorm:"INT(11)"`
-	Username string `xorm:"varchar(20)"`
+	//Id int64 `xorm:"pk autoincr"`
+	User_id int64 `xorm:"pk autoincr"`
+	Username string `xorm:"varchar(20) not null unique"`
 	Password string `xorm:"varchar(200)"`
 	CreateTime time.Time `xorm:"created"`
 }
