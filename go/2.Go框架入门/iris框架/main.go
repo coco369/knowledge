@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/go-xorm/xorm"
+	"github.com/xormplus/xorm"
 	"time"
 )
 
@@ -14,8 +14,8 @@ import (
 */
 
 type User struct {
-	//Id int64 `xorm:"pk autoincr"`
-	User_id int64 `xorm:"pk autoincr"`
+	Id int64
+	//User_id int64 `xorm:"pk autoincr"`
 	Username string `xorm:"varchar(20) not null unique"`
 	Password string `xorm:"varchar(200)"`
 	CreateTime time.Time `xorm:"created"`
