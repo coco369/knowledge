@@ -20,6 +20,14 @@
 
 ​        kubectl是Kubernetes集群的命令行工具，通过kubectl能够对集群本身进行管理，并能够在集群上进行容器化应用的安装部署。
 
+#### k8s架构图：
+
+![](../images/k8s_jiagoutu1.png)
+
+![](../images/k8s_jiagoutu.png)
+
+
+
 #### 1. 部署方式
 
 k8s的部署方式：
@@ -38,7 +46,7 @@ k8s的部署方式：
 
     docker / kubeadm / kubelet / kubectl
 
-##### 2.1 安装kubeadm
+##### 安装kubeadm
 
 默认情况下安装kubernetes需要google外网。可以通过设置以下的镜像站来绕过google：
 
@@ -61,4 +69,36 @@ sudo apt-get update
 apt install kubeadm
 ```
 
+#### 3. 初始化Master节点
+
+```
+
+sudo kubeadm init \
+--apiserver-advertise-address=39.105.231.7 \
+--image-repository registry.aliyuncs.com/google_containers \
+--service-cidr=10.233.0.0/16 \
+--pod-network-cidr=10.16.0.0/16 \
+--kubernetes-version v1.17.0
+
+```
+
+参数说明：
+
+​	image-repository： 指定镜像仓库，否则默认情况下要翻墙才能获取镜像
+
+​	service-cidr：proxy代理，给每一个pod提供统一的入口，指定一个范围的IP
+
+​	pod-network-cidr：指定pod网络中每一个容器需要的IP范围
+
+​	kubernetes-version：指定k8s的版本
+
+​	apiserver-advertise-address：apiserver暴露出去的地址
+
+#### 4. 安装pod网络插件CNI
+
+```
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.9.1/Documentation/kube-flannel.yml
+```
+
+#### 5. 创建node
 
