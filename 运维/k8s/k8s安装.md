@@ -183,3 +183,13 @@ kubectl apply -f kube-flannel.yml
 
 #### 5. 创建node
 
+5.1） 查看token：
+
+```
+# 查看现有的token
+kubeadm token list
+
+# 创建新的token
+kubeadm token create
+```
+![](../images/kubectl_token.png)
