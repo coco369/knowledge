@@ -82,7 +82,7 @@ kubeadm这个工具可以通过简单的`kubeadm init`和`kubeadm join`命令来
 - `kubeadm reset` 把`kubeadm init`或`kubeadm join`做的更改恢复原状；
 - `kubeadm version`打印版本信息；
 - `kubeadm alpha`预览一些alpha特性的命令。
-- kubeadm reset   重启kubeadm
+- kubeadm reset   重启kubeadm。rm -rf $HOME/.kube
 
 **2.3) 修改hostname**
 
@@ -115,13 +115,15 @@ sudo kubeadm init \
 
 ​	kubernetes-version：指定k8s的版本
 
-​	apiserver-advertise-address：apiserver暴露出去的地址。如果不设置或者设置为0.0.0.0，那么将使用默认的接口的IP地址
+​	apiserver-advertise-address：指明用Master的哪个interface与Cluster 的其他节点通信。 如果Master有多个interface， 建议明确指定， 如果 不指定， kubeadm会自动选择有默认网关的interface。
 
 ​	apiserver-bind-port: API SERVER将绑定的端口，默认为6443
 
 **kubeadm init 执行成功：**
 
-sudo kubeadm init  --pod-network-cidr=10.16.0.0/16 --image-repository registry.aliyuncs.com/google_containers
+```
+sudo kubeadm init  --pod-network-cidr=10.100.0.0/16 --image-repository registry.aliyuncs.com/google_containers --apiserver-advertise-address=39.105.231.7
+```
 
 ![](../images/kubeadm_successful.png)
 
@@ -154,7 +156,8 @@ kubectl apply -f kube-flannel.yml
 安装flannel网络插件的时候，可能出现提示raw.githubusercontent.com网络无法访问的情况和‘possibly because of "crypto/rsa: verification error" while trying to verify candidate authority certificate "kubernetes"’的情况，解决办法如下：
 
 1. 修改vim /etc/hosts，并加入 151.101.76.133  raw.githubusercontent.com
-2. 设置 export KUBECONFIG=/etc/kubernetes/kubelet.conf，然后再执行kubectl apply -f 命令
+
+2. 设置 export KUBECONFIG=/etc/kubernetes/admin.conf ，然后再执行kubectl apply -f 命令
 
 3. 如果发现node节点的状态为NotReady，那么可以通过kubectl get pods -n cube-system命令查看pods的状态：（发现还有pending的状态，其实是在下载，只需要等待一直安装好即可，安装好以后，状态就是Ready）
 
@@ -162,24 +165,21 @@ kubectl apply -f kube-flannel.yml
 
    3.2) 执行kubectl get pods -n cube-system -o wide命令，可以查看Pending状态的镜像下载不成功的原因，下图表示解析不到IP，master上的flannel镜像拉取失败。
 
+**4.1） 执行成功apply -f命令：**
+
+![](../images/kubectl_yml.png)
+
+查看pods的状态：
+
 ![](../images/kubectl_pods_status.png)
 
-
+**4.2）执行失败的情况，coredns一直处于pending状态**
 
 ![](../images/kubectl_pods_pending.png)
 
+执行成功时，应该如下图所示：
 
-
-
+![](../images/kubectl_pods_ok.png)
 
 #### 5. 创建node
 
-kubeadm join 172.17.122.36:6443 --token 6exeih.f78evby9qnnh2uwk \
-
-​    --discovery-token-ca-cert-hash sha256:c48329da64826fd041b15dd0e629c7c67c0e33870ffa0fa26ae278d638c40a75
-
-
-
-kubeadm join 172.17.122.36:6443 --token uzfaqz.1gop8dpexugg1kl1 \
-
-​    --discovery-token-ca-cert-hash sha256:e5547e5b8e549db6cb423727801739a98f5df9bfa2d21ea61ce4c9716e37b8cf
