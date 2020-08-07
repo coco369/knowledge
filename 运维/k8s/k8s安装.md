@@ -46,7 +46,7 @@ k8s的部署方式：
 
     docker / kubeadm / kubelet / kubectl
 
-##### 安装kubeadm
+##### 2.1) 安装kubeadm
 
 默认情况下安装kubernetes需要google外网。可以通过设置以下的镜像站来绕过google：
 
@@ -71,9 +71,7 @@ apt install kubeadm=1.15.3-00 kubelet=1.15.3-00 kubectl=1.15.3-00
 
 **注意：**kubeadm和docker是有版本兼容问题的。目前kubeadm用的是1.15.3的版本，docker使用19.03.6的版本
 
-
-
-**命令：**
+**2.2) kubeadm命令：**
 
 kubeadm这个工具可以通过简单的`kubeadm init`和`kubeadm join`命令来创建一个kubernetes集群，kubeadm提供的其他命令都比较通俗易懂：
 
@@ -85,6 +83,14 @@ kubeadm这个工具可以通过简单的`kubeadm init`和`kubeadm join`命令来
 - `kubeadm version`打印版本信息；
 - `kubeadm alpha`预览一些alpha特性的命令。
 - kubeadm reset   重启kubeadm
+
+**2.3) 修改hostname**
+
+​	修改主机和从机的hostname
+
+​		hostname k8s-master 
+
+​		hostname k8s-node1
 
 #### 3. 初始化Master节点
 
@@ -99,7 +105,7 @@ sudo kubeadm init \
 
 ```
 
-参数说明：
+**参数说明：**
 
 ​	image-repository： 指定镜像仓库，否则默认情况下要翻墙才能获取镜像
 
@@ -113,7 +119,9 @@ sudo kubeadm init \
 
 ​	apiserver-bind-port: API SERVER将绑定的端口，默认为6443
 
-**kubeadm init 只需成功：**
+**kubeadm init 执行成功：**
+
+sudo kubeadm init  --pod-network-cidr=10.16.0.0/16 --image-repository registry.aliyuncs.com/google_containers
 
 ![](../images/kubeadm_successful.png)
 
@@ -122,10 +130,17 @@ sudo kubeadm init \
 #### 4. 安装pod网络插件CNI
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.9.1/Documentation/kube-flannel.yml
-
+1. 直接安装
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 
+2. 先下拉yml文件，再修改镜像源，最后安装
+curl  -o  kube-flannel.yml  https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
+# 把yml文件中的所有的quay.io改为quay-mirror.qiniu.com文件
+sed  -i  's/quay.io/quay-mirror.qiniu.com/g'   kube-flannel.yml
+
+# 在master节点执行以下命令
+kubectl apply -f kube-flannel.yml
 ```
 
 通过命令查看node是否启动：
@@ -134,11 +149,37 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documen
 
 
 
-如果发现node节点的状态为NotReady，那么可以通过kubectl get pods -n命令查看pods的状态：
+**注意：**
 
-（发现还有pending的状态，其实是在下载，只需要等待一直安装好即可，安装好以后，状态就是Ready）
+安装flannel网络插件的时候，可能出现提示raw.githubusercontent.com网络无法访问的情况和‘possibly because of "crypto/rsa: verification error" while trying to verify candidate authority certificate "kubernetes"’的情况，解决办法如下：
+
+1. 修改vim /etc/hosts，并加入 151.101.76.133  raw.githubusercontent.com
+2. 设置 export KUBECONFIG=/etc/kubernetes/kubelet.conf，然后再执行kubectl apply -f 命令
+
+3. 如果发现node节点的状态为NotReady，那么可以通过kubectl get pods -n cube-system命令查看pods的状态：（发现还有pending的状态，其实是在下载，只需要等待一直安装好即可，安装好以后，状态就是Ready）
+
+   3.1)  如果还是pending状态，可以通过命令kubectl logs -f coredns-bccdc95cf-jt2pk -n kube-system进行查看
+
+   3.2) 执行kubectl get pods -n cube-system -o wide命令，可以查看Pending状态的镜像下载不成功的原因，下图表示解析不到IP，master上的flannel镜像拉取失败。
 
 ![](../images/kubectl_pods_status.png)
 
+
+
+![](../images/kubectl_pods_pending.png)
+
+
+
+
+
 #### 5. 创建node
 
+kubeadm join 172.17.122.36:6443 --token 6exeih.f78evby9qnnh2uwk \
+
+​    --discovery-token-ca-cert-hash sha256:c48329da64826fd041b15dd0e629c7c67c0e33870ffa0fa26ae278d638c40a75
+
+
+
+kubeadm join 172.17.122.36:6443 --token uzfaqz.1gop8dpexugg1kl1 \
+
+​    --discovery-token-ca-cert-hash sha256:e5547e5b8e549db6cb423727801739a98f5df9bfa2d21ea61ce4c9716e37b8cf
