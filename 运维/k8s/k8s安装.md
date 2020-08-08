@@ -119,10 +119,14 @@ sudo kubeadm init \
 
 ​	apiserver-bind-port: API SERVER将绑定的端口，默认为6443
 
+**注意：**
+
+​	关闭所有服务器的交换分区(swap)：swapoff -a
+
 **kubeadm init 执行成功：**
 
 ```
-sudo kubeadm init  --pod-network-cidr=10.100.0.0/16 --image-repository registry.aliyuncs.com/google_containers --apiserver-advertise-address=39.105.231.7
+sudo kubeadm init --pod-network-cidr=10.100.0.0/16 --image-repository registry.aliyuncs.com/google_containers --apiserver-advertise-address=39.105.231.7
 ```
 
 ![](../images/kubeadm_successful.png)
@@ -155,7 +159,7 @@ kubectl apply -f kube-flannel.yml
 
 安装flannel网络插件的时候，可能出现提示raw.githubusercontent.com网络无法访问的情况和‘possibly because of "crypto/rsa: verification error" while trying to verify candidate authority certificate "kubernetes"’的情况，解决办法如下：
 
-1. 修改vim /etc/hosts，并加入 151.101.76.133  raw.githubusercontent.com
+1. 修改vim /etc/hosts，并加入 199.232.28.133  raw.githubusercontent.com
 
 2. 设置 export KUBECONFIG=/etc/kubernetes/admin.conf ，然后再执行kubectl apply -f 命令
 
@@ -193,3 +197,4 @@ kubeadm token list
 kubeadm token create
 ```
 ![](../images/kubectl_token.png)
+
