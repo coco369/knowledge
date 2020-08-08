@@ -115,7 +115,7 @@ sudo kubeadm init \
 
 ​	kubernetes-version：指定k8s的版本
 
-​	apiserver-advertise-address：指明用Master的哪个interface与Cluster 的其他节点通信。 如果Master有多个interface， 建议明确指定， 如果 不指定， kubeadm会自动选择有默认网关的interface。
+​	apiserver-advertise-address：指明用Master的哪个interface与Cluster 的其他节点通信。 如果Master有多个interface， 建议明确指定， 如果 不指定， kubeadm会自动选择有默认网关的interface。"kubeadm"部署集群时指定"--apiserver-advertise-address=<public_ip>"参数，即可在其他机器上，通过公网ip join到本机器，然而，阿里云ecs里没配置公网ip，etcd会无法启动，导致初始化失败。
 
 ​	apiserver-bind-port: API SERVER将绑定的端口，默认为6443
 
@@ -197,4 +197,14 @@ kubeadm token list
 kubeadm token create
 ```
 ![](../images/kubectl_token.png)
+
+5.2)  加入节点
+
+Kubeadm join --token xxxxx
+
+
+
+#### **总结：**目前集群都是在内网中，内网中的master和node机器都是能通过内网访问的。如果使用阿里云服务器，想要通过外网来关联这些服务器，目前还搞不明白。
+
+如果使用阿里云服务器，可能会遇到的问题，可以参考<https://www.bbsmax.com/A/A2dmPXo45e/>地址。
 
