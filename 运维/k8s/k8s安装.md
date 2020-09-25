@@ -183,6 +183,23 @@ kubectl apply -f kube-flannel.yml
 
 ![](../images/kubectl_pods_ok.png)
 
+
+
+**注意：**如果kubectl get nodes出现提示8080被拒绝访问，解决办法如下所示
+
+```
+[root@master01 ~]# kubectl get nodes
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+```
+
+配置kubectl工具
+
+```
+mkdir -p /root/.kube
+cp /etc/kubernetes/admin.conf /root/.kube/config
+kubectl get nodes
+```
+
 #### 5. 创建node
 
 5.1） 查看token：
@@ -199,8 +216,6 @@ kubeadm token create
 5.2)  加入节点
 
 Kubeadm join --token xxxxx
-
-
 
 #### **总结：**目前集群都是在内网中，内网中的master和node机器都是能通过内网访问的。如果使用阿里云服务器，想要通过外网来关联这些服务器，目前还搞不明白。
 
