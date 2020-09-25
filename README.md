@@ -234,3 +234,7 @@
   - [提升](vue/vue提升)
       - Vue的全局操作 - 生命周期 / axios请求 / 跨域配置 
       - Vue部署 - 项目build相关配置 / Nginx配置 / 反向代理配置
+
+### K8s
+
+- k8s的概念、安装 / minikube的使用
