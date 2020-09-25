@@ -179,6 +179,12 @@ kubectl apply -f kube-flannel.yml
 
 ![](../images/kubectl_pods_pending.png)
 
+由此可以看出 coredns 尚未运行，此时我们还需要安装网络插件。安装命令如下：
+
+```
+kubectl apply -f https://docs.projectcalico.org/v3.7/manifests/calico.yaml
+```
+
 执行成功时，应该如下图所示：
 
 ![](../images/kubectl_pods_ok.png)
@@ -202,7 +208,7 @@ kubectl get nodes
 
 #### 5. 创建node
 
-5.1） 查看token：
+**5.1） 查看token**
 
 ```
 # 查看现有的token
@@ -213,9 +219,13 @@ kubeadm token create
 ```
 ![](../images/kubectl_token.png)
 
-5.2)  加入节点
+**5.2)  加入节点**
 
 Kubeadm join --token xxxxx
+
+**5.3) 查看节点状态**
+
+![](../images/kubectl_ready.png)
 
 #### **总结：**目前集群都是在内网中，内网中的master和node机器都是能通过内网访问的。如果使用阿里云服务器，想要通过外网来关联这些服务器，目前还搞不明白。
 
