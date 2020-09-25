@@ -1,5 +1,3 @@
-通过命令查看node是否启动
-
 # Kubernetes使用指南--入门基础
 
 > Auth: 王海飞
