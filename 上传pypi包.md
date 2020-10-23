@@ -20,7 +20,7 @@
 
 ​	在开发中很多项目都需要使用到共同的功能，如果每个服务都把这个库放置于各自的目录下，维护起来很麻烦，因此把这个公共功能上传到PyPI，通过pip来统一管理。
 
-#### 目录结构
+#### 1. 目录结构
 
 首先将项目的目录组织成如下形式
 
@@ -30,20 +30,25 @@
 |   |-- __init__.py
 |   `-- <files> ....          # 代码模块
 |-- README.md
-|-- LICENSE
+|-- License
+|-- readme.rst
 |-- setup.py
 ```
 
-#### 编写setup.py
+##### 1.1 编写setup.py
 
 ```
 from setuptools import setup, find_packages
+
+with open('readme.rst') as f:
+    readme = f.read()
 
 setup(
     name="python-aliyun-api-gateway",
     packages=find_packages(),
     version='0.0.1',
     description="aliyun api gateway",
+    long_description=readme,
     author="wanghaifei",
     author_email='779598160@qq.com',
     url="https://github.com/coco369/aliyun-api-gateway-python",
@@ -75,20 +80,56 @@ setup(
 - entry_points - 上面的例子中entry_points用来自动创建脚本，上面的例子在pip install安装成功后会创建douyin_image这个命令，直接可以在命令行运行，很方便
 - classifiers - 其他信息，一般包括项目支持的Python版本，License，支持的操作系统。上面的例子中，我们指定项目只能在Python 3上运行，使用MIT License，不依赖操作系统。关于classifiers的完整列表，可参考 [https://pypi.org/classifiers/](https://link.zhihu.com/?target=https%3A//pypi.org/classifiers/)。
 
-好了项目的文件编辑好了，接下来我们就可以开始打包我们的项目了。
-
-## 上传项目到PyPI
-
-我们使用twine上传项目，先安装twine
+##### 1.2 编写readme.rst文件
 
 ```
-pip install twine
+工具包使用规范
+========================
+
+    1. mysql数据库使用
+    2. 经纬度转换使用
+```
+
+##### 1.3 license许可文件
+
+```
+Copyright (c) 2019 The Python Packaging Authority
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+
+
+好了项目的文件编辑好了，接下来我们就可以开始打包我们的项目了。
+
+### 2. 上传项目到PyPI
+
+我们使用twine上传项目，如果没有安装twine则先安装twine，以及相关的包
+
+```
+pip install --upgrade setuptools wheel twine
 ```
 
 执行一下命令，将在项目目录下生成dist文件夹，
 
 ```
-python setup.py sdist ``-``-``formats``=``gztar register upload
+python setup.py sdist bdist_wheel
 ```
 
 
