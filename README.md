@@ -10,9 +10,23 @@
 
 ------
 
-​        python学习之路，就是不断累积，不断学习的过程。该知识库讲解了Python Web框架内容，如Django、DjangoRestFramework、tornado、flask，redis，MySQL，MongoDB，docker，Vue等内容。如下展示知识结构目录图
+​        python学习之路，就是不断累积，不断学习的过程。该知识库讲解了Python Web框架内容，如Django、DjangoRestFramework、tornado、flask，redis，MySQL，MongoDB，docker，Vue等内容。如下展示知识结构表格：
 
-[TOC]
+
+| 知识库 | 知识点 | 已整理知识点 |
+| :-----| :---- | :----- |
+| Git | 基础使用语法、分支管理策略、 | 基础使用语法 |
+| Docker | Docker基础语法、<br />底层技术Namespace，Cgroups、<br />Docker架构<br />编排设计 | Docker基础语法<br />底层技术Namespace，Cgroups<br />Docker架构 |
+| K8s |  |  |
+| Mysql、<br />Redis、<br />MongoDB | 基础语法 | 基础语法 |
+| Celery |  |  |
+| Django | 基础语法<br />MVC模式以及各模块的使用<br />会话<br />权限<br />DRF | 基础语法<br />MVC模式以及各模块的使用<br />会话<br />权限<br />DRF |
+| Tornado |  |  |
+| Flask | 基础语法<br />MVC模式以及各模块的使用<br />会话<br />权限<br />DRF | 基础语法<br />MVC模式以及各模块的使用<br />会话<br /> |
+| 爬虫 |  |  |
+| Vue |  |  |
+| 机器学习 |  |  |
+
 
 ### git知识库
 
