@@ -58,7 +58,7 @@ setup(
     include_package_data=True,
     entry_points={
         'console_scripts': [
-
+			"fastspider=fastspider.start:main"
         ]
     },
     install_requires=[
@@ -87,7 +87,7 @@ setup(
 
 - install_requires - 项目依赖哪些库，这些库会在pip install的时候自动安装
 
-- entry_points - 上面的例子中entry_points用来自动创建脚本，上面的例子在pip install安装成功后会创建douyin_image这个命令，直接可以在命令行运行，很方便
+- entry_points - 上面的例子中entry_points用来自动创建脚本，上面的例子在pip install安装成功后会创建fastspider这个命令，相当于直接运行fastspider下的start.py文件中的main函数，很方便
 
 - classifiers - 其他信息，一般包括项目支持的Python版本，License，支持的操作系统。上面的例子中，我们指定项目只能在Python 3上运行，使用MIT License，不依赖操作系统。关于classifiers的完整列表，可参考 [https://pypi.org/classifiers/](https://link.zhihu.com/?target=https%3A//pypi.org/classifiers/)。例子, 如果只支持Python3:
 
