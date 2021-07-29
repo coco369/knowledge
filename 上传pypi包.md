@@ -54,7 +54,8 @@ setup(
     url="https://github.com/coco369/aliyun-api-gateway-python",
     download_url='https://github.com/coco369/aliyun-api-gateway-python',
     keywords=['command', 'line', 'tool'],
-    classifiers=[],
+    classifiers=["Programming Language :: Python :: 3"],
+    include_package_data=True,
     entry_points={
         'console_scripts': [
 
@@ -69,16 +70,47 @@ setup(
 这里setuptools.setup() 的几个参数的含义如下：
 
 - name - 项目的名称
+
 - version - 项目的版本。需要注意的是，PyPI上只允许一个版本存在，如果后续代码有了任何更改，再次上传需要增加版本号
+
 - author和author_email - 项目作者的名字和邮件
+
 - description - 项目的简短描述
+
 - long_description - 项目的详细描述，会显示在PyPI的项目描述页面。上面的例子里直接用了README.md中的内容做详细描述
+
 - long_description_content_type - 用于指定long_description的markup类型，上面的例子是markdown
+
 - url - 项目主页的URL，一般给出代码仓库的链接
+
 - packages - 指定最终发布的包中要包含的packages。上面的例子中find_packages() 会自动发现项目根目录下所有的packages，当然也可以手动指定package的名字
+
 - install_requires - 项目依赖哪些库，这些库会在pip install的时候自动安装
+
 - entry_points - 上面的例子中entry_points用来自动创建脚本，上面的例子在pip install安装成功后会创建douyin_image这个命令，直接可以在命令行运行，很方便
-- classifiers - 其他信息，一般包括项目支持的Python版本，License，支持的操作系统。上面的例子中，我们指定项目只能在Python 3上运行，使用MIT License，不依赖操作系统。关于classifiers的完整列表，可参考 [https://pypi.org/classifiers/](https://link.zhihu.com/?target=https%3A//pypi.org/classifiers/)。
+
+- classifiers - 其他信息，一般包括项目支持的Python版本，License，支持的操作系统。上面的例子中，我们指定项目只能在Python 3上运行，使用MIT License，不依赖操作系统。关于classifiers的完整列表，可参考 [https://pypi.org/classifiers/](https://link.zhihu.com/?target=https%3A//pypi.org/classifiers/)。例子, 如果只支持Python3:
+
+  ```
+  "Programming Language :: Python :: 3"
+  ```
+
+- include_package_data - 项目里会有一些非py文件，比如html和js等，这时候就要靠 include_package_data来指定。指定内容在MANIFEST.in文件中定义。如下所示：
+
+```python
+  # 包含单个文件
+  include README.md
+  include LICENSE
+  include fastspider/requirements.txt
+  include fastspider/VERSION
+  
+  # 递归包含某个文件夹下所有内容
+  recursive-include fastspider/templates *
+  
+  # 排除__pycache__文件和以pyc、pyo、pyd结尾的文件
+  global-exclude __pycache__ *.py[cod]
+```
+
 
 ##### 1.2 编写readme.rst文件
 
@@ -122,21 +154,22 @@ SOFTWARE.
 
 我们使用twine上传项目，如果没有安装twine则先安装twine，以及相关的包
 
-```
+```sh
 pip install --upgrade setuptools wheel twine
 ```
 
 执行一下命令，将在项目目录下生成dist文件夹，
 
-```
+```sh
 python setup.py sdist bdist_wheel
 ```
 
 
 执行完之后，运行下面的命令将库上传
 
-```bash
+```sh
 twine upload dist/*
 ```
 
 上传完成后，我们的项目就成功地发布到PyPI了。
+
