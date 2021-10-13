@@ -10,13 +10,13 @@
 
 ------
 
-<<<<<<< HEAD
-​python学习之路，就是不断累积，不断学习的过程。该知识库讲解了Python Web框架内容，如Django、DjangoRestFramework、tornado、flask，redis，MySQL，MongoDB，docker，Vue等内容。如下展示知识结构目录图
+​	**python学习之路，就是不断累积，不断学习的过程。该知识库讲解了Python Web框架内容，如Django、DjangoRestFramework、tornado、flask，redis，MySQL，MongoDB，docker，Vue等内容。**
 
-[TOC]
-=======
-​        python学习之路，就是不断累积，不断学习的过程。该知识库讲解了Python Web框架内容，如Django、DjangoRestFramework、tornado、flask，redis，MySQL，MongoDB，docker，Vue等内容。如下展示已整理的知识：
->>>>>>> 86adaea6991d92c41f0608ac6ec63803592b25eb
+
+
+### Python基础
+
+ - [python安装](python基础/Python3安装.md)
 
 ### git知识库
 
